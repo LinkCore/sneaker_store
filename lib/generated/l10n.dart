@@ -49,6 +49,106 @@ class S {
   static S? maybeOf(BuildContext context) {
     return Localizations.of<S>(context, S);
   }
+
+  /// `Let's sign you in.`
+  String get letsSignYouIn {
+    return Intl.message(
+      'Let\'s sign you in.',
+      name: 'letsSignYouIn',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Welcome back.\nWe missed you!`
+  String get welcomeBackWeMissedYou {
+    return Intl.message(
+      'Welcome back.\nWe missed you!',
+      name: 'welcomeBackWeMissedYou',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Create Account!`
+  String get createAccount {
+    return Intl.message(
+      'Create Account!',
+      name: 'createAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Phone, email or username`
+  String get phoneEmailOrUsername {
+    return Intl.message(
+      'Phone, email or username',
+      name: 'phoneEmailOrUsername',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password`
+  String get password {
+    return Intl.message(
+      'Password',
+      name: 'password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Don't have an account?  `
+  String get dontHaveAnAccount {
+    return Intl.message(
+      'Don\'t have an account?  ',
+      name: 'dontHaveAnAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Register`
+  String get register {
+    return Intl.message(
+      'Register',
+      name: 'register',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sign In`
+  String get signIn {
+    return Intl.message(
+      'Sign In',
+      name: 'signIn',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Buyer`
+  String get buyer {
+    return Intl.message(
+      'Buyer',
+      name: 'buyer',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Seller`
+  String get seller {
+    return Intl.message(
+      'Seller',
+      name: 'seller',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

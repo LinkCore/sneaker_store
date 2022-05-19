@@ -1,1 +1,12 @@
-{}
+{
+  "letsSignYouIn" : "Давай войдем.",
+  "welcomeBackWeMissedYou" : "С возвращением.\nМы скучали по тебе!",
+  "createAccount" : "Создать Аккаунт!",
+  "phoneEmailOrUsername" : "Телефон, электронная почта или имя пользователя",
+  "password" : "Пароль",
+  "dontHaveAnAccount" : "У вас нет аккаунта?  ",
+  "register" : "Регистрация",
+  "signIn" : "Войти",
+  "buyer" : "Покупатель",
+  "seller" : "Продавец"
+}

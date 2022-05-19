@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter_sneaker_store/core/user/roles.dart';
 import 'package:flutter_sneaker_store/core/user/user.dart';
 import 'package:hive/hive.dart';
 
@@ -15,16 +16,20 @@ class UserRepository {
   final CollectionReference _userCollection =
       FirebaseFirestore.instance.collection('users');
 
-  Future<void> addUserLocal(User user) async {
+  Future<void> addUserLocal(String? login, String? password, Roles? roles, String? id) async {
     var userBox = await Hive.openBox('userBox');
-    userBox.put('user', user);
-    currentUser = user;
+    userBox.put('login', login);
+    userBox.put('password', password);
+    userBox.put('roles', roles);
+    userBox.put('id', id);
+    userBox.close();
+
+    currentUser = User(id: id, roles: roles, login: login,  password: password);
   }
 
   Future<bool> isUserExistLocal() async {
     var userBox = await Hive.openBox('userBox');
-    if (userBox.containsKey('user')) {
-      currentUser = await userBox.get('user');
+    if (userBox.containsKey('login')) {
       return true;
     } else {
       return false;

@@ -21,5 +21,20 @@ class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'ru';
 
   final messages = _notInlinedMessages(_notInlinedMessages);
-  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{};
+  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "buyer": MessageLookupByLibrary.simpleMessage("Покупатель"),
+        "createAccount":
+            MessageLookupByLibrary.simpleMessage("Создать Аккаунт!"),
+        "dontHaveAnAccount":
+            MessageLookupByLibrary.simpleMessage("У вас нет аккаунта?  "),
+        "letsSignYouIn": MessageLookupByLibrary.simpleMessage("Давай войдем."),
+        "password": MessageLookupByLibrary.simpleMessage("Пароль"),
+        "phoneEmailOrUsername": MessageLookupByLibrary.simpleMessage(
+            "Телефон, электронная почта или имя пользователя"),
+        "register": MessageLookupByLibrary.simpleMessage("Регистрация"),
+        "seller": MessageLookupByLibrary.simpleMessage("Продавец"),
+        "signIn": MessageLookupByLibrary.simpleMessage("Войти"),
+        "welcomeBackWeMissedYou": MessageLookupByLibrary.simpleMessage(
+            "С возвращением.\nМы скучали по тебе!")
+      };
 }
