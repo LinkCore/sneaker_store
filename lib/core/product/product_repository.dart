@@ -23,7 +23,7 @@ class ProductRepository {
     List<String> urls = [];
 
     for(int i = 0; i < imagesList.length; i++){
-      String linkUri = 'product_images/${id}/${i}.png';
+      String linkUri = 'product_images/$id/$i.png';
       await storage.ref(linkUri).putFile(imagesList[i]).then((snapshot) async {
         urls.add(await snapshot.ref.getDownloadURL());
       });

@@ -23,6 +23,7 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "addProduct": MessageLookupByLibrary.simpleMessage("Добавить продукт"),
+        "addToCart": MessageLookupByLibrary.simpleMessage("Добавить в корзину"),
         "addYourMagicalProduct":
             MessageLookupByLibrary.simpleMessage("Добавьте свой продукт!"),
         "approve": MessageLookupByLibrary.simpleMessage("Подтвердить"),
@@ -33,6 +34,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "buyer": MessageLookupByLibrary.simpleMessage("Покупатель"),
         "chooseAvailableSizes":
             MessageLookupByLibrary.simpleMessage("Выберите размеры"),
+        "chooseYourSize":
+            MessageLookupByLibrary.simpleMessage("Выберите размер"),
         "createAccount":
             MessageLookupByLibrary.simpleMessage("Создать Аккаунт!"),
         "deleteProduct":
@@ -40,6 +43,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "dontHaveAnAccount":
             MessageLookupByLibrary.simpleMessage("У вас нет аккаунта?  "),
         "error": MessageLookupByLibrary.simpleMessage("Ошибка"),
+        "goToCart": MessageLookupByLibrary.simpleMessage("В корзину"),
         "letsSignYouIn": MessageLookupByLibrary.simpleMessage("Давай войдем"),
         "noSelectedProducts":
             MessageLookupByLibrary.simpleMessage("Нет Выбранных Продуктов"),
@@ -57,6 +61,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "shortDescription":
             MessageLookupByLibrary.simpleMessage("Краткое описание"),
         "signIn": MessageLookupByLibrary.simpleMessage("Войти"),
+        "sizeGuide": MessageLookupByLibrary.simpleMessage("Размеры"),
         "unnamedAlbum":
             MessageLookupByLibrary.simpleMessage("Безымянный альбом"),
         "welcomeBackWeMissedYou": MessageLookupByLibrary.simpleMessage(

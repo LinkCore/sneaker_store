@@ -2,19 +2,19 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_sneaker_store/scenes/auth/widgets/auth_button.dart';
 import 'package:flutter_sneaker_store/scenes/product/product_bloc/product_bloc.dart';
-import 'package:flutter_sneaker_store/scenes/product/widgets/choose_size.dart';
-import 'package:flutter_sneaker_store/scenes/product/widgets/image_previous.dart';
-import 'package:flutter_sneaker_store/scenes/product/widgets/modal_textfield.dart';
-import 'package:flutter_sneaker_store/scenes/product/widgets/modal_title.dart';
-import 'package:flutter_sneaker_store/scenes/product/widgets/select_photos.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:random_string_generator/random_string_generator.dart';
 
-import '../../common/app_colors.dart';
-import '../../common/app_utilities.dart';
-import '../../core/product/product.dart';
-import '../../generated/l10n.dart';
+import '../../../common/app_colors.dart';
+import '../../../common/app_utilities.dart';
+import '../../../core/product/product.dart';
+import '../../../generated/l10n.dart';
+import 'widgets/choose_size.dart';
+import 'widgets/image_previous.dart';
+import 'widgets/modal_textfield.dart';
+import 'widgets/modal_title.dart';
+import 'widgets/select_photos.dart';
 
 class AddProductModal extends StatefulWidget {
   const AddProductModal({
@@ -105,45 +105,32 @@ class _AddProductModalState extends State<AddProductModal> {
                   }
                 }),
                 const Spacer(),
-                InkResponse(
-                  child: Container(
-                    height: MediaQuery.of(context).size.height / 15,
-                    width: MediaQuery.of(context).size.width / 1,
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(15)),
-                    child: Center(
-                      child: Text(
-                        S.current.addProduct,
-                        style: GoogleFonts.poppins(
-                            color: Colors.black87,
-                            fontWeight: FontWeight.w600,
-                            fontSize: 18),
-                      ),
-                    ),
-                  ),
-                  onTap: () async {
+                AuthButton(
+                    margin: const EdgeInsets.only(top: 0),
+                    text: S.current.addProduct,
+                    onTap: () async {
 
-                    List<int> sizedList = [];
-                    for (var element in selectedIndex) {
-                      sizedList.add(AppUtilities.sizeList[element]);
-                    }
+                      List<int> sizedList = [];
+                      for (var element in selectedIndex) {
+                        sizedList.add(AppUtilities.sizeList[element]);
+                      }
 
-                    Product newProduct = Product(
-                      id: RandomStringGenerator(
-                              fixedLength: 10, hasSymbols: false)
-                          .generate(),
-                      productName: productNameController.text,
-                      description: descriptionController.text,
-                      price: double.parse(priceController.text),
-                      sizedList: sizedList,
-                      imagesList: selectedPicturesBase64,
-                    );
+                      Product newProduct = Product(
+                        id: RandomStringGenerator(
+                                fixedLength: 10, hasSymbols: false)
+                            .generate(),
+                        productName: productNameController.text,
+                        description: descriptionController.text,
+                        price: double.parse(priceController.text),
+                        sizedList: sizedList,
+                        imagesList: selectedPicturesBase64,
+                      );
 
-                    context.read<ProductBloc>().add(AddProductEvent(product: newProduct));
-                    Navigator.of(context).pop();
-                  },
-                ),
+                      context
+                          .read<ProductBloc>()
+                          .add(AddProductEvent(product: newProduct));
+                      Navigator.of(context).pop();
+                    }),
               ],
             ));
       },

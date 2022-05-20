@@ -25,5 +25,9 @@
   "selectAll" : "Select all",
   "selectPhotos" : "Select photos",
   "youCanChooseOnlyFourPictures" : "You can choose only four pictures",
-  "unnamedAlbum" : "Unnamed Album"
+  "unnamedAlbum" : "Unnamed Album",
+  "sizeGuide" : "Size Guide",
+  "chooseYourSize" : "Choose your size",
+  "goToCart" : "Go to cart",
+  "addToCart" : "Add to cart"
 }

@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_sneaker_store/common/app_textstyles.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../../../common/app_utilities.dart';
-import '../../../generated/l10n.dart';
+import '../../../../common/app_utilities.dart';
+import '../../../../generated/l10n.dart';
 
 class ChooseSize extends StatefulWidget {
   final List<int> selectedIndex;
