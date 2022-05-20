@@ -1,12 +1,19 @@
 {
-  "letsSignYouIn" : "Давай войдем.",
+  "letsSignYouIn" : "Давай войдем",
   "welcomeBackWeMissedYou" : "С возвращением.\nМы скучали по тебе!",
   "createAccount" : "Создать Аккаунт!",
-  "phoneEmailOrUsername" : "Телефон, электронная почта или имя пользователя",
+  "phoneEmailOrUsername" : "Телефон, почта или никнейм",
   "password" : "Пароль",
   "dontHaveAnAccount" : "У вас нет аккаунта?  ",
   "register" : "Регистрация",
   "signIn" : "Войти",
   "buyer" : "Покупатель",
-  "seller" : "Продавец"
+  "seller" : "Продавец",
+  "search" : "Поиск",
+  "shopByBrand" : "Доступные бренды",
+  "noSelectedProducts" : "Нет Выбранных Продуктов",
+  "error" : "Ошибка",
+  "deleteProduct" : "Удалить Продукт",
+  "areYouSureYouWantToDeleteThisProduct" : "Вы уверены, что хотите удалить этот продукт?",
+  "approve" : "Подтвердить"
 }

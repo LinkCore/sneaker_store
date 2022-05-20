@@ -82,7 +82,7 @@ class _AuthPageState extends State<AuthPage> {
                     style: AppTextStyles.titleTextStyle,
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(top: 10, bottom: 60),
+                    padding: const EdgeInsets.only(top: 10, bottom: 140),
                     child: Text(
                       S.current.welcomeBackWeMissedYou,
                       style: AppTextStyles.subTitleTextStyle,

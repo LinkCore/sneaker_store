@@ -1,0 +1,23 @@
+part of 'product_bloc.dart';
+
+@immutable
+abstract class ProductState {}
+
+class StoreInitial extends ProductState {}
+
+class LoadingState extends ProductState {}
+
+class ChoiceRoleState extends ProductState {}
+
+class HasDataState extends ProductState {
+  final List<Product> productList;
+  final bool isUpdate;
+
+  HasDataState({required this.productList, required this.isUpdate});
+}
+
+class ErrorState extends ProductState {
+  final String errorText;
+
+  ErrorState({required this.errorText});
+}
