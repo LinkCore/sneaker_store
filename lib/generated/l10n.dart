@@ -219,6 +219,106 @@ class S {
       args: [],
     );
   }
+
+  /// `Add your magical product!`
+  String get addYourMagicalProduct {
+    return Intl.message(
+      'Add your magical product!',
+      name: 'addYourMagicalProduct',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Brand & model`
+  String get brandModel {
+    return Intl.message(
+      'Brand & model',
+      name: 'brandModel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Short description`
+  String get shortDescription {
+    return Intl.message(
+      'Short description',
+      name: 'shortDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Price`
+  String get price {
+    return Intl.message(
+      'Price',
+      name: 'price',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add Product`
+  String get addProduct {
+    return Intl.message(
+      'Add Product',
+      name: 'addProduct',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Choose available sizes`
+  String get chooseAvailableSizes {
+    return Intl.message(
+      'Choose available sizes',
+      name: 'chooseAvailableSizes',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select all`
+  String get selectAll {
+    return Intl.message(
+      'Select all',
+      name: 'selectAll',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select photos`
+  String get selectPhotos {
+    return Intl.message(
+      'Select photos',
+      name: 'selectPhotos',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You can choose only four pictures`
+  String get youCanChooseOnlyFourPictures {
+    return Intl.message(
+      'You can choose only four pictures',
+      name: 'youCanChooseOnlyFourPictures',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Unnamed Album`
+  String get unnamedAlbum {
+    return Intl.message(
+      'Unnamed Album',
+      name: 'unnamedAlbum',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

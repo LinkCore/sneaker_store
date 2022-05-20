@@ -4,6 +4,8 @@ import 'package:flutter_sneaker_store/scenes/home_page/widgets/sliver_bloc_consu
 import 'package:flutter_sneaker_store/scenes/home_page/widgets/sliver_brand_filter.dart';
 import 'package:flutter_sneaker_store/scenes/home_page/widgets/sliver_header.dart';
 
+import '../product/add_product_modal.dart';
+
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -12,6 +14,21 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+
+  void addProduct(){
+    showModalBottomSheet(
+        isScrollControlled: true,
+        useRootNavigator: true,
+        context: context,
+        builder: (context) {
+          return const AddProductModal();
+        },
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(35),
+              topRight: Radius.circular(35)),
+        ));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -45,11 +62,7 @@ class _HomePageState extends State<HomePage> {
           HomePageButton(
             heroTag: 'Add Product',
             icon: Icons.add,
-            onPressed: (){
-
-              /// function for add product
-
-            },
+            onPressed: addProduct,
           ),
         ],
       ),

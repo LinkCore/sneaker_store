@@ -15,5 +15,15 @@
   "error" : "Error",
   "deleteProduct" : "Delete Product",
   "areYouSureYouWantToDeleteThisProduct" : "Are you sure you want to delete this product?",
-  "approve" : "Approve"
+  "approve" : "Approve",
+  "addYourMagicalProduct" : "Add your magical product!",
+  "brandModel" : "Brand & model",
+  "shortDescription" : "Short description",
+  "price" : "Price",
+  "addProduct" : "Add Product",
+  "chooseAvailableSizes" : "Choose available sizes",
+  "selectAll" : "Select all",
+  "selectPhotos" : "Select photos",
+  "youCanChooseOnlyFourPictures" : "You can choose only four pictures",
+  "unnamedAlbum" : "Unnamed Album"
 }

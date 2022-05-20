@@ -15,5 +15,15 @@
   "error" : "Ошибка",
   "deleteProduct" : "Удалить Продукт",
   "areYouSureYouWantToDeleteThisProduct" : "Вы уверены, что хотите удалить этот продукт?",
-  "approve" : "Подтвердить"
+  "approve" : "Подтвердить",
+  "addYourMagicalProduct" : "Добавьте свой продукт!",
+  "brandModel" : "Бренд и модель",
+  "shortDescription" : "Краткое описание",
+  "price" : "Стоимость",
+  "addProduct" : "Добавить продукт",
+  "chooseAvailableSizes" : "Выберите размеры",
+  "selectAll" : "Выбрать все",
+  "selectPhotos" : "Выбрать фотографии",
+  "youCanChooseOnlyFourPictures" : "Вы можете выбрать только четыре картинки",
+  "unnamedAlbum" : "Безымянный альбом"
 }

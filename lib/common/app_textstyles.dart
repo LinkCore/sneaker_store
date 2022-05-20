@@ -8,6 +8,7 @@ class AppTextStyles {
   static TextStyle gridCountModelTextStyle = GoogleFonts.poppins(color: AppColors.backgroundColor,fontWeight: FontWeight.w400);
   static TextStyle titleTextStyle = GoogleFonts.poppins(color: Colors.white, fontSize: 34, fontWeight: FontWeight.w600);
   static TextStyle subTitleTextStyle = GoogleFonts.poppins(color: Colors.white, fontSize: 30, fontWeight: FontWeight.w300);
+  static TextStyle productModalTitleTextStyle = GoogleFonts.poppins(color: Colors.white, fontSize: 20, fontWeight: FontWeight.w300);
   static TextStyle brandFilterTextStyle = GoogleFonts.poppins(color: Colors.white, fontSize: 24, fontWeight: FontWeight.w300);
   static TextStyle backgroundRolesSwitcherTextStyle = GoogleFonts.poppins(color: Colors.white, fontWeight: FontWeight.w400);
   static TextStyle floatingRolesSwitcherTextStyle = GoogleFonts.poppins(color: Colors.white, fontWeight: FontWeight.w600);
