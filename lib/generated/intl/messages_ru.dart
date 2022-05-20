@@ -22,11 +22,17 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "addProduct": MessageLookupByLibrary.simpleMessage("Добавить продукт"),
+        "addYourMagicalProduct":
+            MessageLookupByLibrary.simpleMessage("Добавьте свой продукт!"),
         "approve": MessageLookupByLibrary.simpleMessage("Подтвердить"),
         "areYouSureYouWantToDeleteThisProduct":
             MessageLookupByLibrary.simpleMessage(
                 "Вы уверены, что хотите удалить этот продукт?"),
+        "brandModel": MessageLookupByLibrary.simpleMessage("Бренд и модель"),
         "buyer": MessageLookupByLibrary.simpleMessage("Покупатель"),
+        "chooseAvailableSizes":
+            MessageLookupByLibrary.simpleMessage("Выберите размеры"),
         "createAccount":
             MessageLookupByLibrary.simpleMessage("Создать Аккаунт!"),
         "deleteProduct":
@@ -40,12 +46,22 @@ class MessageLookup extends MessageLookupByLibrary {
         "password": MessageLookupByLibrary.simpleMessage("Пароль"),
         "phoneEmailOrUsername":
             MessageLookupByLibrary.simpleMessage("Телефон, почта или никнейм"),
+        "price": MessageLookupByLibrary.simpleMessage("Стоимость"),
         "register": MessageLookupByLibrary.simpleMessage("Регистрация"),
         "search": MessageLookupByLibrary.simpleMessage("Поиск"),
+        "selectAll": MessageLookupByLibrary.simpleMessage("Выбрать все"),
+        "selectPhotos":
+            MessageLookupByLibrary.simpleMessage("Выбрать фотографии"),
         "seller": MessageLookupByLibrary.simpleMessage("Продавец"),
         "shopByBrand": MessageLookupByLibrary.simpleMessage("Доступные бренды"),
+        "shortDescription":
+            MessageLookupByLibrary.simpleMessage("Краткое описание"),
         "signIn": MessageLookupByLibrary.simpleMessage("Войти"),
+        "unnamedAlbum":
+            MessageLookupByLibrary.simpleMessage("Безымянный альбом"),
         "welcomeBackWeMissedYou": MessageLookupByLibrary.simpleMessage(
-            "С возвращением.\nМы скучали по тебе!")
+            "С возвращением.\nМы скучали по тебе!"),
+        "youCanChooseOnlyFourPictures": MessageLookupByLibrary.simpleMessage(
+            "Вы можете выбрать только четыре картинки")
       };
 }

@@ -37,4 +37,6 @@ class AppUtilities {
     "Saucony": Brands.saucony,
     "Asics": Brands.asics,
   };
+
+  static List<int> sizeList = List.generate(15, (index) => index+36);
 }
