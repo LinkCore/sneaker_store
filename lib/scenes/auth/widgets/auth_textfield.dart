@@ -7,7 +7,7 @@ class AuthTextField extends StatefulWidget {
   final TextEditingController controller;
   final bool isSuffixIcon;
 
-  AuthTextField({Key? key, required this.labelText, required this.controller, required this.isSuffixIcon}) : super(key: key);
+  const AuthTextField({Key? key, required this.labelText, required this.controller, required this.isSuffixIcon}) : super(key: key);
 
   @override
   State<AuthTextField> createState() => _AuthTextFieldState();
@@ -39,6 +39,7 @@ class _AuthTextFieldState extends State<AuthTextField> {
         },
       );
     }
+    return null;
   }
 
   @override

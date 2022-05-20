@@ -25,5 +25,9 @@
   "selectAll" : "Выбрать все",
   "selectPhotos" : "Выбрать фотографии",
   "youCanChooseOnlyFourPictures" : "Вы можете выбрать только четыре картинки",
-  "unnamedAlbum" : "Безымянный альбом"
+  "unnamedAlbum" : "Безымянный альбом",
+  "sizeGuide" : "Размеры",
+  "chooseYourSize" : "Выберите размер",
+  "goToCart" : "В корзину",
+  "addToCart" : "Добавить в корзину"
 }

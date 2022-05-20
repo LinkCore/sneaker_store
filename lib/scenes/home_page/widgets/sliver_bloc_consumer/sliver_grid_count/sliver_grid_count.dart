@@ -4,7 +4,7 @@ import 'package:flutter_sneaker_store/common/app_textstyles.dart';
 
 import '../../../../../generated/l10n.dart';
 import '../../../../product/product_bloc/product_bloc.dart';
-import '../../../../product/product_page.dart';
+import '../../../../product/product_page/product_page.dart';
 
 class SliverGridCount extends StatefulWidget {
   final HasDataState state;

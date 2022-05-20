@@ -23,6 +23,7 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "addProduct": MessageLookupByLibrary.simpleMessage("Add Product"),
+        "addToCart": MessageLookupByLibrary.simpleMessage("Add to cart"),
         "addYourMagicalProduct":
             MessageLookupByLibrary.simpleMessage("Add your magical product!"),
         "approve": MessageLookupByLibrary.simpleMessage("Approve"),
@@ -33,12 +34,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "buyer": MessageLookupByLibrary.simpleMessage("Buyer"),
         "chooseAvailableSizes":
             MessageLookupByLibrary.simpleMessage("Choose available sizes"),
+        "chooseYourSize":
+            MessageLookupByLibrary.simpleMessage("Choose your size"),
         "createAccount":
             MessageLookupByLibrary.simpleMessage("Create Account!"),
         "deleteProduct": MessageLookupByLibrary.simpleMessage("Delete Product"),
         "dontHaveAnAccount":
             MessageLookupByLibrary.simpleMessage("Don\'t have an account?  "),
         "error": MessageLookupByLibrary.simpleMessage("Error"),
+        "goToCart": MessageLookupByLibrary.simpleMessage("Go to cart"),
         "letsSignYouIn":
             MessageLookupByLibrary.simpleMessage("Let\'s sign you in."),
         "noSelectedProducts":
@@ -56,6 +60,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "shortDescription":
             MessageLookupByLibrary.simpleMessage("Short description"),
         "signIn": MessageLookupByLibrary.simpleMessage("Sign In"),
+        "sizeGuide": MessageLookupByLibrary.simpleMessage("Size Guide"),
         "unnamedAlbum": MessageLookupByLibrary.simpleMessage("Unnamed Album"),
         "welcomeBackWeMissedYou": MessageLookupByLibrary.simpleMessage(
             "Welcome back.\nWe missed you!"),

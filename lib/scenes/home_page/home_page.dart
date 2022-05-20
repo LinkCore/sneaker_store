@@ -4,7 +4,7 @@ import 'package:flutter_sneaker_store/scenes/home_page/widgets/sliver_bloc_consu
 import 'package:flutter_sneaker_store/scenes/home_page/widgets/sliver_brand_filter.dart';
 import 'package:flutter_sneaker_store/scenes/home_page/widgets/sliver_header.dart';
 
-import '../product/add_product_modal.dart';
+import '../product/add_product/add_product_modal.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);

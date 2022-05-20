@@ -319,6 +319,46 @@ class S {
       args: [],
     );
   }
+
+  /// `Size Guide`
+  String get sizeGuide {
+    return Intl.message(
+      'Size Guide',
+      name: 'sizeGuide',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Choose your size`
+  String get chooseYourSize {
+    return Intl.message(
+      'Choose your size',
+      name: 'chooseYourSize',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Go to cart`
+  String get goToCart {
+    return Intl.message(
+      'Go to cart',
+      name: 'goToCart',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add to cart`
+  String get addToCart {
+    return Intl.message(
+      'Add to cart',
+      name: 'addToCart',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

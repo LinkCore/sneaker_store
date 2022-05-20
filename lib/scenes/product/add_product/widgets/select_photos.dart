@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../../../generated/l10n.dart';
-import '../../gallery/gallery_page.dart';
+
+import '../../../../generated/l10n.dart';
+import '../../../gallery/gallery_page.dart';
+
 
 class SelectPhotos extends StatefulWidget {
   Function onTap;

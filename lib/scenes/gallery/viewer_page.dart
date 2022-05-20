@@ -9,7 +9,7 @@ import '../../generated/l10n.dart';
 class ViewerPage extends StatelessWidget {
   final Medium medium;
 
-  ViewerPage(Medium medium) : medium = medium;
+  const ViewerPage(this.medium, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
