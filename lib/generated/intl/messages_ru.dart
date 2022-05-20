@@ -22,17 +22,28 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "approve": MessageLookupByLibrary.simpleMessage("Подтвердить"),
+        "areYouSureYouWantToDeleteThisProduct":
+            MessageLookupByLibrary.simpleMessage(
+                "Вы уверены, что хотите удалить этот продукт?"),
         "buyer": MessageLookupByLibrary.simpleMessage("Покупатель"),
         "createAccount":
             MessageLookupByLibrary.simpleMessage("Создать Аккаунт!"),
+        "deleteProduct":
+            MessageLookupByLibrary.simpleMessage("Удалить Продукт"),
         "dontHaveAnAccount":
             MessageLookupByLibrary.simpleMessage("У вас нет аккаунта?  "),
-        "letsSignYouIn": MessageLookupByLibrary.simpleMessage("Давай войдем."),
+        "error": MessageLookupByLibrary.simpleMessage("Ошибка"),
+        "letsSignYouIn": MessageLookupByLibrary.simpleMessage("Давай войдем"),
+        "noSelectedProducts":
+            MessageLookupByLibrary.simpleMessage("Нет Выбранных Продуктов"),
         "password": MessageLookupByLibrary.simpleMessage("Пароль"),
-        "phoneEmailOrUsername": MessageLookupByLibrary.simpleMessage(
-            "Телефон, электронная почта или имя пользователя"),
+        "phoneEmailOrUsername":
+            MessageLookupByLibrary.simpleMessage("Телефон, почта или никнейм"),
         "register": MessageLookupByLibrary.simpleMessage("Регистрация"),
+        "search": MessageLookupByLibrary.simpleMessage("Поиск"),
         "seller": MessageLookupByLibrary.simpleMessage("Продавец"),
+        "shopByBrand": MessageLookupByLibrary.simpleMessage("Доступные бренды"),
         "signIn": MessageLookupByLibrary.simpleMessage("Войти"),
         "welcomeBackWeMissedYou": MessageLookupByLibrary.simpleMessage(
             "С возвращением.\nМы скучали по тебе!")

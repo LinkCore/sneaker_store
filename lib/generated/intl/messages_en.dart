@@ -22,18 +22,28 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "approve": MessageLookupByLibrary.simpleMessage("Approve"),
+        "areYouSureYouWantToDeleteThisProduct":
+            MessageLookupByLibrary.simpleMessage(
+                "Are you sure you want to delete this product?"),
         "buyer": MessageLookupByLibrary.simpleMessage("Buyer"),
         "createAccount":
             MessageLookupByLibrary.simpleMessage("Create Account!"),
+        "deleteProduct": MessageLookupByLibrary.simpleMessage("Delete Product"),
         "dontHaveAnAccount":
             MessageLookupByLibrary.simpleMessage("Don\'t have an account?  "),
+        "error": MessageLookupByLibrary.simpleMessage("Error"),
         "letsSignYouIn":
             MessageLookupByLibrary.simpleMessage("Let\'s sign you in."),
+        "noSelectedProducts":
+            MessageLookupByLibrary.simpleMessage("No Selected Products"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "phoneEmailOrUsername":
             MessageLookupByLibrary.simpleMessage("Phone, email or username"),
         "register": MessageLookupByLibrary.simpleMessage("Register"),
+        "search": MessageLookupByLibrary.simpleMessage("Search"),
         "seller": MessageLookupByLibrary.simpleMessage("Seller"),
+        "shopByBrand": MessageLookupByLibrary.simpleMessage("Shop by Brand"),
         "signIn": MessageLookupByLibrary.simpleMessage("Sign In"),
         "welcomeBackWeMissedYou": MessageLookupByLibrary.simpleMessage(
             "Welcome back.\nWe missed you!")

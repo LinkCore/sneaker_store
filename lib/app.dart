@@ -4,6 +4,7 @@ import 'package:flutter_sneaker_store/app_routes.dart';
 import 'package:flutter_sneaker_store/scenes/auth/auth_bloc/auth_bloc.dart';
 import 'package:flutter_sneaker_store/scenes/auth/entry_page.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_sneaker_store/scenes/product/product_bloc/product_bloc.dart';
 
 import 'common/app_theme.dart';
 import 'generated/l10n.dart';
@@ -15,6 +16,8 @@ class SneakerStoreApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
+        BlocProvider<ProductBloc>(
+            create: (context) => ProductBloc()),
         BlocProvider<AuthBloc>(
             create: (context) => AuthBloc()..add(StartupEvent())),
       ],

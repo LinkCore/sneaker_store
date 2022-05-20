@@ -75,7 +75,6 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   }
 
   Future<void> _onSignOutEvent(SignOutEvent event, Emitter<AuthState> emit) async {
-    emit(AutoLoginState());
     UserRepository().removeUserLocal();
     emit(NeedToAuthState());
   }
