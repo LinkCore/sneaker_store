@@ -9,11 +9,11 @@ class LoadingState extends ProductState {}
 
 class ChoiceRoleState extends ProductState {}
 
-class HasDataState extends ProductState {
+class ProductHasDataState extends ProductState {
   final List<Product> productList;
   final bool isUpdate;
 
-  HasDataState({required this.productList, required this.isUpdate});
+  ProductHasDataState({required this.productList, required this.isUpdate});
 }
 
 class ErrorState extends ProductState {

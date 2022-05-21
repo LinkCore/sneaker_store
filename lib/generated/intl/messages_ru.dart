@@ -31,13 +31,18 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage(
                 "Вы уверены, что хотите удалить этот продукт?"),
         "brandModel": MessageLookupByLibrary.simpleMessage("Бренд и модель"),
+        "buy": MessageLookupByLibrary.simpleMessage("Купить"),
         "buyer": MessageLookupByLibrary.simpleMessage("Покупатель"),
+        "buyingSuccess":
+            MessageLookupByLibrary.simpleMessage("Покупка успешна!"),
+        "cartIsEmpty": MessageLookupByLibrary.simpleMessage("Корзина пуста"),
         "chooseAvailableSizes":
             MessageLookupByLibrary.simpleMessage("Выберите размеры"),
         "chooseYourSize":
             MessageLookupByLibrary.simpleMessage("Выберите размер"),
         "createAccount":
             MessageLookupByLibrary.simpleMessage("Создать Аккаунт!"),
+        "dataUpdated": MessageLookupByLibrary.simpleMessage("Данные обнолены"),
         "deleteProduct":
             MessageLookupByLibrary.simpleMessage("Удалить Продукт"),
         "dontHaveAnAccount":
@@ -50,6 +55,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "password": MessageLookupByLibrary.simpleMessage("Пароль"),
         "phoneEmailOrUsername":
             MessageLookupByLibrary.simpleMessage("Телефон, почта или никнейм"),
+        "pleaseAddedSomeProducts": MessageLookupByLibrary.simpleMessage(
+            "Пожалуйста, добавьте какой-то продукт"),
         "price": MessageLookupByLibrary.simpleMessage("Стоимость"),
         "register": MessageLookupByLibrary.simpleMessage("Регистрация"),
         "search": MessageLookupByLibrary.simpleMessage("Поиск"),
@@ -67,6 +74,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "welcomeBackWeMissedYou": MessageLookupByLibrary.simpleMessage(
             "С возвращением.\nМы скучали по тебе!"),
         "youCanChooseOnlyFourPictures": MessageLookupByLibrary.simpleMessage(
-            "Вы можете выбрать только четыре картинки")
+            "Вы можете выбрать только четыре картинки"),
+        "yourCart": MessageLookupByLibrary.simpleMessage("Ваша корзина")
       };
 }

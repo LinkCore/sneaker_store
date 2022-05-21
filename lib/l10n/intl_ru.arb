@@ -13,6 +13,7 @@
   "shopByBrand" : "Доступные бренды",
   "noSelectedProducts" : "Нет Выбранных Продуктов",
   "error" : "Ошибка",
+  "errorData" : "Ошибка данных",
   "deleteProduct" : "Удалить Продукт",
   "areYouSureYouWantToDeleteThisProduct" : "Вы уверены, что хотите удалить этот продукт?",
   "approve" : "Подтвердить",
@@ -30,4 +31,11 @@
   "chooseYourSize" : "Выберите размер",
   "goToCart" : "В корзину",
   "addToCart" : "Добавить в корзину"
+  "yourCart" : "Ваша корзина",
+  "cartIsEmpty" : "Корзина пуста",
+  "pleaseAddedSomeProducts" : "Пожалуйста, добавьте какой-то продукт",
+  "buyingSuccess" : "Покупка успешна!",
+  "haveAGoodDay" : "Хорошего дня.",
+  "buy" : "Купить",
+  "dataUpdated" : "Данные обнолены"
 }

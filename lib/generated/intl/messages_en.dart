@@ -31,13 +31,18 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage(
                 "Are you sure you want to delete this product?"),
         "brandModel": MessageLookupByLibrary.simpleMessage("Brand & model"),
+        "buy": MessageLookupByLibrary.simpleMessage("Buy"),
         "buyer": MessageLookupByLibrary.simpleMessage("Buyer"),
+        "buyingSuccess":
+            MessageLookupByLibrary.simpleMessage("Buying success!"),
+        "cartIsEmpty": MessageLookupByLibrary.simpleMessage("Cart is empty"),
         "chooseAvailableSizes":
             MessageLookupByLibrary.simpleMessage("Choose available sizes"),
         "chooseYourSize":
             MessageLookupByLibrary.simpleMessage("Choose your size"),
         "createAccount":
             MessageLookupByLibrary.simpleMessage("Create Account!"),
+        "dataUpdated": MessageLookupByLibrary.simpleMessage("Data updated"),
         "deleteProduct": MessageLookupByLibrary.simpleMessage("Delete Product"),
         "dontHaveAnAccount":
             MessageLookupByLibrary.simpleMessage("Don\'t have an account?  "),
@@ -50,6 +55,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "phoneEmailOrUsername":
             MessageLookupByLibrary.simpleMessage("Phone, email or username"),
+        "pleaseAddedSomeProducts":
+            MessageLookupByLibrary.simpleMessage("Please added some products"),
         "price": MessageLookupByLibrary.simpleMessage("Price"),
         "register": MessageLookupByLibrary.simpleMessage("Register"),
         "search": MessageLookupByLibrary.simpleMessage("Search"),
@@ -65,6 +72,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "welcomeBackWeMissedYou": MessageLookupByLibrary.simpleMessage(
             "Welcome back.\nWe missed you!"),
         "youCanChooseOnlyFourPictures": MessageLookupByLibrary.simpleMessage(
-            "You can choose only four pictures")
+            "You can choose only four pictures"),
+        "yourCart": MessageLookupByLibrary.simpleMessage("Your Cart")
       };
 }

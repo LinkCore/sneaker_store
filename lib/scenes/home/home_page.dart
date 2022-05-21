@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_sneaker_store/scenes/home_page/widgets/home_page_button.dart';
-import 'package:flutter_sneaker_store/scenes/home_page/widgets/sliver_bloc_consumer/sliver_bloc_consumer.dart';
-import 'package:flutter_sneaker_store/scenes/home_page/widgets/sliver_brand_filter.dart';
-import 'package:flutter_sneaker_store/scenes/home_page/widgets/sliver_header.dart';
+import 'package:flutter_sneaker_store/scenes/home/widgets/home_page_button.dart';
+import 'package:flutter_sneaker_store/scenes/home/widgets/sliver_bloc_consumer/sliver_bloc_consumer.dart';
+import 'package:flutter_sneaker_store/scenes/home/widgets/sliver_brand_filter.dart';
+import 'package:flutter_sneaker_store/scenes/home/widgets/sliver_header.dart';
 
 import '../product/add_product/add_product_modal.dart';
+import '../cart/cart_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -14,6 +15,13 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+
+  void goToCart(){
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+            builder: (context) => const CartPage()));
+  }
 
   void addProduct(){
     showModalBottomSheet(
@@ -52,11 +60,7 @@ class _HomePageState extends State<HomePage> {
           HomePageButton(
             heroTag: 'Cart',
             icon: Icons.shopping_cart,
-            onPressed: (){
-
-              /// function to go to the cart
-
-            },
+            onPressed: goToCart,
           ),
           const SizedBox(height: 5),
           HomePageButton(

@@ -32,9 +32,9 @@ class ProductBloc extends Bloc<ProductEvent, ProductState> {
 
     if (event.searchFilter == '') {
       if (event.filter == Brands.noFilter) {
-        emit(HasDataState(productList: productList, isUpdate: event.isUpdate));
+        emit(ProductHasDataState(productList: productList, isUpdate: event.isUpdate));
       } else {
-        emit(HasDataState(
+        emit(ProductHasDataState(
             productList: productList
                 .where((element) =>
                 element.productName!.contains(AppUtilities.brandsEnumToString[event.filter]!))
@@ -42,7 +42,7 @@ class ProductBloc extends Bloc<ProductEvent, ProductState> {
             isUpdate: event.isUpdate));
       }
     } else {
-      emit(HasDataState(
+      emit(ProductHasDataState(
           productList: productList
               .where((element) =>
           element.productName!.contains(event.searchFilter) ||

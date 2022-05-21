@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_sneaker_store/common/app_colors.dart';
 
-import '../home_page/home_page.dart';
+import '../home/home_page.dart';
 import 'auth_bloc/auth_bloc.dart';
 import 'auth_page.dart';
 

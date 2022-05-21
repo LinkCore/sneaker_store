@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_sneaker_store/scenes/home_page/widgets/sliver_bloc_consumer/sliver_grid_count/sliver_grid_count.dart';
 import '../../../../generated/l10n.dart';
+import '../../../home/widgets/sliver_bloc_consumer/sliver_grid_count/sliver_grid_count.dart';
 import '../../../product/product_bloc/product_bloc.dart';
 import 'circular_loading.dart';
 import 'empty_product_list.dart';
@@ -19,10 +19,10 @@ class _SliverBlocConsumerState extends State<SliverBlocConsumer> {
   Widget build(BuildContext context) {
     return BlocConsumer<ProductBloc, ProductState>(
       listener: (BuildContext context, state) {
-        if (state is HasDataState) {
+        if (state is ProductHasDataState) {
           if (state.isUpdate) {
             ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(content: Text('Data updated')));
+                SnackBar(content: Text(S.current.dataUpdated)));
           }
         }
       },
@@ -30,7 +30,7 @@ class _SliverBlocConsumerState extends State<SliverBlocConsumer> {
         if (state is LoadingState) {
           return const CircularLoading();
         }
-        if (state is HasDataState) {
+        if (state is ProductHasDataState) {
           if(state.productList.isEmpty){
             return const EmptyProductList();
           }

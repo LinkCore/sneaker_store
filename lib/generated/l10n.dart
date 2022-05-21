@@ -190,6 +190,16 @@ class S {
     );
   }
 
+  /// `Error data`
+  String get errorData {
+    return Intl.message(
+      'Error data',
+      name: 'errorData',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Delete Product`
   String get deleteProduct {
     return Intl.message(
@@ -320,31 +330,31 @@ class S {
     );
   }
 
-  /// `Size Guide`
-  String get sizeGuide {
+  /// `Your Cart`
+  String get yourCart {
     return Intl.message(
-      'Size Guide',
-      name: 'sizeGuide',
+      'Your Cart',
+      name: 'yourCart',
       desc: '',
       args: [],
     );
   }
 
-  /// `Choose your size`
-  String get chooseYourSize {
+  /// `Cart is empty`
+  String get cartIsEmpty {
     return Intl.message(
-      'Choose your size',
-      name: 'chooseYourSize',
+      'Cart is empty',
+      name: 'cartIsEmpty',
       desc: '',
       args: [],
     );
   }
 
-  /// `Go to cart`
-  String get goToCart {
+  /// `Please added some products`
+  String get pleaseAddedSomeProducts {
     return Intl.message(
-      'Go to cart',
-      name: 'goToCart',
+      'Please added some products',
+      name: 'pleaseAddedSomeProducts',
       desc: '',
       args: [],
     );
@@ -355,6 +365,36 @@ class S {
     return Intl.message(
       'Add to cart',
       name: 'addToCart',
+  /// `Buying success!`
+  String get buyingSuccess {
+    return Intl.message(
+      'Buying success!',
+      name: 'buyingSuccess',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Have a good day.`
+  String get haveAGoodDay {
+    return Intl.message(
+      'Have a good day.',
+      name: 'haveAGoodDay',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Buy`
+  String get buy {
+    return Intl.message(
+      'Buy',
+      name: 'buy',
+      desc: '',
+      args: [],
+    );
+  }
+
       desc: '',
       args: [],
     );
