@@ -8,9 +8,9 @@ import '../../generated/l10n.dart';
 
 class AlbumPage extends StatefulWidget {
   final Album album;
-  Function indexes;
+  final Function indexes;
 
-  AlbumPage({Key? key, required this.album, required this.indexes}) : super(key: key);
+  const AlbumPage({Key? key, required this.album, required this.indexes}) : super(key: key);
 
   @override
   State<StatefulWidget> createState() => AlbumPageState();

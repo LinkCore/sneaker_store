@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_sneaker_store/scenes/home/widgets/home_page_button.dart';
-import 'package:flutter_sneaker_store/scenes/home/widgets/sliver_bloc_consumer/sliver_bloc_consumer.dart';
-import 'package:flutter_sneaker_store/scenes/home/widgets/sliver_brand_filter.dart';
-import 'package:flutter_sneaker_store/scenes/home/widgets/sliver_header.dart';
+import 'package:flutter_sneaker_store/scenes/home/widgets/home_page_button_widget.dart';
+import 'package:flutter_sneaker_store/scenes/home/widgets/sliver_bloc_consumer/sliver_bloc_consumer_widget.dart';
+import 'package:flutter_sneaker_store/scenes/home/widgets/sliver_brand_filter_widget.dart';
+import 'package:flutter_sneaker_store/scenes/home/widgets/sliver_header_widget.dart';
 
 import '../product/add_product/add_product_modal.dart';
 import '../cart/cart_page.dart';
@@ -48,22 +48,22 @@ class _HomePageState extends State<HomePage> {
         child: const CustomScrollView(
         physics: BouncingScrollPhysics(),
           slivers: [
-        SliverHeader(),
-        SliverBrandFilter(),
-        SliverBlocConsumer(),
+        SliverHeaderWidget(),
+        SliverBrandFilterWidget(),
+        SliverBlocConsumerWidget(),
           ],
         ),
       ),
       floatingActionButton: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
-          HomePageButton(
+          HomePageButtonWidget(
             heroTag: 'Cart',
             icon: Icons.shopping_cart,
             onPressed: goToCart,
           ),
           const SizedBox(height: 5),
-          HomePageButton(
+          HomePageButtonWidget(
             heroTag: 'Add Product',
             icon: Icons.add,
             onPressed: addProduct,

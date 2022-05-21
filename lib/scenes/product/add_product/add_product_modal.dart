@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_sneaker_store/scenes/auth/widgets/auth_button.dart';
+import 'package:flutter_sneaker_store/scenes/auth/widgets/auth_button_widget.dart';
 import 'package:flutter_sneaker_store/scenes/product/product_bloc/product_bloc.dart';
 import 'package:random_string_generator/random_string_generator.dart';
 
@@ -10,11 +10,11 @@ import '../../../common/app_colors.dart';
 import '../../../common/app_utilities.dart';
 import '../../../core/product/product.dart';
 import '../../../generated/l10n.dart';
-import 'widgets/choose_size.dart';
-import 'widgets/image_previous.dart';
-import 'widgets/modal_textfield.dart';
-import 'widgets/modal_title.dart';
-import 'widgets/select_photos.dart';
+import 'widgets/choose_size_widget.dart';
+import 'widgets/image_previous_widget.dart';
+import 'widgets/modal_textfield_widget.dart';
+import 'widgets/modal_title_widget.dart';
+import 'widgets/select_photos_widget.dart';
 
 class AddProductModal extends StatefulWidget {
   const AddProductModal({
@@ -72,26 +72,26 @@ class _AddProductModalState extends State<AddProductModal> {
                       color: Colors.white70,
                       borderRadius: BorderRadius.circular(5)),
                 ),
-                ModalTitle(titleText: S.current.addYourMagicalProduct),
-                ModalTextField(
+                ModalTitleWidget(titleText: S.current.addYourMagicalProduct),
+                ModalTextFieldWidget(
                   labelText: S.current.brandModel,
                   controller: productNameController,
                   keyboardType: TextInputType.text,
                 ),
-                ModalTextField(
+                ModalTextFieldWidget(
                   labelText: S.current.shortDescription,
                   controller: descriptionController,
                   keyboardType: TextInputType.text,
                 ),
-                ModalTextField(
+                ModalTextFieldWidget(
                   labelText: S.current.price,
                   controller: priceController,
                   keyboardType: TextInputType.phone,
                 ),
-                ChooseSize(selectedIndex: selectedIndex),
+                ChooseSizeWidget(selectedIndex: selectedIndex),
                 Builder(builder: (context) {
                   if (selectedPictures.isEmpty) {
-                    return SelectPhotos(
+                    return SelectPhotosWidget(
                       onTap:
                           (List<FileImage> indexes, List<File> picturesFile) {
                         setState(() {
@@ -101,11 +101,11 @@ class _AddProductModalState extends State<AddProductModal> {
                       },
                     );
                   } else {
-                    return ImagePrevious(allPicture: selectedPictures);
+                    return ImagePreviousWidget(allPicture: selectedPictures);
                   }
                 }),
                 const Spacer(),
-                AuthButton(
+                AuthButtonWidget(
                     margin: const EdgeInsets.only(top: 0),
                     text: S.current.addProduct,
                     onTap: () async {

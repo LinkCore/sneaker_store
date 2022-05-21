@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class HomePageButton extends StatelessWidget {
+class HomePageButtonWidget extends StatelessWidget {
   final VoidCallback onPressed;
   final String heroTag;
   final IconData icon;
 
-  const HomePageButton(
+  const HomePageButtonWidget(
       {Key? key,
       required this.onPressed,
       required this.heroTag,

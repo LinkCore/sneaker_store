@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_sneaker_store/common/app_colors.dart';
-import 'package:flutter_sneaker_store/scenes/auth/widgets/auth_button.dart';
-import 'package:flutter_sneaker_store/scenes/auth/widgets/auth_textfield.dart';
-import 'package:flutter_sneaker_store/scenes/auth/widgets/roles_swither.dart';
+import 'package:flutter_sneaker_store/scenes/auth/widgets/auth_button_widget.dart';
+import 'package:flutter_sneaker_store/scenes/auth/widgets/auth_textfield_widget.dart';
+import 'package:flutter_sneaker_store/scenes/auth/widgets/roles_swither_widget.dart';
 import '../../common/app_textstyles.dart';
 import '../../core/user/roles.dart';
 import '../../generated/l10n.dart';
@@ -84,7 +84,7 @@ class _RegisterPage extends State<RegisterPage> {
                     style: AppTextStyles.subTitleTextStyle,
                   ),
                 ),
-                RolesSwitcher(
+                RolesSwitcherWidget(
                   leftText: S.current.buyer,
                   rightText: S.current.seller,
                   backgroundColor: Colors.white.withOpacity(0.07),
@@ -96,17 +96,17 @@ class _RegisterPage extends State<RegisterPage> {
                   onTap: onTapRolesSwitcher,
                 ),
                 SizedBox(height: MediaQuery.of(context).size.height/18,),
-                AuthTextField(
+                AuthTextFieldWidget(
                   labelText: S.current.phoneEmailOrUsername,
                   controller: loginController,
                   isSuffixIcon: false,
                 ),
-                AuthTextField(
+                AuthTextFieldWidget(
                   labelText: S.current.password,
                   controller: passwordController,
                   isSuffixIcon: true,
                 ),
-                AuthButton(
+                AuthButtonWidget(
                     margin: const EdgeInsets.only(top: 100, bottom: 40),
                     text: S.current.register,
                     onTap: onTapRegister,

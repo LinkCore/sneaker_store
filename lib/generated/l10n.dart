@@ -330,6 +330,46 @@ class S {
     );
   }
 
+  /// `Size Guide`
+  String get sizeGuide {
+    return Intl.message(
+      'Size Guide',
+      name: 'sizeGuide',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Choose your size`
+  String get chooseYourSize {
+    return Intl.message(
+      'Choose your size',
+      name: 'chooseYourSize',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Go to cart`
+  String get goToCart {
+    return Intl.message(
+      'Go to cart',
+      name: 'goToCart',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add to cart`
+  String get addToCart {
+    return Intl.message(
+      'Add to cart',
+      name: 'addToCart',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Your Cart`
   String get yourCart {
     return Intl.message(
@@ -360,11 +400,6 @@ class S {
     );
   }
 
-  /// `Add to cart`
-  String get addToCart {
-    return Intl.message(
-      'Add to cart',
-      name: 'addToCart',
   /// `Buying success!`
   String get buyingSuccess {
     return Intl.message(
@@ -395,6 +430,21 @@ class S {
     );
   }
 
+  /// `Data updated`
+  String get dataUpdated {
+    return Intl.message(
+      'Data updated',
+      name: 'dataUpdated',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select size`
+  String get selectSize {
+    return Intl.message(
+      'Select size',
+      name: 'selectSize',
       desc: '',
       args: [],
     );

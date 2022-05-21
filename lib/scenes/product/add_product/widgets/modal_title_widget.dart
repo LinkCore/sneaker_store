@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_sneaker_store/common/app_textstyles.dart';
 
-class ModalTitle extends StatelessWidget {
+class ModalTitleWidget extends StatelessWidget {
   final String titleText;
 
-  const ModalTitle({Key? key, required this.titleText}) : super(key: key);
+  const ModalTitleWidget({Key? key, required this.titleText}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

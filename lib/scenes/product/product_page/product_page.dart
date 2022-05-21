@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_sneaker_store/scenes/product/product_page/widgets/choose_size_text.dart';
-import 'package:flutter_sneaker_store/scenes/product/product_page/widgets/main_image.dart';
-import 'package:flutter_sneaker_store/scenes/product/product_page/widgets/main_text.dart';
-import 'package:flutter_sneaker_store/scenes/product/product_page/widgets/product_button.dart';
-import 'package:flutter_sneaker_store/scenes/product/product_page/widgets/title_appbar.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_sneaker_store/scenes/product/product_page/widgets/choose_size_text_widget.dart';
+import 'package:flutter_sneaker_store/scenes/product/product_page/widgets/main_image_widget.dart';
+import 'package:flutter_sneaker_store/scenes/product/product_page/widgets/main_text_widget.dart';
+import 'package:flutter_sneaker_store/scenes/product/product_page/widgets/product_button_widget.dart';
+import 'package:flutter_sneaker_store/scenes/product/product_page/widgets/title_appbar_widget.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../../common/app_colors.dart';
 import '../../../core/product/product.dart';
+import '../../../generated/l10n.dart';
+import '../../cart/cart_bloc/cart_bloc.dart';
+import '../../cart/cart_page.dart';
 
 class ProductPage extends StatefulWidget {
   final Product product;
@@ -61,9 +65,10 @@ class _ProductPageState extends State<ProductPage> {
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
               border: Border.all(
-                  color:
-                      selectedSizedIndex == i ? Colors.amber : Colors.white70,
-                  width: 2)),
+                  color: selectedSizedIndex == i ? Colors.amber : Colors.white70,
+                  width: 2
+              )
+          ),
           child: Center(
             child: Text(
               '${sizedList![i]}',
@@ -194,7 +199,7 @@ class _ProductPageState extends State<ProductPage> {
                           ScaffoldMessenger.of(context)
                               .removeCurrentSnackBar();
                           ScaffoldMessenger.of(context).showSnackBar(
-                              const SnackBar(content: Text('Select size')));
+                              SnackBar(content: Text(S.current.selectSize)));
                         } else {
                           if (!isTapped) {
                             Product newProduct = Product(
@@ -205,16 +210,17 @@ class _ProductPageState extends State<ProductPage> {
                               sizedList: [sizePrevious!],
                               imagesUrls: widget.product.imagesUrls,
                             );
-
-                            /// add product to cart
-
+                            context
+                                .read<CartBloc>()
+                                .add(AddToCartEvent(newProduct: newProduct));
                             setState(() {
                               isTapped = true;
                             });
                           } else {
-
-                            /// go to cart
-
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const CartPage()));
                           }
                         }
                       },

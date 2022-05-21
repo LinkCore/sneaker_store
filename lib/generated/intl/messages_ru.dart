@@ -48,7 +48,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "dontHaveAnAccount":
             MessageLookupByLibrary.simpleMessage("У вас нет аккаунта?  "),
         "error": MessageLookupByLibrary.simpleMessage("Ошибка"),
+        "errorData": MessageLookupByLibrary.simpleMessage("Ошибка данных"),
         "goToCart": MessageLookupByLibrary.simpleMessage("В корзину"),
+        "haveAGoodDay": MessageLookupByLibrary.simpleMessage("Хорошего дня."),
         "letsSignYouIn": MessageLookupByLibrary.simpleMessage("Давай войдем"),
         "noSelectedProducts":
             MessageLookupByLibrary.simpleMessage("Нет Выбранных Продуктов"),
@@ -63,6 +65,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "selectAll": MessageLookupByLibrary.simpleMessage("Выбрать все"),
         "selectPhotos":
             MessageLookupByLibrary.simpleMessage("Выбрать фотографии"),
+        "selectSize": MessageLookupByLibrary.simpleMessage("Выберите размер"),
         "seller": MessageLookupByLibrary.simpleMessage("Продавец"),
         "shopByBrand": MessageLookupByLibrary.simpleMessage("Доступные бренды"),
         "shortDescription":

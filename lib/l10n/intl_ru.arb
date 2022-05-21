@@ -30,12 +30,13 @@
   "sizeGuide" : "Размеры",
   "chooseYourSize" : "Выберите размер",
   "goToCart" : "В корзину",
-  "addToCart" : "Добавить в корзину"
+  "addToCart" : "Добавить в корзину",
   "yourCart" : "Ваша корзина",
   "cartIsEmpty" : "Корзина пуста",
   "pleaseAddedSomeProducts" : "Пожалуйста, добавьте какой-то продукт",
   "buyingSuccess" : "Покупка успешна!",
   "haveAGoodDay" : "Хорошего дня.",
   "buy" : "Купить",
-  "dataUpdated" : "Данные обнолены"
+  "dataUpdated" : "Данные обнолены",
+  "selectSize" : "Выберите размер"
 }

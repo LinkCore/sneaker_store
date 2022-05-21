@@ -30,12 +30,13 @@
   "sizeGuide" : "Size Guide",
   "chooseYourSize" : "Choose your size",
   "goToCart" : "Go to cart",
-  "addToCart" : "Add to cart"
+  "addToCart" : "Add to cart",
   "yourCart" : "Your Cart",
   "cartIsEmpty" : "Cart is empty",
   "pleaseAddedSomeProducts" : "Please added some products",
   "buyingSuccess" : "Buying success!",
   "haveAGoodDay" : "Have a good day.",
   "buy" : "Buy",
-  "dataUpdated" : "Data updated"
+  "dataUpdated" : "Data updated",
+  "selectSize" : "Select size"
 }

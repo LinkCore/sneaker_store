@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_sneaker_store/scenes/cart/widgets/cart_button.dart';
-import 'package:flutter_sneaker_store/scenes/cart/widgets/cart_product.dart';
-import 'package:flutter_sneaker_store/scenes/cart/widgets/empty_cart.dart';
+import 'package:flutter_sneaker_store/scenes/cart/widgets/cart_button_widget.dart';
+import 'package:flutter_sneaker_store/scenes/cart/widgets/cart_product_widget.dart';
+import 'package:flutter_sneaker_store/scenes/cart/widgets/empty_cart_widget.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../common/app_colors.dart';
@@ -48,7 +48,7 @@ class _CartPageState extends State<CartPage> {
             return const CircularProgressIndicator();
           } else if (state is CartHasDataState) {
             if (state.productList.isEmpty) {
-              return const EmptyCart();
+              return const EmptyCartWidget();
             } else {
               return Stack(
                   alignment: AlignmentDirectional.bottomEnd,
@@ -56,17 +56,17 @@ class _CartPageState extends State<CartPage> {
                     Positioned(
                         child: Align(
                             alignment: Alignment.topCenter,
-                            child: CartProduct(state: state),
+                            child: CartProductWidget(state: state),
                         )
                     ),
                     Positioned(
                         child: Align(
                             alignment: Alignment.bottomCenter,
-                            child: CartButton(state: state)))
+                            child: CartButtonWidget(state: state)))
                   ]);
             }
           } else {
-            return const EmptyCart();
+            return const EmptyCartWidget();
           }
         }));
   }
