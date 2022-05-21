@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 
 import '../../../common/app_textstyles.dart';
 
-class AuthButton extends StatelessWidget {
+class AuthButtonWidget extends StatelessWidget {
   final EdgeInsetsGeometry margin;
   final String text;
   final Future<void> Function() onTap;
-  const AuthButton({Key? key, required this.margin, required this.text, required this.onTap}) : super(key: key);
+  const AuthButtonWidget({Key? key, required this.margin, required this.text, required this.onTap}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

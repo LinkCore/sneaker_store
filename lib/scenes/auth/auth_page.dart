@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_sneaker_store/scenes/auth/register_page.dart';
-import 'package:flutter_sneaker_store/scenes/auth/widgets/auth_button.dart';
-import 'package:flutter_sneaker_store/scenes/auth/widgets/auth_textfield.dart';
+import 'package:flutter_sneaker_store/scenes/auth/widgets/auth_button_widget.dart';
+import 'package:flutter_sneaker_store/scenes/auth/widgets/auth_textfield_widget.dart';
 
 import '../../common/app_colors.dart';
 import '../../common/app_textstyles.dart';
@@ -88,12 +88,12 @@ class _AuthPageState extends State<AuthPage> {
                       style: AppTextStyles.subTitleTextStyle,
                     ),
                   ),
-                  AuthTextField(
+                  AuthTextFieldWidget(
                     labelText: S.current.phoneEmailOrUsername,
                     controller: loginController,
                     isSuffixIcon: false,
                   ),
-                  AuthTextField(
+                  AuthTextFieldWidget(
                     labelText: S.current.password,
                     controller: passwordController,
                     isSuffixIcon: true,
@@ -115,7 +115,7 @@ class _AuthPageState extends State<AuthPage> {
                       ),
                     ],
                   ),
-                  AuthButton(
+                  AuthButtonWidget(
                     margin: const EdgeInsets.only(top: 20, bottom: 50),
                     text: S.current.signIn,
                     onTap: onTapSignIn,

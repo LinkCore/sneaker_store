@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-class ImagePrevious extends StatelessWidget {
+class ImagePreviousWidget extends StatelessWidget {
   final List<FileImage> allPicture;
 
-  const ImagePrevious({Key? key, required this.allPicture}) : super(key: key);
+  const ImagePreviousWidget({Key? key, required this.allPicture}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

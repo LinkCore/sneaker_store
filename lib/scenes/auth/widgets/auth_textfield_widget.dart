@@ -2,18 +2,18 @@ import 'package:flutter/material.dart';
 
 import '../../../common/app_textstyles.dart';
 
-class AuthTextField extends StatefulWidget {
+class AuthTextFieldWidget extends StatefulWidget {
   final String labelText;
   final TextEditingController controller;
   final bool isSuffixIcon;
 
-  const AuthTextField({Key? key, required this.labelText, required this.controller, required this.isSuffixIcon}) : super(key: key);
+  const AuthTextFieldWidget({Key? key, required this.labelText, required this.controller, required this.isSuffixIcon}) : super(key: key);
 
   @override
-  State<AuthTextField> createState() => _AuthTextFieldState();
+  State<AuthTextFieldWidget> createState() => _AuthTextFieldWidgetState();
 }
 
-class _AuthTextFieldState extends State<AuthTextField> {
+class _AuthTextFieldWidgetState extends State<AuthTextFieldWidget> {
 
   bool get isObscure => widget.isSuffixIcon;
   IconData visibilityIcon = Icons.visibility_off;

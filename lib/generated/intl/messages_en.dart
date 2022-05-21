@@ -47,7 +47,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "dontHaveAnAccount":
             MessageLookupByLibrary.simpleMessage("Don\'t have an account?  "),
         "error": MessageLookupByLibrary.simpleMessage("Error"),
+        "errorData": MessageLookupByLibrary.simpleMessage("Error data"),
         "goToCart": MessageLookupByLibrary.simpleMessage("Go to cart"),
+        "haveAGoodDay":
+            MessageLookupByLibrary.simpleMessage("Have a good day."),
         "letsSignYouIn":
             MessageLookupByLibrary.simpleMessage("Let\'s sign you in."),
         "noSelectedProducts":
@@ -62,6 +65,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "search": MessageLookupByLibrary.simpleMessage("Search"),
         "selectAll": MessageLookupByLibrary.simpleMessage("Select all"),
         "selectPhotos": MessageLookupByLibrary.simpleMessage("Select photos"),
+        "selectSize": MessageLookupByLibrary.simpleMessage("Select size"),
         "seller": MessageLookupByLibrary.simpleMessage("Seller"),
         "shopByBrand": MessageLookupByLibrary.simpleMessage("Shop by Brand"),
         "shortDescription":

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_sneaker_store/common/app_textstyles.dart';
 
-class ModalTextField extends StatelessWidget {
+class ModalTextFieldWidget extends StatelessWidget {
   final String labelText;
   final TextEditingController controller;
   final TextInputType keyboardType;
 
-  const ModalTextField({Key? key,
+  const ModalTextFieldWidget({Key? key,
     required this.keyboardType,
     required this.labelText,
     required this.controller}) : super(key: key);

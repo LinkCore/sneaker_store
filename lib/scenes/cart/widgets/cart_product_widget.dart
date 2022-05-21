@@ -3,15 +3,15 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../cart_bloc/cart_bloc.dart';
 
-class CartProduct extends StatefulWidget {
+class CartProductWidget extends StatefulWidget {
   final CartHasDataState state;
-  const CartProduct({Key? key, required this.state}) : super(key: key);
+  const CartProductWidget({Key? key, required this.state}) : super(key: key);
 
   @override
-  _CartProductState createState() => _CartProductState();
+  _CartProductWidgetState createState() => _CartProductWidgetState();
 }
 
-class _CartProductState extends State<CartProduct> {
+class _CartProductWidgetState extends State<CartProductWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(

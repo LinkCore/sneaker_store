@@ -7,14 +7,14 @@ import '../../../common/app_colors.dart';
 import '../../../generated/l10n.dart';
 import '../../product/product_bloc/product_bloc.dart';
 
-class SliverBrandFilter extends StatefulWidget {
-  const SliverBrandFilter({Key? key}) : super(key: key);
+class SliverBrandFilterWidget extends StatefulWidget {
+  const SliverBrandFilterWidget({Key? key}) : super(key: key);
 
   @override
-  _SliverBrandFilterState createState() => _SliverBrandFilterState();
+  _SliverBrandFilterWidgetState createState() => _SliverBrandFilterWidgetState();
 }
 
-class _SliverBrandFilterState extends State<SliverBrandFilter> {
+class _SliverBrandFilterWidgetState extends State<SliverBrandFilterWidget> {
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(

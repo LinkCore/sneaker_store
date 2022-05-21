@@ -6,16 +6,16 @@ import '../../../../../generated/l10n.dart';
 import '../../../../product/product_bloc/product_bloc.dart';
 import '../../../../product/product_page/product_page.dart';
 
-class SliverGridCount extends StatefulWidget {
+class SliverGridCountWidget extends StatefulWidget {
   final ProductHasDataState state;
 
-  const SliverGridCount({Key? key, required this.state}) : super(key: key);
+  const SliverGridCountWidget({Key? key, required this.state}) : super(key: key);
 
   @override
-  _SliverGridCountState createState() => _SliverGridCountState();
+  _SliverGridCountWidgetState createState() => _SliverGridCountWidgetState();
 }
 
-class _SliverGridCountState extends State<SliverGridCount> {
+class _SliverGridCountWidgetState extends State<SliverGridCountWidget> {
 
   @override
   Widget build(BuildContext context) {

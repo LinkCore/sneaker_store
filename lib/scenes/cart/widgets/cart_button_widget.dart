@@ -6,15 +6,15 @@ import '../../../common/app_colors.dart';
 import '../../../generated/l10n.dart';
 import '../cart_bloc/cart_bloc.dart';
 
-class CartButton extends StatefulWidget {
+class CartButtonWidget extends StatefulWidget {
   final CartHasDataState state;
-  const CartButton({Key? key, required this.state}) : super(key: key);
+  const CartButtonWidget({Key? key, required this.state}) : super(key: key);
 
   @override
-  State<CartButton> createState() => _CartButtonState();
+  State<CartButtonWidget> createState() => _CartButtonWidgetState();
 }
 
-class _CartButtonState extends State<CartButton> {
+class _CartButtonWidgetState extends State<CartButtonWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(

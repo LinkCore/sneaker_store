@@ -4,8 +4,8 @@ import 'package:google_fonts/google_fonts.dart';
 import '../../../common/app_colors.dart';
 import '../../../generated/l10n.dart';
 
-class EmptyCart extends StatelessWidget {
-  const EmptyCart({Key? key}) : super(key: key);
+class EmptyCartWidget extends StatelessWidget {
+  const EmptyCartWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

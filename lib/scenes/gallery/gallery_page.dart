@@ -9,9 +9,9 @@ import 'package:transparent_image/transparent_image.dart';
 import 'album_page.dart';
 
 class GalleryPage extends StatefulWidget {
-  Function indexes;
+  final Function indexes;
 
-  GalleryPage({Key? key, required this.indexes}) : super(key: key);
+  const GalleryPage({Key? key, required this.indexes}) : super(key: key);
 
   @override
   _GalleryPageState createState() => _GalleryPageState();

@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../generated/l10n.dart';
-import '../../../home/widgets/sliver_bloc_consumer/sliver_grid_count/sliver_grid_count.dart';
+import '../../../home/widgets/sliver_bloc_consumer/sliver_grid_count/sliver_grid_count_widget.dart';
 import '../../../product/product_bloc/product_bloc.dart';
-import 'circular_loading.dart';
-import 'empty_product_list.dart';
-import 'error_text.dart';
+import 'circular_loading_widget.dart';
+import 'empty_product_list_widget.dart';
+import 'error_text_widget.dart';
 
-class SliverBlocConsumer extends StatefulWidget {
-  const SliverBlocConsumer({Key? key}) : super(key: key);
+class SliverBlocConsumerWidget extends StatefulWidget {
+  const SliverBlocConsumerWidget({Key? key}) : super(key: key);
 
   @override
-  _SliverBlocConsumerState createState() => _SliverBlocConsumerState();
+  _SliverBlocConsumerWidgetState createState() => _SliverBlocConsumerWidgetState();
 }
 
-class _SliverBlocConsumerState extends State<SliverBlocConsumer> {
+class _SliverBlocConsumerWidgetState extends State<SliverBlocConsumerWidget> {
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<ProductBloc, ProductState>(
@@ -28,20 +28,20 @@ class _SliverBlocConsumerState extends State<SliverBlocConsumer> {
       },
       builder: (context, state) {
         if (state is LoadingState) {
-          return const CircularLoading();
+          return const CircularLoadingWidget();
         }
         if (state is ProductHasDataState) {
           if(state.productList.isEmpty){
-            return const EmptyProductList();
+            return const EmptyProductListWidget();
           }
           else{
-            return SliverGridCount(state: state);
+            return SliverGridCountWidget(state: state);
           }
         }
         if (state is ErrorState) {
-          return ErrorText(text: '${S.current.error}' '${state.errorText}');
+          return ErrorTextWidget(text: '${S.current.error}' '${state.errorText}');
         } else {
-          return ErrorText(text: S.current.error);
+          return ErrorTextWidget(text: S.current.error);
         }
       },
     );

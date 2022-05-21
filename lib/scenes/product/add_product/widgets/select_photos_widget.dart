@@ -5,17 +5,17 @@ import '../../../../generated/l10n.dart';
 import '../../../gallery/gallery_page.dart';
 
 
-class SelectPhotos extends StatefulWidget {
-  Function onTap;
+class SelectPhotosWidget extends StatefulWidget {
+  final Function onTap;
 
-  SelectPhotos({Key? key, required this.onTap})
+  const SelectPhotosWidget({Key? key, required this.onTap})
       : super(key: key);
 
   @override
-  _SelectPhotosState createState() => _SelectPhotosState();
+  _SelectPhotosWidgetState createState() => _SelectPhotosWidgetState();
 }
 
-class _SelectPhotosState extends State<SelectPhotos> {
+class _SelectPhotosWidgetState extends State<SelectPhotosWidget> {
   @override
   Widget build(BuildContext context) {
     return InkWell(

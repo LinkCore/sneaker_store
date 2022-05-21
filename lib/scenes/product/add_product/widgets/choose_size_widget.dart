@@ -5,15 +5,15 @@ import 'package:google_fonts/google_fonts.dart';
 import '../../../../common/app_utilities.dart';
 import '../../../../generated/l10n.dart';
 
-class ChooseSize extends StatefulWidget {
+class ChooseSizeWidget extends StatefulWidget {
   final List<int> selectedIndex;
-  const ChooseSize({Key? key, required this.selectedIndex}) : super(key: key);
+  const ChooseSizeWidget({Key? key, required this.selectedIndex}) : super(key: key);
 
   @override
-  _ChooseSizeState createState() => _ChooseSizeState();
+  _ChooseSizeWidgetState createState() => _ChooseSizeWidgetState();
 }
 
-class _ChooseSizeState extends State<ChooseSize> {
+class _ChooseSizeWidgetState extends State<ChooseSizeWidget> {
   Color selectAllColor = Colors.white54;
 
   List<Widget> _listAssembler() {

@@ -8,14 +8,14 @@ import '../../../generated/l10n.dart';
 import '../../auth/auth_bloc/auth_bloc.dart';
 import '../../product/product_bloc/product_bloc.dart';
 
-class SliverHeader extends StatefulWidget {
-  const SliverHeader({Key? key}) : super(key: key);
+class SliverHeaderWidget extends StatefulWidget {
+  const SliverHeaderWidget({Key? key}) : super(key: key);
 
   @override
-  _SliverHeaderState createState() => _SliverHeaderState();
+  _SliverHeaderWidgetState createState() => _SliverHeaderWidgetState();
 }
 
-class _SliverHeaderState extends State<SliverHeader> {
+class _SliverHeaderWidgetState extends State<SliverHeaderWidget> {
   TextEditingController searchController = TextEditingController();
 
   @override

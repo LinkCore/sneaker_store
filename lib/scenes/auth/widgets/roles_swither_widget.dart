@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class RolesSwitcher extends StatefulWidget {
+class RolesSwitcherWidget extends StatefulWidget {
   final double height;
   final TextStyle floatingWidgetTextStyle;
   final TextStyle backgroundTextStyle;
@@ -11,7 +11,7 @@ class RolesSwitcher extends StatefulWidget {
   final double width;
   final VoidCallback onTap;
 
-  RolesSwitcher(
+  RolesSwitcherWidget(
       {Key? key,
         VoidCallback? onTap,
         double? height,
@@ -36,10 +36,10 @@ class RolesSwitcher extends StatefulWidget {
         super(key: key);
 
   @override
-  _RolesSwitcherState createState() => _RolesSwitcherState();
+  _RolesSwitcherWidgetState createState() => _RolesSwitcherWidgetState();
 }
 
-class _RolesSwitcherState extends State<RolesSwitcher> {
+class _RolesSwitcherWidgetState extends State<RolesSwitcherWidget> {
   bool isEnabled = false;
   Widget child = const Text("");
 

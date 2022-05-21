@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_sneaker_store/common/app_textstyles.dart';
 import '../../../../generated/l10n.dart';
 
-class EmptyProductList extends StatelessWidget {
-  const EmptyProductList({Key? key}) : super(key: key);
+class EmptyProductListWidget extends StatelessWidget {
+  const EmptyProductListWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
