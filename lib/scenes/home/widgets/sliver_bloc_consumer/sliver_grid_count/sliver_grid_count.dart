@@ -7,7 +7,7 @@ import '../../../../product/product_bloc/product_bloc.dart';
 import '../../../../product/product_page.dart';
 
 class SliverGridCount extends StatefulWidget {
-  final HasDataState state;
+  final ProductHasDataState state;
 
   const SliverGridCount({Key? key, required this.state}) : super(key: key);
 

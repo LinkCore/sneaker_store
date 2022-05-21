@@ -190,6 +190,16 @@ class S {
     );
   }
 
+  /// `Error data`
+  String get errorData {
+    return Intl.message(
+      'Error data',
+      name: 'errorData',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Delete Product`
   String get deleteProduct {
     return Intl.message(
@@ -315,6 +325,76 @@ class S {
     return Intl.message(
       'Unnamed Album',
       name: 'unnamedAlbum',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your Cart`
+  String get yourCart {
+    return Intl.message(
+      'Your Cart',
+      name: 'yourCart',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cart is empty`
+  String get cartIsEmpty {
+    return Intl.message(
+      'Cart is empty',
+      name: 'cartIsEmpty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please added some products`
+  String get pleaseAddedSomeProducts {
+    return Intl.message(
+      'Please added some products',
+      name: 'pleaseAddedSomeProducts',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Buying success!`
+  String get buyingSuccess {
+    return Intl.message(
+      'Buying success!',
+      name: 'buyingSuccess',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Have a good day.`
+  String get haveAGoodDay {
+    return Intl.message(
+      'Have a good day.',
+      name: 'haveAGoodDay',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Buy`
+  String get buy {
+    return Intl.message(
+      'Buy',
+      name: 'buy',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Data updated`
+  String get dataUpdated {
+    return Intl.message(
+      'Data updated',
+      name: 'dataUpdated',
       desc: '',
       args: [],
     );

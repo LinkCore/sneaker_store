@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
-import 'package:hive/hive.dart';
 import 'package:meta/meta.dart';
 import 'package:random_string_generator/random_string_generator.dart';
 

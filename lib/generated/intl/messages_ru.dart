@@ -30,22 +30,31 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage(
                 "Вы уверены, что хотите удалить этот продукт?"),
         "brandModel": MessageLookupByLibrary.simpleMessage("Бренд и модель"),
+        "buy": MessageLookupByLibrary.simpleMessage("Купить"),
         "buyer": MessageLookupByLibrary.simpleMessage("Покупатель"),
+        "buyingSuccess":
+            MessageLookupByLibrary.simpleMessage("Покупка успешна!"),
+        "cartIsEmpty": MessageLookupByLibrary.simpleMessage("Корзина пуста"),
         "chooseAvailableSizes":
             MessageLookupByLibrary.simpleMessage("Выберите размеры"),
         "createAccount":
             MessageLookupByLibrary.simpleMessage("Создать Аккаунт!"),
+        "dataUpdated": MessageLookupByLibrary.simpleMessage("Данные обнолены"),
         "deleteProduct":
             MessageLookupByLibrary.simpleMessage("Удалить Продукт"),
         "dontHaveAnAccount":
             MessageLookupByLibrary.simpleMessage("У вас нет аккаунта?  "),
         "error": MessageLookupByLibrary.simpleMessage("Ошибка"),
+        "errorData": MessageLookupByLibrary.simpleMessage("Ошибка данных"),
+        "haveAGoodDay": MessageLookupByLibrary.simpleMessage("Хорошего дня."),
         "letsSignYouIn": MessageLookupByLibrary.simpleMessage("Давай войдем"),
         "noSelectedProducts":
             MessageLookupByLibrary.simpleMessage("Нет Выбранных Продуктов"),
         "password": MessageLookupByLibrary.simpleMessage("Пароль"),
         "phoneEmailOrUsername":
             MessageLookupByLibrary.simpleMessage("Телефон, почта или никнейм"),
+        "pleaseAddedSomeProducts": MessageLookupByLibrary.simpleMessage(
+            "Пожалуйста, добавьте какой-то продукт"),
         "price": MessageLookupByLibrary.simpleMessage("Стоимость"),
         "register": MessageLookupByLibrary.simpleMessage("Регистрация"),
         "search": MessageLookupByLibrary.simpleMessage("Поиск"),
@@ -62,6 +71,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "welcomeBackWeMissedYou": MessageLookupByLibrary.simpleMessage(
             "С возвращением.\nМы скучали по тебе!"),
         "youCanChooseOnlyFourPictures": MessageLookupByLibrary.simpleMessage(
-            "Вы можете выбрать только четыре картинки")
+            "Вы можете выбрать только четыре картинки"),
+        "yourCart": MessageLookupByLibrary.simpleMessage("Ваша корзина")
       };
 }
