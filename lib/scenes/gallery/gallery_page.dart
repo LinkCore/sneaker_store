@@ -6,6 +6,7 @@ import 'package:permission_handler/permission_handler.dart';
 import 'package:photo_gallery/photo_gallery.dart';
 import 'package:transparent_image/transparent_image.dart';
 
+import '../auth/widgets/bootom_sheet_anchor.dart';
 import 'album_page.dart';
 
 class GalleryPage extends StatefulWidget {
@@ -62,15 +63,7 @@ class _GalleryPageState extends State<GalleryPage> {
             ),
             child: Column(
               children: [
-                Container(
-                  margin:
-                  const EdgeInsets.symmetric(horizontal: 140, vertical: 10),
-                  width: MediaQuery.of(context).size.width,
-                  height: 6,
-                  decoration: BoxDecoration(
-                      color: Colors.white70,
-                      borderRadius: BorderRadius.circular(5)),
-                ),
+                const BottomSheetAnchor(margin: EdgeInsets.only(left: 165, right: 165, bottom: 10, top: 10)),
                 Expanded(
                   child: SizedBox(
                     height: MediaQuery.of(context).size.height / 2,

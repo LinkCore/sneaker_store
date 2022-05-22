@@ -54,10 +54,13 @@ class _SliverGridCountWidgetState extends State<SliverGridCountWidget> {
                         ),
                       ),
                     ),
-                    Text(
-                      '${product.price.toString()} USD',
-                      style: AppTextStyles.gridCountPriceTextStyle,
-                      ),
+                    SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Text(
+                        '${product.price.toString()} USD',
+                        style: AppTextStyles.gridCountPriceTextStyle,
+                        ),
+                    ),
                     ],
                   ),
                 ),

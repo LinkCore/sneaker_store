@@ -27,67 +27,78 @@ class _CartButtonWidgetState extends State<CartButtonWidget> {
       height: MediaQuery.of(context).size.height / 12.5,
       child: Row(
         mainAxisAlignment:
-        MainAxisAlignment.spaceAround,
+        MainAxisAlignment.center,
         children: [
-          Text(
-            '\$ ${widget.state.totalCost.toString()}',
-            style: GoogleFonts.poppins(
-                fontSize: 22,
-                fontWeight: FontWeight.w600,
-                color: Colors.white),
-          ),
-          InkWell(
+          Expanded(
             child: Container(
-              height:
-              MediaQuery.of(context).size.height /
-                  17,
-              width:
-              MediaQuery.of(context).size.height /
-                  5,
-              decoration: BoxDecoration(
-                  color: Colors.amber,
-                  borderRadius:
-                  BorderRadius.circular(15)),
-              child: Center(
-                  child: Text(
-                    S.current.buy,
-                    style: GoogleFonts.poppins(
-                        fontSize: 18,
-                        color: AppColors.backgroundColor,
-                        fontWeight: FontWeight.w600),
-                  )),
+              margin: const EdgeInsets.symmetric(horizontal: 20),
+              child: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Text(
+                  '\$ ${widget.state.totalCost.toString()}',
+                  style: GoogleFonts.poppins(
+                      fontSize: 22,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.white),
+                ),
+              ),
             ),
-            onTap: () {
-              showDialog(
-                  context: context,
-                  builder: (context) => AlertDialog(
-                    backgroundColor:
-                    AppColors.backgroundColor,
-                    shape:
-                    const RoundedRectangleBorder(
-                        borderRadius:
-                        BorderRadius.all(
-                            Radius.circular(
-                                15.0))),
-                    title: Text(
-                      S.current.buyingSuccess,
+          ),
+          Expanded(
+            child: InkWell(
+              child: Container(
+                margin: const EdgeInsets.symmetric(horizontal: 20),
+                height:
+                MediaQuery.of(context).size.height /
+                    17,
+                width:
+                MediaQuery.of(context).size.height /
+                    5,
+                decoration: BoxDecoration(
+                    color: Colors.amber,
+                    borderRadius:
+                    BorderRadius.circular(15)),
+                child: Center(
+                    child: Text(
+                      S.current.buy,
                       style: GoogleFonts.poppins(
-                          fontSize: 22,
-                          fontWeight:
-                          FontWeight.w500),
-                    ),
-                    content: Text(
-                      S.current.haveAGoodDay,
-                      style: GoogleFonts.poppins(
-                          fontSize: 16,
-                          fontWeight:
-                          FontWeight.w300),
-                    ),
-                  ));
+                          fontSize: 18,
+                          color: AppColors.backgroundColor,
+                          fontWeight: FontWeight.w600),
+                    )),
+              ),
+              onTap: () {
+                showDialog(
+                    context: context,
+                    builder: (context) => AlertDialog(
+                      backgroundColor:
+                      AppColors.backgroundColor,
+                      shape:
+                      const RoundedRectangleBorder(
+                          borderRadius:
+                          BorderRadius.all(
+                              Radius.circular(
+                                  15.0))),
+                      title: Text(
+                        S.current.buyingSuccess,
+                        style: GoogleFonts.poppins(
+                            fontSize: 22,
+                            fontWeight:
+                            FontWeight.w500),
+                      ),
+                      content: Text(
+                        S.current.haveAGoodDay,
+                        style: GoogleFonts.poppins(
+                            fontSize: 16,
+                            fontWeight:
+                            FontWeight.w300),
+                      ),
+                    ));
 
-              context.read<CartBloc>().add(ClearCartEvent());
+                context.read<CartBloc>().add(ClearCartEvent());
 
-            },
+              },
+            ),
           )
         ],
       ),

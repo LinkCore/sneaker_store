@@ -4,17 +4,17 @@ import 'package:google_fonts/google_fonts.dart';
 import '../../../../common/app_colors.dart';
 import '../../../../generated/l10n.dart';
 
-class ProductButton extends StatefulWidget {
+class ProductButtonWidget extends StatefulWidget {
   final Future<void> Function() onTap;
   final bool isTapped;
 
-  const ProductButton({Key? key, required this.onTap, required this.isTapped}) : super(key: key);
+  const ProductButtonWidget({Key? key, required this.onTap, required this.isTapped}) : super(key: key);
 
   @override
-  _ProductButtonState createState() => _ProductButtonState();
+  _ProductButtonWidgetState createState() => _ProductButtonWidgetState();
 }
 
-class _ProductButtonState extends State<ProductButton> {
+class _ProductButtonWidgetState extends State<ProductButtonWidget> {
 
 
   @override

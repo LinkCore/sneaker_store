@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class TitleAppBar extends StatelessWidget {
+class TitleAppBarWidget extends StatelessWidget {
   final String productName;
-  const TitleAppBar({Key? key, required this.productName}) : super(key: key);
+  const TitleAppBarWidget({Key? key, required this.productName}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

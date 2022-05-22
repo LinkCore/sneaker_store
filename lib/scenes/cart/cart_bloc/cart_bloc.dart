@@ -1,12 +1,14 @@
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
+
 import '../../../core/product/product.dart';
+
 part 'cart_event.dart';
+
 part 'cart_state.dart';
 
 class CartBloc extends Bloc<CartEvent, CartState> {
   CartBloc() : super(CartInitial()) {
-
     on<OnStartupEvent>(_onStartupEvent);
     on<AddToCartEvent>(_addToCartEvent);
     on<DeleteProductEvent>(_deleteProductEvent);
@@ -26,7 +28,7 @@ class CartBloc extends Bloc<CartEvent, CartState> {
     emit(LoadingState());
     productsList.add(event.newProduct);
     double totalCost = 0;
-    for(int i = 0; i < productsList.length; i++){
+    for (int i = 0; i < productsList.length; i++) {
       totalCost = totalCost + productsList[i].price!.toDouble();
     }
     emit(CartHasDataState(productList: productsList, totalCost: totalCost));
@@ -36,7 +38,11 @@ class CartBloc extends Bloc<CartEvent, CartState> {
       DeleteProductEvent event, Emitter<CartState> emit) async {
     emit(LoadingState());
     productsList.remove(event.product);
-    emit(CartHasDataState(productList: productsList, totalCost: 0));
+    double totalCost = 0;
+    for (int i = 0; i < productsList.length; i++) {
+      totalCost = totalCost + productsList[i].price!.toDouble();
+    }
+    emit(CartHasDataState(productList: productsList, totalCost: totalCost));
   }
 
   Future<void> _clearCartEvent(

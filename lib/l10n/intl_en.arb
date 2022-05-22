@@ -13,7 +13,6 @@
   "shopByBrand" : "Shop by Brand",
   "noSelectedProducts" : "No Selected Products",
   "error" : "Error",
-  "errorData" : "Error data",
   "deleteProduct" : "Delete Product",
   "areYouSureYouWantToDeleteThisProduct" : "Are you sure you want to delete this product?",
   "approve" : "Approve",
@@ -33,10 +32,15 @@
   "addToCart" : "Add to cart",
   "yourCart" : "Your Cart",
   "cartIsEmpty" : "Cart is empty",
-  "pleaseAddedSomeProducts" : "Please added some products",
+  "pleaseAddedSomeProducts" : "Please add some products",
   "buyingSuccess" : "Buying success!",
   "haveAGoodDay" : "Have a good day.",
   "buy" : "Buy",
   "dataUpdated" : "Data updated",
-  "selectSize" : "Select size"
+  "selectSize" : "Select size",
+  "showAll" : "Show all",
+  "processingData" : "Processing Data...",
+  "dataError" : "Data Error",
+  "pleaseEnterSomeText" : "Please enter some text",
+  "pleaseEnterMoreThanThreeCharacters" : "Please Enter More Than Three Characters"
 }

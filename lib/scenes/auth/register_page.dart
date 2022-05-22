@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_sneaker_store/common/app_colors.dart';
 import 'package:flutter_sneaker_store/scenes/auth/widgets/auth_button_widget.dart';
 import 'package:flutter_sneaker_store/scenes/auth/widgets/auth_textfield_widget.dart';
+import 'package:flutter_sneaker_store/scenes/auth/widgets/bootom_sheet_anchor.dart';
 import 'package:flutter_sneaker_store/scenes/auth/widgets/roles_swither_widget.dart';
 import '../../common/app_textstyles.dart';
 import '../../core/user/roles.dart';
@@ -57,7 +58,7 @@ class _RegisterPage extends State<RegisterPage> {
       builder: (BuildContext builder, ScrollController scrollController) {
         return Container(
             height: MediaQuery.of(context).size.height / 1.35,
-            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 35),
+            padding: const EdgeInsets.symmetric(horizontal: 35),
             decoration: const BoxDecoration(
               borderRadius: BorderRadius.only(
                   topRight: Radius.circular(35),
@@ -68,15 +69,7 @@ class _RegisterPage extends State<RegisterPage> {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Container(
-                  margin: const EdgeInsets.only(
-                      left: 140, right: 140, bottom: 10),
-                  width: MediaQuery.of(context).size.width,
-                  height: 6,
-                  decoration: BoxDecoration(
-                      color: Colors.white70,
-                      borderRadius: BorderRadius.circular(5)),
-                ),
+                const BottomSheetAnchor(margin: EdgeInsets.only(left: 140, right: 140, bottom: 10, top: 10),),
                 Container(
                   margin: const EdgeInsets.only(bottom: 20, top: 20),
                   child: Text(

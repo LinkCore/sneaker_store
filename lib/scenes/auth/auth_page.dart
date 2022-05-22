@@ -25,24 +25,24 @@ class _AuthPageState extends State<AuthPage> {
   Future<void> onTapSignIn() async {
     if (_formKey.currentState!.validate()) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Processing Data')),
+        SnackBar(content: Text(S.current.processingData, style: AppTextStyles.labelTextStyle,)),
       );
       if (blocErrorText != null) {
         ScaffoldMessenger.of(context).clearSnackBars();
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text(blocErrorText!)),
+          SnackBar(content: Text(blocErrorText!, style: AppTextStyles.labelTextStyle,)),
         );
       }
-    } else {
+      context.read<AuthBloc>().add(SignInEvent(
+        password: passwordController.text,
+        login: loginController.text,));
+    } else {ScaffoldMessenger.of(context)
+        .removeCurrentSnackBar();
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Data Error')),
+        SnackBar(content: Text(S.current.dataError, style: AppTextStyles.labelTextStyle,)),
+
       );
     }
-    context.read<AuthBloc>().add(SignInEvent(
-        password: passwordController.text,
-        login: loginController.text,
-    )
-    );
   }
 
   Future<void> onTapRegister() async {

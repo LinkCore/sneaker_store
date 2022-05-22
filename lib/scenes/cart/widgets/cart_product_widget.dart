@@ -21,9 +21,9 @@ class _CartProductWidgetState extends State<CartProductWidget> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                for (int i = 0; i < widget.state.productList.length; i++)
+                for (int  i = 0; i < widget.state.productList.length; i++)
                   Dismissible(
-                    key: Key(i.toString()),
+                    key: Key(widget.state.productList[i].hashCode.toString()),
                     child: Container(
                       margin: const EdgeInsets.symmetric(vertical: 5),
                       child: Row(
@@ -65,17 +65,21 @@ class _CartProductWidgetState extends State<CartProductWidget> {
                                     // overflow: TextOverflow.ellipsis,
                                   ),
                                 ),
-                                Text(
-                                  widget.state.productList[i]
-                                      .description!,
-                                  style:
-                                  GoogleFonts.poppins(
-                                      fontSize: 14,
-                                      fontWeight:
-                                      FontWeight
-                                          .w300,
-                                      color: Colors
-                                          .white54),
+                                SingleChildScrollView(
+                                  scrollDirection:
+                                  Axis.horizontal,
+                                  child: Text(
+                                    widget.state.productList[i]
+                                        .description!,
+                                    style:
+                                    GoogleFonts.poppins(
+                                        fontSize: 14,
+                                        fontWeight:
+                                        FontWeight
+                                            .w300,
+                                        color: Colors
+                                            .white54),
+                                  ),
                                 ),
                               ],
                             ),
@@ -100,14 +104,18 @@ class _CartProductWidgetState extends State<CartProductWidget> {
                           Expanded(
                               flex: 2,
                               child: Center(
-                                child: Text(
-                                  "\$ ${widget.state.productList[i].price.toString()}",
-                                  style:
-                                  GoogleFonts.poppins(
-                                      fontSize: 22,
-                                      fontWeight:
-                                      FontWeight
-                                          .w500),
+                                child: SingleChildScrollView(
+                                  scrollDirection:
+                                  Axis.horizontal,
+                                  child: Text(
+                                    "\$ ${widget.state.productList[i].price.toString()}",
+                                    style:
+                                    GoogleFonts.poppins(
+                                        fontSize: 22,
+                                        fontWeight:
+                                        FontWeight
+                                            .w500),
+                                  ),
                                 ),
                               )),
                         ],
@@ -115,17 +123,12 @@ class _CartProductWidgetState extends State<CartProductWidget> {
                     ),
                     onDismissed:
                         (DismissDirection direction) {
-                      if (direction ==
-                          DismissDirection.endToStart) {
+                      if (direction == DismissDirection.endToStart) {
                         context.read<CartBloc>().add(
-                            DeleteProductEvent(
-                                product:
-                                widget.state.productList[i]));
+                            DeleteProductEvent(product: widget.state.productList[i]));
                       } else {
                         context.read<CartBloc>().add(
-                            DeleteProductEvent(
-                                product:
-                                widget.state.productList[i]));
+                            DeleteProductEvent(product: widget.state.productList[i]));
                       }
                     },
                   ),

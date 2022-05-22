@@ -42,12 +42,12 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Choose your size"),
         "createAccount":
             MessageLookupByLibrary.simpleMessage("Create Account!"),
+        "dataError": MessageLookupByLibrary.simpleMessage("Data Error"),
         "dataUpdated": MessageLookupByLibrary.simpleMessage("Data updated"),
         "deleteProduct": MessageLookupByLibrary.simpleMessage("Delete Product"),
         "dontHaveAnAccount":
             MessageLookupByLibrary.simpleMessage("Don\'t have an account?  "),
         "error": MessageLookupByLibrary.simpleMessage("Error"),
-        "errorData": MessageLookupByLibrary.simpleMessage("Error data"),
         "goToCart": MessageLookupByLibrary.simpleMessage("Go to cart"),
         "haveAGoodDay":
             MessageLookupByLibrary.simpleMessage("Have a good day."),
@@ -59,8 +59,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "phoneEmailOrUsername":
             MessageLookupByLibrary.simpleMessage("Phone, email or username"),
         "pleaseAddedSomeProducts":
-            MessageLookupByLibrary.simpleMessage("Please added some products"),
+            MessageLookupByLibrary.simpleMessage("Please add some products"),
+        "pleaseEnterMoreThanThreeCharacters":
+            MessageLookupByLibrary.simpleMessage(
+                "Please Enter More Than Three Characters"),
+        "pleaseEnterSomeText":
+            MessageLookupByLibrary.simpleMessage("Please enter some text"),
         "price": MessageLookupByLibrary.simpleMessage("Price"),
+        "processingData":
+            MessageLookupByLibrary.simpleMessage("Processing Data..."),
         "register": MessageLookupByLibrary.simpleMessage("Register"),
         "search": MessageLookupByLibrary.simpleMessage("Search"),
         "selectAll": MessageLookupByLibrary.simpleMessage("Select all"),
@@ -70,6 +77,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "shopByBrand": MessageLookupByLibrary.simpleMessage("Shop by Brand"),
         "shortDescription":
             MessageLookupByLibrary.simpleMessage("Short description"),
+        "showAll": MessageLookupByLibrary.simpleMessage("Show all"),
         "signIn": MessageLookupByLibrary.simpleMessage("Sign In"),
         "sizeGuide": MessageLookupByLibrary.simpleMessage("Size Guide"),
         "unnamedAlbum": MessageLookupByLibrary.simpleMessage("Unnamed Album"),
