@@ -10,7 +10,8 @@ import '../../generated/l10n.dart';
 import 'auth_bloc/auth_bloc.dart';
 
 class AuthPage extends StatefulWidget {
-  const AuthPage({Key? key}) : super(key: key);
+  final String? errorText;
+  const AuthPage({Key? key, this.errorText}) : super(key: key);
 
   @override
   State<AuthPage> createState() => _AuthPageState();
@@ -20,23 +21,24 @@ class _AuthPageState extends State<AuthPage> {
   TextEditingController loginController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
-  String? blocErrorText;
+
 
   Future<void> onTapSignIn() async {
     if (_formKey.currentState!.validate()) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text(S.current.processingData, style: AppTextStyles.labelTextStyle,)),
       );
-      if (blocErrorText != null) {
+      if (widget.errorText != null) {
         ScaffoldMessenger.of(context).clearSnackBars();
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text(blocErrorText!, style: AppTextStyles.labelTextStyle,)),
+          SnackBar(content: Text(widget.errorText!, style: AppTextStyles.labelTextStyle,)),
         );
       }
       context.read<AuthBloc>().add(SignInEvent(
         password: passwordController.text,
         login: loginController.text,));
-    } else {ScaffoldMessenger.of(context)
+
+    } else { ScaffoldMessenger.of(context)
         .removeCurrentSnackBar();
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text(S.current.dataError, style: AppTextStyles.labelTextStyle,)),

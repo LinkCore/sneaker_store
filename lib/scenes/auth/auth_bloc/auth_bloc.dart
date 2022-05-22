@@ -1,12 +1,14 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:flutter/gestures.dart';
 import 'package:meta/meta.dart';
 import 'package:random_string_generator/random_string_generator.dart';
 
 import '../../../core/user/roles.dart';
 import '../../../core/user/user.dart';
 import '../../../core/user/user_repository.dart';
+import '../../../generated/l10n.dart';
 
 part 'auth_event.dart';
 
@@ -66,7 +68,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
         emit(AutoLoginState());
       } else {
-        emit(AuthErrorState(errorText: 'User is not exist'));
+        emit(AuthErrorState(errorText: S.current.userIsNotExist));
       }
     } catch (e) {
       (AuthErrorState(errorText: e.toString()));

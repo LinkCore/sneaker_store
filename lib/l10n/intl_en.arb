@@ -42,5 +42,7 @@
   "processingData" : "Processing Data...",
   "dataError" : "Data Error",
   "pleaseEnterSomeText" : "Please enter some text",
-  "pleaseEnterMoreThanThreeCharacters" : "Please Enter More Than Three Characters"
+  "pleaseEnterMoreThanThreeCharacters" : "Please Enter More Than Three Characters",
+  "invalidState" : "Invalid state",
+  "userIsNotExist" : "User is not exist"
 }

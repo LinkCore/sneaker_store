@@ -51,6 +51,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "error": MessageLookupByLibrary.simpleMessage("Ошибка"),
         "goToCart": MessageLookupByLibrary.simpleMessage("В корзину"),
         "haveAGoodDay": MessageLookupByLibrary.simpleMessage("Хорошего дня."),
+        "invalidState":
+            MessageLookupByLibrary.simpleMessage("Некорректное состояние"),
         "letsSignYouIn": MessageLookupByLibrary.simpleMessage("Давай войдем!"),
         "noSelectedProducts":
             MessageLookupByLibrary.simpleMessage("Нет Выбранных Продуктов"),
@@ -82,6 +84,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "sizeGuide": MessageLookupByLibrary.simpleMessage("Размеры"),
         "unnamedAlbum":
             MessageLookupByLibrary.simpleMessage("Безымянный альбом"),
+        "userIsNotExist":
+            MessageLookupByLibrary.simpleMessage("Пользователь не существует"),
         "welcomeBackWeMissedYou": MessageLookupByLibrary.simpleMessage(
             "С возвращением.\nМы скучали по тебе!"),
         "youCanChooseOnlyFourPictures": MessageLookupByLibrary.simpleMessage(

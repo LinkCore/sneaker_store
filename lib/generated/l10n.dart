@@ -489,6 +489,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Invalid state`
+  String get invalidState {
+    return Intl.message(
+      'Invalid state',
+      name: 'invalidState',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `User is not exist`
+  String get userIsNotExist {
+    return Intl.message(
+      'User is not exist',
+      name: 'userIsNotExist',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

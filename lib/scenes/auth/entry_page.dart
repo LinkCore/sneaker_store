@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_sneaker_store/common/app_colors.dart';
+import 'package:flutter_sneaker_store/common/app_textstyles.dart';
 
+import '../../generated/l10n.dart';
 import '../home/home_page.dart';
 import 'auth_bloc/auth_bloc.dart';
 import 'auth_page.dart';
@@ -24,19 +26,24 @@ class _EntryPageState extends State<EntryPage> {
           setState(() {
             _child =  const HomePage();
           });
-        } else if (state is NeedToAuthState || state is AuthErrorState) {
+        } else if (state is NeedToAuthState) {
           setState(() {
             _child = const AuthPage();
           });
-        } else if (state is AuthLoadingState) {
+        } else if (state is AuthErrorState){
           setState(() {
-            _child = const Center(child: CircularProgressIndicator());
+            _child = AuthPage(errorText: state.errorText);
+          });
+        }
+        else if (state is AuthLoadingState) {
+          setState(() {
+            _child = Container(color: AppColors.backgroundColor ,child: const Center(child: CircularProgressIndicator(color: Colors.amber,)));
           });
         } else {
           setState(() {
-            _child = const Scaffold(
+            _child = Scaffold(
               backgroundColor: AppColors.backgroundColor,
-              body: Center(child: Text('State?')),
+              body: Center(child: Text(S.current.invalidState, style: AppTextStyles.labelTextStyle,)),
             );
           });
         }

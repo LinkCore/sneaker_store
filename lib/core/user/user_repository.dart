@@ -22,7 +22,6 @@ class UserRepository {
     userBox.put('password', password);
     userBox.put('roles', roles);
     userBox.put('id', id);
-    // userBox.close();
 
     currentUser = User(id: id, roles: roles, login: login,  password: password);
   }

@@ -51,6 +51,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "goToCart": MessageLookupByLibrary.simpleMessage("Go to cart"),
         "haveAGoodDay":
             MessageLookupByLibrary.simpleMessage("Have a good day."),
+        "invalidState": MessageLookupByLibrary.simpleMessage("Invalid state"),
         "letsSignYouIn":
             MessageLookupByLibrary.simpleMessage("Let\'s sign you in."),
         "noSelectedProducts":
@@ -81,6 +82,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "signIn": MessageLookupByLibrary.simpleMessage("Sign In"),
         "sizeGuide": MessageLookupByLibrary.simpleMessage("Size Guide"),
         "unnamedAlbum": MessageLookupByLibrary.simpleMessage("Unnamed Album"),
+        "userIsNotExist":
+            MessageLookupByLibrary.simpleMessage("User is not exist"),
         "welcomeBackWeMissedYou": MessageLookupByLibrary.simpleMessage(
             "Welcome back.\nWe missed you!"),
         "youCanChooseOnlyFourPictures": MessageLookupByLibrary.simpleMessage(

@@ -7,14 +7,12 @@ class CircularLoadingWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverToBoxAdapter(
-      child: Expanded(
-        child: Container(
-            color: AppColors.backgroundColor,
-            child: const CircularProgressIndicator(
-                backgroundColor: AppColors.backgroundColor,
-                color: Colors.amber
-            )
-        ),
+      child: Container(
+          color: AppColors.backgroundColor,
+          child: const CircularProgressIndicator(
+              backgroundColor: AppColors.backgroundColor,
+              color: Colors.amber
+          )
       ),
     );
   }
