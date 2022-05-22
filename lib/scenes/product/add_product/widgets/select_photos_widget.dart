@@ -30,7 +30,7 @@ class _SelectPhotosWidgetState extends State<SelectPhotosWidget> {
           child: Text(
             S.current.selectPhotos,
             style: GoogleFonts.poppins(
-                color: Colors.white70,
+                color: Colors.white,
                 fontSize: 18,
                 fontWeight: FontWeight.w500
             ),

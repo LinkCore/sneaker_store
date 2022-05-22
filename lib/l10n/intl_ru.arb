@@ -1,5 +1,5 @@
 {
-  "letsSignYouIn" : "Давай войдем",
+  "letsSignYouIn" : "Давай войдем!",
   "welcomeBackWeMissedYou" : "С возвращением.\nМы скучали по тебе!",
   "createAccount" : "Создать Аккаунт!",
   "phoneEmailOrUsername" : "Телефон, почта или никнейм",
@@ -13,7 +13,6 @@
   "shopByBrand" : "Доступные бренды",
   "noSelectedProducts" : "Нет Выбранных Продуктов",
   "error" : "Ошибка",
-  "errorData" : "Ошибка данных",
   "deleteProduct" : "Удалить Продукт",
   "areYouSureYouWantToDeleteThisProduct" : "Вы уверены, что хотите удалить этот продукт?",
   "approve" : "Подтвердить",
@@ -33,10 +32,15 @@
   "addToCart" : "Добавить в корзину",
   "yourCart" : "Ваша корзина",
   "cartIsEmpty" : "Корзина пуста",
-  "pleaseAddedSomeProducts" : "Пожалуйста, добавьте какой-то продукт",
+  "pleaseAddedSomeProducts" : "Пожалуйста, добавьте продукт",
   "buyingSuccess" : "Покупка успешна!",
   "haveAGoodDay" : "Хорошего дня.",
   "buy" : "Купить",
-  "dataUpdated" : "Данные обнолены",
-  "selectSize" : "Выберите размер"
+  "dataUpdated" : "Данные обновлены",
+  "selectSize" : "Выберите размер",
+  "showAll" : "Показать все",
+  "processingData" : "Обработка данных...",
+  "dataError" : "Ошибка данных",
+  "pleaseEnterSomeText" : "Пожалуйста, введите текст",
+  "pleaseEnterMoreThanThreeCharacters" : "Пожалуйста, введите более трех символов"
 }

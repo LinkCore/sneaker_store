@@ -8,6 +8,7 @@ import 'package:flutter_sneaker_store/scenes/product/product_page/widgets/title_
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../../common/app_colors.dart';
+import '../../../common/app_textstyles.dart';
 import '../../../core/product/product.dart';
 import '../../../generated/l10n.dart';
 import '../../cart/cart_bloc/cart_bloc.dart';
@@ -148,11 +149,11 @@ class _ProductPageState extends State<ProductPage> {
         centerTitle: true,
         backgroundColor: AppColors.backgroundColor,
         elevation: 0,
-        title: TitleAppBar(productName: productNameController.text),
+        title: TitleAppBarWidget(productName: productNameController.text),
       ),
       body: Stack(
         children: [
-          MainImage(mainImage: child),
+          MainImageWidget(mainImage: child),
           Positioned(
             child: Align(
               alignment: Alignment.bottomCenter,
@@ -166,7 +167,7 @@ class _ProductPageState extends State<ProductPage> {
                 ),
                 child: Column(
                   children: [
-                    MainText(
+                    MainTextWidget(
                         productName: productNameController.text,
                         description: descriptionController.text,
                         price: priceController.text
@@ -180,7 +181,7 @@ class _ProductPageState extends State<ProductPage> {
                         children: _imagesList(),
                       ),
                     ),
-                    const ChooseSizeText(),
+                    const ChooseSizeTextWidget(),
                     Container(
                       padding: const EdgeInsets.symmetric(horizontal: 40),
                       child: SingleChildScrollView(
@@ -192,14 +193,14 @@ class _ProductPageState extends State<ProductPage> {
                         ),
                       ),
                     ),
-                    ProductButton(
+                    ProductButtonWidget(
                       isTapped: isTapped,
                       onTap: () async {
                         if (sizePrevious == null) {
                           ScaffoldMessenger.of(context)
                               .removeCurrentSnackBar();
                           ScaffoldMessenger.of(context).showSnackBar(
-                              SnackBar(content: Text(S.current.selectSize)));
+                              SnackBar(content: Text(S.current.selectSize, style: AppTextStyles.labelTextStyle,)));
                         } else {
                           if (!isTapped) {
                             Product newProduct = Product(
@@ -217,10 +218,15 @@ class _ProductPageState extends State<ProductPage> {
                               isTapped = true;
                             });
                           } else {
+                            setState(() {
+                              isTapped = false;
+                            });
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => const CartPage()));
+                                    builder: (context) => const CartPage()
+                                )
+                            );
                           }
                         }
                       },

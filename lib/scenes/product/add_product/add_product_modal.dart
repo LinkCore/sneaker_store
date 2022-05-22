@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_sneaker_store/scenes/auth/widgets/auth_button_widget.dart';
 import 'package:flutter_sneaker_store/scenes/product/product_bloc/product_bloc.dart';
@@ -10,6 +11,7 @@ import '../../../common/app_colors.dart';
 import '../../../common/app_utilities.dart';
 import '../../../core/product/product.dart';
 import '../../../generated/l10n.dart';
+import '../../auth/widgets/bootom_sheet_anchor.dart';
 import 'widgets/choose_size_widget.dart';
 import 'widgets/image_previous_widget.dart';
 import 'widgets/modal_textfield_widget.dart';
@@ -55,7 +57,7 @@ class _AddProductModalState extends State<AddProductModal> {
     return DraggableScrollableSheet(
       builder: (BuildContext context, ScrollController scrollController) {
         return Container(
-            padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 10),
+            padding: const EdgeInsets.symmetric(horizontal: 35, vertical: 10),
             decoration: const BoxDecoration(
               borderRadius: BorderRadius.only(
                   topRight: Radius.circular(35), topLeft: Radius.circular(35)),
@@ -64,29 +66,27 @@ class _AddProductModalState extends State<AddProductModal> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Container(
-                  margin: const EdgeInsets.symmetric(horizontal: 110),
-                  width: MediaQuery.of(context).size.width,
-                  height: 6,
-                  decoration: BoxDecoration(
-                      color: Colors.white70,
-                      borderRadius: BorderRadius.circular(5)),
-                ),
+                const BottomSheetAnchor(margin: EdgeInsets.only(left: 140, right: 140, bottom: 10)),
                 ModalTitleWidget(titleText: S.current.addYourMagicalProduct),
                 ModalTextFieldWidget(
                   labelText: S.current.brandModel,
                   controller: productNameController,
                   keyboardType: TextInputType.text,
+                    filteringText: const []
                 ),
                 ModalTextFieldWidget(
                   labelText: S.current.shortDescription,
                   controller: descriptionController,
                   keyboardType: TextInputType.text,
+                  filteringText: const [],
                 ),
                 ModalTextFieldWidget(
                   labelText: S.current.price,
                   controller: priceController,
                   keyboardType: TextInputType.phone,
+                  filteringText: [
+                    FilteringTextInputFormatter.digitsOnly
+                  ],
                 ),
                 ChooseSizeWidget(selectedIndex: selectedIndex),
                 Builder(builder: (context) {
@@ -109,7 +109,6 @@ class _AddProductModalState extends State<AddProductModal> {
                     margin: const EdgeInsets.only(top: 0),
                     text: S.current.addProduct,
                     onTap: () async {
-
                       List<int> sizedList = [];
                       for (var element in selectedIndex) {
                         sizedList.add(AppUtilities.sizeList[element]);

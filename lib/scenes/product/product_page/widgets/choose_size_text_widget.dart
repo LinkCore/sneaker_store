@@ -3,8 +3,8 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../../../../generated/l10n.dart';
 
-class ChooseSizeText extends StatelessWidget {
-  const ChooseSizeText({Key? key}) : super(key: key);
+class ChooseSizeTextWidget extends StatelessWidget {
+  const ChooseSizeTextWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

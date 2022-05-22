@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
-class MainImage extends StatefulWidget {
+class MainImageWidget extends StatefulWidget {
   final Widget mainImage;
-  const MainImage({Key? key, required this.mainImage}) : super(key: key);
+  const MainImageWidget({Key? key, required this.mainImage}) : super(key: key);
 
   @override
-  _MainImageState createState() => _MainImageState();
+  _MainImageWidgetState createState() => _MainImageWidgetState();
 }
 
-class _MainImageState extends State<MainImage> {
+class _MainImageWidgetState extends State<MainImageWidget> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(

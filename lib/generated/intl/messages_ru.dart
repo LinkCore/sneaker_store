@@ -42,24 +42,31 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Выберите размер"),
         "createAccount":
             MessageLookupByLibrary.simpleMessage("Создать Аккаунт!"),
-        "dataUpdated": MessageLookupByLibrary.simpleMessage("Данные обнолены"),
+        "dataError": MessageLookupByLibrary.simpleMessage("Ошибка данных"),
+        "dataUpdated": MessageLookupByLibrary.simpleMessage("Данные обновлены"),
         "deleteProduct":
             MessageLookupByLibrary.simpleMessage("Удалить Продукт"),
         "dontHaveAnAccount":
             MessageLookupByLibrary.simpleMessage("У вас нет аккаунта?  "),
         "error": MessageLookupByLibrary.simpleMessage("Ошибка"),
-        "errorData": MessageLookupByLibrary.simpleMessage("Ошибка данных"),
         "goToCart": MessageLookupByLibrary.simpleMessage("В корзину"),
         "haveAGoodDay": MessageLookupByLibrary.simpleMessage("Хорошего дня."),
-        "letsSignYouIn": MessageLookupByLibrary.simpleMessage("Давай войдем"),
+        "letsSignYouIn": MessageLookupByLibrary.simpleMessage("Давай войдем!"),
         "noSelectedProducts":
             MessageLookupByLibrary.simpleMessage("Нет Выбранных Продуктов"),
         "password": MessageLookupByLibrary.simpleMessage("Пароль"),
         "phoneEmailOrUsername":
             MessageLookupByLibrary.simpleMessage("Телефон, почта или никнейм"),
         "pleaseAddedSomeProducts": MessageLookupByLibrary.simpleMessage(
-            "Пожалуйста, добавьте какой-то продукт"),
+            "Пожалуйста, добавьте продукт"),
+        "pleaseEnterMoreThanThreeCharacters":
+            MessageLookupByLibrary.simpleMessage(
+                "Пожалуйста, введите более трех символов"),
+        "pleaseEnterSomeText":
+            MessageLookupByLibrary.simpleMessage("Пожалуйста, введите текст"),
         "price": MessageLookupByLibrary.simpleMessage("Стоимость"),
+        "processingData":
+            MessageLookupByLibrary.simpleMessage("Обработка данных..."),
         "register": MessageLookupByLibrary.simpleMessage("Регистрация"),
         "search": MessageLookupByLibrary.simpleMessage("Поиск"),
         "selectAll": MessageLookupByLibrary.simpleMessage("Выбрать все"),
@@ -70,6 +77,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "shopByBrand": MessageLookupByLibrary.simpleMessage("Доступные бренды"),
         "shortDescription":
             MessageLookupByLibrary.simpleMessage("Краткое описание"),
+        "showAll": MessageLookupByLibrary.simpleMessage("Показать все"),
         "signIn": MessageLookupByLibrary.simpleMessage("Войти"),
         "sizeGuide": MessageLookupByLibrary.simpleMessage("Размеры"),
         "unnamedAlbum":

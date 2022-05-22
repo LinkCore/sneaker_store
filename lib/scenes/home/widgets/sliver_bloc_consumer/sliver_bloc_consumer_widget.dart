@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../../../common/app_textstyles.dart';
 import '../../../../generated/l10n.dart';
 import '../../../home/widgets/sliver_bloc_consumer/sliver_grid_count/sliver_grid_count_widget.dart';
 import '../../../product/product_bloc/product_bloc.dart';
@@ -22,7 +23,7 @@ class _SliverBlocConsumerWidgetState extends State<SliverBlocConsumerWidget> {
         if (state is ProductHasDataState) {
           if (state.isUpdate) {
             ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(content: Text(S.current.dataUpdated)));
+                SnackBar(content: Text(S.current.dataUpdated, style: AppTextStyles.labelTextStyle,)));
           }
         }
       },

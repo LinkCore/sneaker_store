@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class MainText extends StatelessWidget {
+class MainTextWidget extends StatelessWidget {
   final String productName;
   final String description;
   final String price;
 
-  const MainText(
+  const MainTextWidget(
       {Key? key,
       required this.productName,
       required this.description,

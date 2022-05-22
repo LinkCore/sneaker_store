@@ -190,16 +190,6 @@ class S {
     );
   }
 
-  /// `Error data`
-  String get errorData {
-    return Intl.message(
-      'Error data',
-      name: 'errorData',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `Delete Product`
   String get deleteProduct {
     return Intl.message(
@@ -390,10 +380,10 @@ class S {
     );
   }
 
-  /// `Please added some products`
+  /// `Please add some products`
   String get pleaseAddedSomeProducts {
     return Intl.message(
-      'Please added some products',
+      'Please add some products',
       name: 'pleaseAddedSomeProducts',
       desc: '',
       args: [],
@@ -445,6 +435,56 @@ class S {
     return Intl.message(
       'Select size',
       name: 'selectSize',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Show all`
+  String get showAll {
+    return Intl.message(
+      'Show all',
+      name: 'showAll',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Processing Data...`
+  String get processingData {
+    return Intl.message(
+      'Processing Data...',
+      name: 'processingData',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Data Error`
+  String get dataError {
+    return Intl.message(
+      'Data Error',
+      name: 'dataError',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter some text`
+  String get pleaseEnterSomeText {
+    return Intl.message(
+      'Please enter some text',
+      name: 'pleaseEnterSomeText',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please Enter More Than Three Characters`
+  String get pleaseEnterMoreThanThreeCharacters {
+    return Intl.message(
+      'Please Enter More Than Three Characters',
+      name: 'pleaseEnterMoreThanThreeCharacters',
       desc: '',
       args: [],
     );

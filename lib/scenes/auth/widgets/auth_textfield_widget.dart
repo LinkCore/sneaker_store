@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-
 import '../../../common/app_textstyles.dart';
+import '../../../generated/l10n.dart';
 
 class AuthTextFieldWidget extends StatefulWidget {
   final String labelText;
@@ -49,10 +49,10 @@ class _AuthTextFieldWidgetState extends State<AuthTextFieldWidget> {
       child: TextFormField(
         validator: (value){
           if (value == null || value.isEmpty) {
-            return 'Please enter some text';
+            return S.current.pleaseEnterSomeText;
           }
           else if(value.length < 4){
-            return 'Please enter more than three characters';
+            return S.current.pleaseEnterMoreThanThreeCharacters;
           }
           return null;
         },
