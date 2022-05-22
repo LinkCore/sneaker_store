@@ -30,6 +30,9 @@
 .pub-cache/
 .pub/
 /build/
+lib/generated/l10n.dart
+lib/generated/intl/messages_ru.dart
+lib/generated/intl/messages_en.dart
 
 # Web related
 lib/generated_plugin_registrant.dart
