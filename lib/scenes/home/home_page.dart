@@ -4,11 +4,13 @@ import 'package:flutter_sneaker_store/scenes/home/widgets/sliver_bloc_consumer/s
 import 'package:flutter_sneaker_store/scenes/home/widgets/sliver_brand_filter_widget.dart';
 import 'package:flutter_sneaker_store/scenes/home/widgets/sliver_header_widget.dart';
 
+import '../../core/user/roles.dart';
 import '../product/add_product/add_product_modal.dart';
 import '../cart/cart_page.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+  final Roles? userRoles;
+  const HomePage({Key? key, required this.userRoles}) : super(key: key);
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -63,11 +65,12 @@ class _HomePageState extends State<HomePage> {
             onPressed: goToCart,
           ),
           const SizedBox(height: 5),
-          HomePageButtonWidget(
-            heroTag: 'Add Product',
-            icon: Icons.add,
-            onPressed: addProduct,
-          ),
+          widget.userRoles == Roles.seller ?
+             HomePageButtonWidget(
+              heroTag: 'Add Product',
+              icon: Icons.add,
+              onPressed: addProduct,
+            ) : const SizedBox(),
         ],
       ),
     );

@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
-import 'package:flutter/gestures.dart';
 import 'package:meta/meta.dart';
 import 'package:random_string_generator/random_string_generator.dart';
 
@@ -11,7 +10,6 @@ import '../../../core/user/user_repository.dart';
 import '../../../generated/l10n.dart';
 
 part 'auth_event.dart';
-
 part 'auth_state.dart';
 
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
@@ -26,7 +24,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       StartupEvent event, Emitter<AuthState> emit) async {
     emit(AuthLoadingState());
     if (await UserRepository().isUserExistLocal()) {
-      emit(AutoLoginState());
+      emit(AutoLoginState(userRole: event.roles));
     } else {
       emit(NeedToAuthState());
     }
@@ -47,7 +45,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       UserRepository().addUserLocal(
           newUser.login, newUser.password, newUser.roles, newUser.id);
       UserRepository().addUserRemote(newUser);
-      emit(AutoLoginState());
+      emit(AutoLoginState(userRole: event.roles));
     } catch (e) {
       emit(AuthErrorState(errorText: e.toString()));
     }
@@ -66,7 +64,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
           UserRepository().currentUser.id,
         );
 
-        emit(AutoLoginState());
+        emit(AutoLoginState(userRole: UserRepository().currentUser.roles));
       } else {
         emit(AuthErrorState(errorText: S.current.userIsNotExist));
       }
