@@ -6,12 +6,14 @@ import 'package:flutter_sneaker_store/scenes/auth/widgets/auth_textfield_widget.
 
 import '../../common/app_colors.dart';
 import '../../common/app_textstyles.dart';
+import '../../core/user/roles.dart';
 import '../../generated/l10n.dart';
 import 'auth_bloc/auth_bloc.dart';
 
 class AuthPage extends StatefulWidget {
   final String? errorText;
-  const AuthPage({Key? key, this.errorText}) : super(key: key);
+  final Roles? userRole;
+  const AuthPage({Key? key, this.errorText, this.userRole}) : super(key: key);
 
   @override
   State<AuthPage> createState() => _AuthPageState();
@@ -34,9 +36,13 @@ class _AuthPageState extends State<AuthPage> {
           SnackBar(content: Text(widget.errorText!, style: AppTextStyles.labelTextStyle,)),
         );
       }
-      context.read<AuthBloc>().add(SignInEvent(
+      context.read<AuthBloc>().add(
+          SignInEvent(
         password: passwordController.text,
-        login: loginController.text,));
+        login: loginController.text,
+        userRole: widget.userRole,
+          )
+      );
 
     } else { ScaffoldMessenger.of(context)
         .removeCurrentSnackBar();

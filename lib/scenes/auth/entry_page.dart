@@ -24,11 +24,11 @@ class _EntryPageState extends State<EntryPage> {
       listener: (context, state) {
         if (state is AutoLoginState) {
           setState(() {
-            _child =  const HomePage();
+            _child =  HomePage(userRoles: state.userRole);
           });
         } else if (state is NeedToAuthState) {
           setState(() {
-            _child = const AuthPage();
+            _child = AuthPage();
           });
         } else if (state is AuthErrorState){
           setState(() {
