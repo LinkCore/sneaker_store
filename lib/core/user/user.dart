@@ -4,8 +4,8 @@ import 'package:hive/hive.dart';
 import '../../common/app_utilities.dart';
 
 @HiveType(typeId: 0)
-class User {
-  User({
+class LocalUser {
+  LocalUser({
     @HiveField(0)
     String? id,
     @HiveField(1)
@@ -21,7 +21,7 @@ class User {
     _password = password;
   }
 
-  User.fromJson({required Map<String, dynamic> json, required String id}) {
+  LocalUser.fromJson({required Map<String, dynamic> json, required String id}) {
     _id = id;
     _roles = AppUtilities.stringToRolesEnum[json ['roles']];
     _login = json['login'];

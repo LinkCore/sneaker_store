@@ -97,13 +97,15 @@ class _AuthPageState extends State<AuthPage> {
                     ),
                   ),
                   AuthTextFieldWidget(
-                    labelText: S.current.phoneEmailOrUsername,
+                    labelText: S.current.email,
                     controller: loginController,
+                    keyboard: TextInputType.emailAddress,
                     isSuffixIcon: false,
                   ),
                   AuthTextFieldWidget(
                     labelText: S.current.password,
                     controller: passwordController,
+                    keyboard: TextInputType.text,
                     isSuffixIcon: true,
                   ),
                   const Spacer(),

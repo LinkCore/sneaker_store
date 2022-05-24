@@ -6,8 +6,9 @@ class AuthTextFieldWidget extends StatefulWidget {
   final String labelText;
   final TextEditingController controller;
   final bool isSuffixIcon;
+  final TextInputType keyboard;
 
-  const AuthTextFieldWidget({Key? key, required this.labelText, required this.controller, required this.isSuffixIcon}) : super(key: key);
+  const AuthTextFieldWidget({Key? key, required this.labelText, required this.controller, required this.isSuffixIcon, required this.keyboard}) : super(key: key);
 
   @override
   State<AuthTextFieldWidget> createState() => _AuthTextFieldWidgetState();
@@ -64,6 +65,7 @@ class _AuthTextFieldWidgetState extends State<AuthTextFieldWidget> {
         ),
         controller: widget.controller,
         style: AppTextStyles.labelTextStyle,
+        keyboardType: widget.keyboard,
       ),
     );
   }

@@ -47,12 +47,12 @@ class _HomePageState extends State<HomePage> {
         onTap: (){
           FocusManager.instance.primaryFocus!.unfocus();
         },
-        child: const CustomScrollView(
-        physics: BouncingScrollPhysics(),
+        child: CustomScrollView(
+        physics: const BouncingScrollPhysics(),
           slivers: [
-        SliverHeaderWidget(),
-        SliverBrandFilterWidget(),
-        SliverBlocConsumerWidget(),
+        const SliverHeaderWidget(),
+        const SliverBrandFilterWidget(),
+        SliverBlocConsumerWidget(userRole: widget.userRoles),
           ],
         ),
       ),
@@ -64,13 +64,17 @@ class _HomePageState extends State<HomePage> {
             icon: Icons.shopping_cart,
             onPressed: goToCart,
           ),
-          const SizedBox(height: 5),
-          widget.userRoles == Roles.seller ?
-             HomePageButtonWidget(
-              heroTag: 'Add Product',
-              icon: Icons.add,
-              onPressed: addProduct,
-            ) : const SizedBox(),
+             Visibility(
+               visible: widget.userRoles == Roles.seller,
+               child: Container(
+                 margin: const EdgeInsets.only(top: 5),
+                 child: HomePageButtonWidget(
+                  heroTag: 'Add Product',
+                  icon: Icons.add,
+                  onPressed: addProduct,
+            ),
+               ),
+             ),
         ],
       ),
     );

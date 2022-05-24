@@ -2,7 +2,7 @@
   "letsSignYouIn" : "Давай войдем!",
   "welcomeBackWeMissedYou" : "С возвращением.\nМы скучали по тебе!",
   "createAccount" : "Создать Аккаунт!",
-  "phoneEmailOrUsername" : "Телефон, почта или никнейм",
+  "email" : "Почта",
   "password" : "Пароль",
   "dontHaveAnAccount" : "У вас нет аккаунта?  ",
   "register" : "Регистрация",

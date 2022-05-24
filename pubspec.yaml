@@ -31,6 +31,8 @@ dependencies:
   awesome_select: ^5.2.0
   permission_handler: ^9.2.0
   transparent_image: ^2.0.0
+  firebase_auth: ^3.3.18
+  firebase_app_check: ^0.0.6+12
 
 dev_dependencies:
   flutter_test:
