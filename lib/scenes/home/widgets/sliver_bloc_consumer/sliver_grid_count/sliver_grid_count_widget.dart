@@ -2,14 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_sneaker_store/common/app_textstyles.dart';
 
+import '../../../../../core/user/roles.dart';
 import '../../../../../generated/l10n.dart';
 import '../../../../product/product_bloc/product_bloc.dart';
 import '../../../../product/product_page/product_page.dart';
 
 class SliverGridCountWidget extends StatefulWidget {
+  final Roles? userRole;
   final ProductHasDataState state;
 
-  const SliverGridCountWidget({Key? key, required this.state}) : super(key: key);
+  const SliverGridCountWidget({Key? key, required this.state, required this.userRole}) : super(key: key);
 
   @override
   _SliverGridCountWidgetState createState() => _SliverGridCountWidgetState();
@@ -68,6 +70,7 @@ class _SliverGridCountWidgetState extends State<SliverGridCountWidget> {
 
 
               onLongPress: () async {
+                if(widget.userRole == Roles.seller){
                 showDialog(
                     context: context,
                     builder: (context) => AlertDialog(
@@ -93,14 +96,14 @@ class _SliverGridCountWidgetState extends State<SliverGridCountWidget> {
                           ),
                         )
                       ],
-                    ));
+                    ));}
               },
 
               onTap: () async {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => ProductPage(product: product)
+                        builder: (context) => ProductPage(product: product, userRole: widget.userRole,)
                       )
                   );
                 }

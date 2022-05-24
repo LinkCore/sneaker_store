@@ -2,7 +2,7 @@
   "letsSignYouIn" : "Let's sign you in.",
   "welcomeBackWeMissedYou" : "Welcome back.\nWe missed you!",
   "createAccount" : "Create Account!",
-  "phoneEmailOrUsername" : "Phone, email or username",
+  "email" : "Email",
   "password" : "Password",
   "dontHaveAnAccount" : "Don't have an account?  ",
   "register" : "Register",

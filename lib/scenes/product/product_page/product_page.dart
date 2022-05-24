@@ -1,6 +1,10 @@
+import 'dart:io';
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_sneaker_store/scenes/product/product_page/widgets/choose_size_text_widget.dart';
+import 'package:flutter_sneaker_store/scenes/product/product_page/widgets/custom_dialog.dart';
 import 'package:flutter_sneaker_store/scenes/product/product_page/widgets/main_image_widget.dart';
 import 'package:flutter_sneaker_store/scenes/product/product_page/widgets/main_text_widget.dart';
 import 'package:flutter_sneaker_store/scenes/product/product_page/widgets/product_button_widget.dart';
@@ -10,14 +14,16 @@ import 'package:google_fonts/google_fonts.dart';
 import '../../../common/app_colors.dart';
 import '../../../common/app_textstyles.dart';
 import '../../../core/product/product.dart';
+import '../../../core/user/roles.dart';
 import '../../../generated/l10n.dart';
 import '../../cart/cart_bloc/cart_bloc.dart';
 import '../../cart/cart_page.dart';
 
 class ProductPage extends StatefulWidget {
+  final Roles? userRole;
   final Product product;
 
-  const ProductPage({Key? key, required this.product}) : super(key: key);
+  const ProductPage({Key? key, required this.product, required this.userRole}) : super(key: key);
 
   @override
   State<ProductPage> createState() => _ProductPageState();
@@ -33,9 +39,13 @@ class _ProductPageState extends State<ProductPage> {
   int selectedImagesIndex = 0;
   int? selectedSizedIndex;
   Widget child = Container();
+  List<int> selectedIndex = [];
+  List<File> selectedPicturesBase64 = [];
+  late List<FileImage> selectedPictures;
 
   @override
   void initState() {
+    selectedPictures = [];
     productNameController =
         TextEditingController(text: widget.product.productName);
     descriptionController =
@@ -66,10 +76,9 @@ class _ProductPageState extends State<ProductPage> {
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
               border: Border.all(
-                  color: selectedSizedIndex == i ? Colors.amber : Colors.white70,
-                  width: 2
-              )
-          ),
+                  color:
+                      selectedSizedIndex == i ? Colors.amber : Colors.white70,
+                  width: 2)),
           child: Center(
             child: Text(
               '${sizedList![i]}',
@@ -144,16 +153,37 @@ class _ProductPageState extends State<ProductPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: Colors.white,
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: AppColors.backgroundColor,
         elevation: 0,
         title: TitleAppBarWidget(productName: productNameController.text),
+        actions: [
+          Visibility(
+            visible: widget.userRole == Roles.seller,
+            child: IconButton(
+              icon: const Icon(Icons.edit_outlined),
+              onPressed: () {
+                showDialog(
+                    context: context, builder: (context) => CustomDialog(product: widget.product,));
+              },
+            ),
+          )
+        ],
       ),
       body: Stack(
         children: [
           MainImageWidget(mainImage: child),
+          Positioned.fill(
+            child: BackdropFilter(
+              filter: ImageFilter.blur(
+                sigmaX: 10.0,
+                sigmaY: 10.0,
+              ),
+            ),
+          ),
           Positioned(
             child: Align(
               alignment: Alignment.bottomCenter,
@@ -170,8 +200,7 @@ class _ProductPageState extends State<ProductPage> {
                     MainTextWidget(
                         productName: productNameController.text,
                         description: descriptionController.text,
-                        price: priceController.text
-                    ),
+                        price: priceController.text),
                     Container(
                       padding: const EdgeInsets.symmetric(
                           horizontal: 40, vertical: 10),
@@ -197,10 +226,12 @@ class _ProductPageState extends State<ProductPage> {
                       isTapped: isTapped,
                       onTap: () async {
                         if (sizePrevious == null) {
-                          ScaffoldMessenger.of(context)
-                              .removeCurrentSnackBar();
-                          ScaffoldMessenger.of(context).showSnackBar(
-                              SnackBar(content: Text(S.current.selectSize, style: AppTextStyles.labelTextStyle,)));
+                          ScaffoldMessenger.of(context).removeCurrentSnackBar();
+                          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                              content: Text(
+                            S.current.selectSize,
+                            style: AppTextStyles.labelTextStyle,
+                          )));
                         } else {
                           if (!isTapped) {
                             Product newProduct = Product(
@@ -224,9 +255,7 @@ class _ProductPageState extends State<ProductPage> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => const CartPage()
-                                )
-                            );
+                                    builder: (context) => const CartPage()));
                           }
                         }
                       },

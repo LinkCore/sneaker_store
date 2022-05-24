@@ -61,7 +61,7 @@ class ProductRepository {
   }
 
   void editProduct(Product product) async {
-    _productCollection.doc(product.id).update(product.toJson());
+    _productCollection.doc(product.id).set(product.toJson(), SetOptions(merge: true));
   }
 
   Stream collectionListener() {

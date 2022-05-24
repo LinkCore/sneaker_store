@@ -3,6 +3,7 @@ import 'package:flutter_sneaker_store/core/user/roles.dart';
 import 'package:flutter_sneaker_store/core/user/user.dart';
 import 'package:hive/hive.dart';
 
+
 class UserRepository {
   static final UserRepository _userRepository = UserRepository._internal();
 
@@ -12,18 +13,18 @@ class UserRepository {
 
   UserRepository._internal();
 
-  late User currentUser;
-  final CollectionReference _userCollection =
-      FirebaseFirestore.instance.collection('users');
+  late LocalUser currentUser;
+  final CollectionReference _userCollection =   FirebaseFirestore.instance.collection('users');
 
-  Future<void> addUserLocal(String? login, String? password, Roles? roles, String? id) async {
+  Future<void> addUserLocal(
+      String? login, String? password, Roles? roles, String? id) async {
     var userBox = await Hive.openBox('userBox');
     userBox.put('login', login);
     userBox.put('password', password);
-    userBox.put('roles', roles);
+    userBox.put('roles', roles!.index);
     userBox.put('id', id);
 
-    currentUser = User(id: id, roles: roles, login: login,  password: password);
+    currentUser = LocalUser(id: id, roles: roles, login: login, password: password);
   }
 
   Future<bool> isUserExistLocal() async {
@@ -40,7 +41,7 @@ class UserRepository {
     await userBox.clear();
   }
 
-  Future<void> addUserRemote(User user) async {
+  Future<void> addUserRemote(LocalUser user) async {
     await _userCollection.doc(user.id).set(user.toJson());
     currentUser = user;
   }
@@ -48,7 +49,7 @@ class UserRepository {
   Future<bool> isUserExistRemote(String login, String password) async {
     QuerySnapshot collection = await _userCollection.get();
     for (var document in collection.docs) {
-      User user = User.fromJson(
+      LocalUser user = LocalUser.fromJson(
           json: document.data() as Map<String, dynamic>, id: document.id);
       if (user.login == login) {
         if (user.password == password) {

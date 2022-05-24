@@ -28,7 +28,7 @@ class _EntryPageState extends State<EntryPage> {
           });
         } else if (state is NeedToAuthState) {
           setState(() {
-            _child = AuthPage();
+            _child = const AuthPage();
           });
         } else if (state is AuthErrorState){
           setState(() {

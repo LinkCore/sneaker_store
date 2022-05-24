@@ -90,13 +90,15 @@ class _RegisterPage extends State<RegisterPage> {
                 ),
                 SizedBox(height: MediaQuery.of(context).size.height/18,),
                 AuthTextFieldWidget(
-                  labelText: S.current.phoneEmailOrUsername,
+                  labelText: S.current.email,
                   controller: loginController,
+                  keyboard: TextInputType.emailAddress,
                   isSuffixIcon: false,
                 ),
                 AuthTextFieldWidget(
                   labelText: S.current.password,
                   controller: passwordController,
+                  keyboard: TextInputType.text,
                   isSuffixIcon: true,
                 ),
                 AuthButtonWidget(

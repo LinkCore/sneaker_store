@@ -47,6 +47,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "deleteProduct": MessageLookupByLibrary.simpleMessage("Delete Product"),
         "dontHaveAnAccount":
             MessageLookupByLibrary.simpleMessage("Don\'t have an account?  "),
+        "email": MessageLookupByLibrary.simpleMessage("Email"),
         "error": MessageLookupByLibrary.simpleMessage("Error"),
         "goToCart": MessageLookupByLibrary.simpleMessage("Go to cart"),
         "haveAGoodDay":
@@ -57,8 +58,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "noSelectedProducts":
             MessageLookupByLibrary.simpleMessage("No Selected Products"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
-        "phoneEmailOrUsername":
-            MessageLookupByLibrary.simpleMessage("Phone, email or username"),
         "pleaseAddedSomeProducts":
             MessageLookupByLibrary.simpleMessage("Please add some products"),
         "pleaseEnterMoreThanThreeCharacters":

@@ -4,6 +4,7 @@ import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
 import 'package:random_string_generator/random_string_generator.dart';
 
+import '../../../core/user/auth_repository.dart';
 import '../../../core/user/roles.dart';
 import '../../../core/user/user.dart';
 import '../../../core/user/user_repository.dart';
@@ -34,7 +35,9 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       RegisterUserEvent event, Emitter<AuthState> emit) async {
     emit(AuthLoadingState());
 
-    User newUser = User(
+    await AuthRepository().signUpWithEmail(event.login, event.password);
+
+    LocalUser newUser = LocalUser(
       id: RandomStringGenerator(fixedLength: 10, hasSymbols: false).generate(),
       roles: event.roles,
       login: event.login,
@@ -54,6 +57,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   Future<void> _onSignInEvent(
       SignInEvent event, Emitter<AuthState> emit) async {
     emit(AuthLoadingState());
+    await AuthRepository().signInWithEmail(event.login, event.password);
     try {
       if (await UserRepository()
           .isUserExistRemote(event.login, event.password)) {

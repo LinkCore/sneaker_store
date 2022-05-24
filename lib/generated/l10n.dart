@@ -80,11 +80,11 @@ class S {
     );
   }
 
-  /// `Phone, email or username`
-  String get phoneEmailOrUsername {
+  /// `Email`
+  String get email {
     return Intl.message(
-      'Phone, email or username',
-      name: 'phoneEmailOrUsername',
+      'Email',
+      name: 'email',
       desc: '',
       args: [],
     );

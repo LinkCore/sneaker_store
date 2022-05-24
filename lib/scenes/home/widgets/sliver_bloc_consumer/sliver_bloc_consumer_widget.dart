@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../common/app_textstyles.dart';
+import '../../../../core/user/roles.dart';
 import '../../../../generated/l10n.dart';
 import '../../../home/widgets/sliver_bloc_consumer/sliver_grid_count/sliver_grid_count_widget.dart';
 import '../../../product/product_bloc/product_bloc.dart';
@@ -9,7 +10,8 @@ import 'empty_product_list_widget.dart';
 import 'error_text_widget.dart';
 
 class SliverBlocConsumerWidget extends StatefulWidget {
-  const SliverBlocConsumerWidget({Key? key}) : super(key: key);
+  final Roles? userRole;
+  const SliverBlocConsumerWidget({Key? key, required this.userRole}) : super(key: key);
 
   @override
   _SliverBlocConsumerWidgetState createState() => _SliverBlocConsumerWidgetState();
@@ -36,7 +38,7 @@ class _SliverBlocConsumerWidgetState extends State<SliverBlocConsumerWidget> {
             return const EmptyProductListWidget();
           }
           else{
-            return SliverGridCountWidget(state: state);
+            return SliverGridCountWidget(state: state, userRole: widget.userRole);
           }
         }
         if (state is ErrorState) {
