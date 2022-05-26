@@ -44,5 +44,7 @@
   "pleaseEnterSomeText" : "Please enter some text",
   "pleaseEnterMoreThanThreeCharacters" : "Please Enter More Than Three Characters",
   "invalidState" : "Invalid state",
-  "userIsNotExist" : "User is not exist"
+  "userIsNotExist" : "User is not exist",
+  "edit" : "Edit",
+  "apply" : "Apply"
 }

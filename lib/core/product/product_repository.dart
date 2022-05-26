@@ -18,17 +18,25 @@ class ProductRepository {
 
   final storage  = FirebaseStorage.instance;
 
-  Future<List<String>> uploadImages(List<File> imagesList, String id,) async{
+  Future<List<String>> uploadImages( String id, {List<File>? newFiles, List<String>? oldFiles}) async{
 
-    List<String> urls = [];
-
-    for(int i = 0; i < imagesList.length; i++){
-      String linkUri = 'product_images/$id/$i.png';
-      await storage.ref(linkUri).putFile(imagesList[i]).then((snapshot) async {
-        urls.add(await snapshot.ref.getDownloadURL());
-      });
+    if (newFiles != null) {
+      if (newFiles.isNotEmpty) {
+        List<String> urls = [];
+        for(int i = 0; i < newFiles.length; i++){
+          String linkUri = 'product_images/$id/$i.png';
+          await storage.ref(linkUri).putFile(newFiles[i]).then((snapshot) async {
+            urls.add(await snapshot.ref.getDownloadURL());
+          });
+        }
+        return urls;
+      }else{
+        return oldFiles!;
+      }
+    }else{
+      return oldFiles!;
     }
-    return urls;
+
   }
 
   Future<List<Product>> getProducts() async {
@@ -49,7 +57,7 @@ class ProductRepository {
       description: product.description,
       price: product.price,
       sizedList: product.sizedList,
-      imagesUrls: await uploadImages(product.imagesList!, product.id!),
+      imagesUrls: await uploadImages( product.id!, newFiles: product.imagesList!),
     );
 
     _productCollection.doc(newProduct.id).set(newProduct.toJson());

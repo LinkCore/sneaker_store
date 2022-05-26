@@ -111,7 +111,7 @@ class _ProductPageState extends State<ProductPage> {
   List<Widget> _imagesList() {
     List<Widget> imageWidgets = [];
     List<String>? imagesList = widget.product.imagesUrls;
-    for (int i = 0; i < widget.product.imagesUrls!.length; i++) {
+    for (int i = 0; i < widget.product.imagesUrls!.length; i++){
       imageWidgets.add(InkWell(
         child: Container(
           height: 70,
@@ -167,7 +167,7 @@ class _ProductPageState extends State<ProductPage> {
               icon: const Icon(Icons.edit_outlined),
               onPressed: () {
                 showDialog(
-                    context: context, builder: (context) => CustomDialog(product: widget.product,));
+                    context: context, builder: (context) => CustomDialog(product: widget.product, selectedSize: widget.product.sizedList, imagesList: widget.product.imagesUrls));
               },
             ),
           )

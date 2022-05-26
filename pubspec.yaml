@@ -33,6 +33,7 @@ dependencies:
   transparent_image: ^2.0.0
   firebase_auth: ^3.3.18
   firebase_app_check: ^0.0.6+12
+  uiblock: ^2.0.2
 
 dev_dependencies:
   flutter_test:
