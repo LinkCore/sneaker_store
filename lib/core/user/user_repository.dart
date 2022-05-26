@@ -29,7 +29,13 @@ class UserRepository {
 
   Future<bool> isUserExistLocal() async {
     var userBox = await Hive.openBox('userBox');
-    if (userBox.containsKey('login')) {
+    if(userBox.containsKey('id') && userBox.containsKey('roles') && userBox.containsKey('login') && userBox.containsKey('password')){
+      await addUserLocal(
+        userBox.get('login'),
+        userBox.get('password'),
+        Roles.values[userBox.get('roles')],
+        userBox.get('id'),
+      );
       return true;
     } else {
       return false;

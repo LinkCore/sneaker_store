@@ -6,7 +6,7 @@ import '../../../../common/app_utilities.dart';
 import '../../../../generated/l10n.dart';
 
 class ChooseSizeWidget extends StatefulWidget {
-  final List<int> selectedIndex;
+  final List<int>? selectedIndex;
   const ChooseSizeWidget({Key? key, required this.selectedIndex}) : super(key: key);
 
   @override
@@ -29,7 +29,7 @@ class _ChooseSizeWidgetState extends State<ChooseSizeWidget> {
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                   border: Border.all(
-                      color: widget.selectedIndex.contains(i) ? Colors.amber : Colors.white70,
+                      color: widget.selectedIndex!.contains(i) ? Colors.amber : Colors.white70,
                       width: 2
                   )
               ),
@@ -41,14 +41,14 @@ class _ChooseSizeWidgetState extends State<ChooseSizeWidget> {
               ),
             ),
             onTap: () {
-              if(widget.selectedIndex.contains(i)){
+              if(widget.selectedIndex!.contains(i)){
                 setState(() {
-                  widget.selectedIndex.remove(i);
+                  widget.selectedIndex!.remove(i);
                 });
               }
               else{
                 setState(() {
-                  widget.selectedIndex.add(i);
+                  widget.selectedIndex!.add(i);
                 });
               }
             },
@@ -87,17 +87,17 @@ class _ChooseSizeWidgetState extends State<ChooseSizeWidget> {
                   ),
                 ),
                 onTap: (){
-                  if(widget.selectedIndex.length == AppUtilities.sizeList.length){
+                  if(widget.selectedIndex!.length == AppUtilities.sizeList.length){
                     setState(() {
                       selectAllColor = Colors.white54;
-                      widget.selectedIndex.clear();
+                      widget.selectedIndex!.clear();
                     });
                   }
                   else{
                     setState(() {
                       selectAllColor = Colors.blue;
-                      widget.selectedIndex.clear();
-                      widget.selectedIndex.addAll(List.generate(AppUtilities.sizeList.length, (index) => index));
+                      widget.selectedIndex!.clear();
+                      widget.selectedIndex!.addAll(List.generate(AppUtilities.sizeList.length, (index) => index));
                     });
                   }
                 },

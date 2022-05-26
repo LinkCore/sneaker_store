@@ -11,6 +11,7 @@ import '../../../core/user/user_repository.dart';
 import '../../../generated/l10n.dart';
 
 part 'auth_event.dart';
+
 part 'auth_state.dart';
 
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
@@ -25,8 +26,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       StartupEvent event, Emitter<AuthState> emit) async {
     emit(AuthLoadingState());
     if (await UserRepository().isUserExistLocal()) {
-      emit(AutoLoginState(userRole: event.roles));
-    } else {
+      emit(AutoLoginState(userRole: UserRepository().currentUser.roles));
+    }  else {
       emit(NeedToAuthState());
     }
   }
@@ -67,7 +68,6 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
           UserRepository().currentUser.roles,
           UserRepository().currentUser.id,
         );
-
         emit(AutoLoginState(userRole: UserRepository().currentUser.roles));
       } else {
         emit(AuthErrorState(errorText: S.current.userIsNotExist));
@@ -77,7 +77,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     }
   }
 
-  Future<void> _onSignOutEvent(SignOutEvent event, Emitter<AuthState> emit) async {
+  Future<void> _onSignOutEvent(
+      SignOutEvent event, Emitter<AuthState> emit) async {
     UserRepository().removeUserLocal();
     emit(NeedToAuthState());
   }
