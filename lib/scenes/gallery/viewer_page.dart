@@ -14,8 +14,7 @@ class ViewerPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     DateTime? date = medium.creationDate ?? medium.modifiedDate;
-    return MaterialApp(
-      home: Scaffold(
+    return Scaffold(
         backgroundColor: AppColors.backgroundColor,
         appBar: AppBar(
           backgroundColor: AppColors.backgroundColor,
@@ -25,6 +24,7 @@ class ViewerPage extends StatelessWidget {
             icon: const Icon(Icons.arrow_back_ios),
           ),
           title: date != null ? Text(date.toLocal().toString()) : null,
+          centerTitle: true,
         ),
         body: Container(
           alignment: Alignment.center,
@@ -39,7 +39,6 @@ class ViewerPage extends StatelessWidget {
                   style: AppTextStyles.labelTextStyle,
                 ),
         ),
-      ),
-    );
+      );
   }
 }

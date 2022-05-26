@@ -44,5 +44,7 @@
   "pleaseEnterSomeText" : "Пожалуйста, введите текст",
   "pleaseEnterMoreThanThreeCharacters" : "Пожалуйста, введите более трех символов",
   "invalidState" : "Некорректное состояние",
-  "userIsNotExist" : "Пользователь не существует"
+  "userIsNotExist" : "Пользователь не существует",
+  "edit" : "Редактировать",
+  "apply" : "Подтвердить"
 }

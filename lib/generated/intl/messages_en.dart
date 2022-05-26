@@ -26,6 +26,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "addToCart": MessageLookupByLibrary.simpleMessage("Add to cart"),
         "addYourMagicalProduct":
             MessageLookupByLibrary.simpleMessage("Add your magical product!"),
+        "apply": MessageLookupByLibrary.simpleMessage("Apply"),
         "approve": MessageLookupByLibrary.simpleMessage("Approve"),
         "areYouSureYouWantToDeleteThisProduct":
             MessageLookupByLibrary.simpleMessage(
@@ -47,6 +48,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "deleteProduct": MessageLookupByLibrary.simpleMessage("Delete Product"),
         "dontHaveAnAccount":
             MessageLookupByLibrary.simpleMessage("Don\'t have an account?  "),
+        "edit": MessageLookupByLibrary.simpleMessage("Edit"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
         "error": MessageLookupByLibrary.simpleMessage("Error"),
         "goToCart": MessageLookupByLibrary.simpleMessage("Go to cart"),

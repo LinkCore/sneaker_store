@@ -26,6 +26,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "addToCart": MessageLookupByLibrary.simpleMessage("Добавить в корзину"),
         "addYourMagicalProduct":
             MessageLookupByLibrary.simpleMessage("Добавьте свой продукт!"),
+        "apply": MessageLookupByLibrary.simpleMessage("Подтвердить"),
         "approve": MessageLookupByLibrary.simpleMessage("Подтвердить"),
         "areYouSureYouWantToDeleteThisProduct":
             MessageLookupByLibrary.simpleMessage(
@@ -48,6 +49,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Удалить Продукт"),
         "dontHaveAnAccount":
             MessageLookupByLibrary.simpleMessage("У вас нет аккаунта?  "),
+        "edit": MessageLookupByLibrary.simpleMessage("Редактировать"),
         "email": MessageLookupByLibrary.simpleMessage("Почта"),
         "error": MessageLookupByLibrary.simpleMessage("Ошибка"),
         "goToCart": MessageLookupByLibrary.simpleMessage("В корзину"),
