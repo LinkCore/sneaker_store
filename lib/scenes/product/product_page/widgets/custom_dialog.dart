@@ -33,11 +33,6 @@ class _CustomDialogState extends State<CustomDialog> {
   late TextEditingController descriptionController;
   late TextEditingController priceController;
   late String imagePrevious = widget.product.imagesUrls!.first;
-  int? sizePrevious;
-  bool isTapped = false;
-  int selectedImagesIndex = 0;
-  int? selectedSizedIndex;
-  Widget child = Container();
   List<int> selectedIndex = [];
   List<File> selectedPicturesBase64 = [];
   late List<FileImage> selectedPictures;
@@ -51,7 +46,6 @@ class _CustomDialogState extends State<CustomDialog> {
         TextEditingController(text: widget.product.description);
     priceController =
         TextEditingController(text: widget.product.price.toString());
-    child = Image.network(imagePrevious, key: const Key("init"));
     super.initState();
   }
 
