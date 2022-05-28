@@ -27,7 +27,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     emit(AuthLoadingState());
     if (await UserRepository().isUserExistLocal()) {
       emit(AutoLoginState(userRole: UserRepository().currentUser.roles));
-    }  else {
+    } else {
       emit(NeedToAuthState());
     }
   }
@@ -36,21 +36,26 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       RegisterUserEvent event, Emitter<AuthState> emit) async {
     emit(AuthLoadingState());
 
-    await AuthRepository().signUpWithEmail(event.login, event.password);
-
-    LocalUser newUser = LocalUser(
-      id: RandomStringGenerator(fixedLength: 10, hasSymbols: false).generate(),
-      roles: event.roles,
-      login: event.login,
-      password: event.password,
-    );
-
     try {
-      UserRepository().addUserLocal(
-          newUser.login, newUser.password, newUser.roles, newUser.id);
-      UserRepository().addUserRemote(newUser);
-      emit(AutoLoginState(userRole: event.roles));
-    } catch (e) {
+      await AuthRepository().signUpWithEmail(event.login, event.password);
+
+      LocalUser newUser = LocalUser(
+        id: RandomStringGenerator(fixedLength: 10, hasSymbols: false)
+            .generate(),
+        roles: event.roles,
+        login: event.login,
+        password: event.password,
+      );
+
+      try {
+        UserRepository().addUserLocal(
+            newUser.login, newUser.password, newUser.roles, newUser.id);
+        UserRepository().addUserRemote(newUser);
+        emit(AutoLoginState(userRole: event.roles));
+      } catch (e) {
+        emit(AuthErrorState(errorText: e.toString()));
+      }
+    } on Exception catch (e) {
       emit(AuthErrorState(errorText: e.toString()));
     }
   }
@@ -58,8 +63,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   Future<void> _onSignInEvent(
       SignInEvent event, Emitter<AuthState> emit) async {
     emit(AuthLoadingState());
-    await AuthRepository().signInWithEmail(event.login, event.password);
     try {
+      await AuthRepository().signInWithEmail(event.login, event.password);
       if (await UserRepository()
           .isUserExistRemote(event.login, event.password)) {
         UserRepository().addUserLocal(

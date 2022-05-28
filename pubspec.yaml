@@ -17,8 +17,8 @@ dependencies:
     sdk: flutter
 
   cupertino_icons: ^1.0.2
-  firebase_core: ^1.14.0
-  cloud_firestore: ^3.1.11
+  firebase_core: ^1.17.1
+  cloud_firestore: ^3.1.17
   firebase_storage: ^10.2.15
   flutter_bloc: ^8.0.1
   hive: ^2.1.0
@@ -31,8 +31,8 @@ dependencies:
   awesome_select: ^5.2.0
   permission_handler: ^9.2.0
   transparent_image: ^2.0.0
-  firebase_auth: ^3.3.18
-  firebase_app_check: ^0.0.6+12
+  firebase_auth: ^3.3.19
+  firebase_app_check: ^0.0.6+13
   uiblock: ^2.0.2
 
 dev_dependencies:

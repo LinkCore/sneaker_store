@@ -46,5 +46,13 @@
   "invalidState" : "Invalid state",
   "userIsNotExist" : "User is not exist",
   "edit" : "Edit",
-  "apply" : "Apply"
+  "apply" : "Apply",
+  "weakPassword" : "Weak password",
+  "thePasswordProvidedIsTooWeak" : "The password provided is too weak",
+  "emailAlreadyInUse" : "Email already in use",
+  "theAccountAlreadyExistsForThatEmail" : "The account already exists for that email",
+  "userNotFound" : "User not found",
+  "noUserFoundForThatEmail" : "No user found for that email",
+  "wrongPassword" : "Wrong password",
+  "wrongPasswordProvidedForThatUser" : "Wrong password provided for that user"
 }

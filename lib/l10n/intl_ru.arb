@@ -46,5 +46,13 @@
   "invalidState" : "Некорректное состояние",
   "userIsNotExist" : "Пользователь не существует",
   "edit" : "Редактировать",
-  "apply" : "Подтвердить"
+  "apply" : "Подтвердить",
+  "weakPassword" : "Простой пароль",
+  "thePasswordProvidedIsTooWeak" : "Данный пароль слишком прост",
+  "emailAlreadyInUse" : "Эта почта уже занята",
+  "theAccountAlreadyExistsForThatEmail" : "Аккаунт для этой почты уже существует",
+  "userNotFound" : "Пользователь не найден",
+  "noUserFoundForThatEmail" : "Пользователь с данной почтой не найден",
+  "wrongPassword" : "Неверный пароль",
+  "wrongPasswordProvidedForThatUser" : "Неверный пароль для этого пользователя"
 }

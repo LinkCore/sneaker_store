@@ -96,7 +96,6 @@ class _CartButtonWidgetState extends State<CartButtonWidget> {
                     ));
 
                 context.read<CartBloc>().add(ClearCartEvent());
-
               },
             ),
           )
