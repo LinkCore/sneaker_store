@@ -50,6 +50,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Don\'t have an account?  "),
         "edit": MessageLookupByLibrary.simpleMessage("Edit"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
+        "emailAlreadyInUse":
+            MessageLookupByLibrary.simpleMessage("Email already in use"),
         "error": MessageLookupByLibrary.simpleMessage("Error"),
         "goToCart": MessageLookupByLibrary.simpleMessage("Go to cart"),
         "haveAGoodDay":
@@ -59,6 +61,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Let\'s sign you in."),
         "noSelectedProducts":
             MessageLookupByLibrary.simpleMessage("No Selected Products"),
+        "noUserFoundForThatEmail": MessageLookupByLibrary.simpleMessage(
+            "No user found for that email"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "pleaseAddedSomeProducts":
             MessageLookupByLibrary.simpleMessage("Please add some products"),
@@ -82,11 +86,22 @@ class MessageLookup extends MessageLookupByLibrary {
         "showAll": MessageLookupByLibrary.simpleMessage("Show all"),
         "signIn": MessageLookupByLibrary.simpleMessage("Sign In"),
         "sizeGuide": MessageLookupByLibrary.simpleMessage("Size Guide"),
+        "theAccountAlreadyExistsForThatEmail":
+            MessageLookupByLibrary.simpleMessage(
+                "The account already exists for that email"),
+        "thePasswordProvidedIsTooWeak": MessageLookupByLibrary.simpleMessage(
+            "The password provided is too weak"),
         "unnamedAlbum": MessageLookupByLibrary.simpleMessage("Unnamed Album"),
         "userIsNotExist":
             MessageLookupByLibrary.simpleMessage("User is not exist"),
+        "userNotFound": MessageLookupByLibrary.simpleMessage("User not found"),
+        "weakPassword": MessageLookupByLibrary.simpleMessage("Weak password"),
         "welcomeBackWeMissedYou": MessageLookupByLibrary.simpleMessage(
             "Welcome back.\nWe missed you!"),
+        "wrongPassword": MessageLookupByLibrary.simpleMessage("Wrong password"),
+        "wrongPasswordProvidedForThatUser":
+            MessageLookupByLibrary.simpleMessage(
+                "Wrong password provided for that user"),
         "youCanChooseOnlyFourPictures": MessageLookupByLibrary.simpleMessage(
             "You can choose only four pictures"),
         "yourCart": MessageLookupByLibrary.simpleMessage("Your Cart")

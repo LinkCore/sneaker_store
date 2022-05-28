@@ -529,6 +529,86 @@ class S {
       args: [],
     );
   }
+
+  /// `Weak password`
+  String get weakPassword {
+    return Intl.message(
+      'Weak password',
+      name: 'weakPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The password provided is too weak`
+  String get thePasswordProvidedIsTooWeak {
+    return Intl.message(
+      'The password provided is too weak',
+      name: 'thePasswordProvidedIsTooWeak',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Email already in use`
+  String get emailAlreadyInUse {
+    return Intl.message(
+      'Email already in use',
+      name: 'emailAlreadyInUse',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The account already exists for that email`
+  String get theAccountAlreadyExistsForThatEmail {
+    return Intl.message(
+      'The account already exists for that email',
+      name: 'theAccountAlreadyExistsForThatEmail',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `User not found`
+  String get userNotFound {
+    return Intl.message(
+      'User not found',
+      name: 'userNotFound',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No user found for that email`
+  String get noUserFoundForThatEmail {
+    return Intl.message(
+      'No user found for that email',
+      name: 'noUserFoundForThatEmail',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Wrong password`
+  String get wrongPassword {
+    return Intl.message(
+      'Wrong password',
+      name: 'wrongPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Wrong password provided for that user`
+  String get wrongPasswordProvidedForThatUser {
+    return Intl.message(
+      'Wrong password provided for that user',
+      name: 'wrongPasswordProvidedForThatUser',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

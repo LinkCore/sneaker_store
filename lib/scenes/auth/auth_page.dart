@@ -13,6 +13,7 @@ import 'auth_bloc/auth_bloc.dart';
 class AuthPage extends StatefulWidget {
   final String? errorText;
   final Roles? userRole;
+
   const AuthPage({Key? key, this.errorText, this.userRole}) : super(key: key);
 
   @override
@@ -24,55 +25,71 @@ class _AuthPageState extends State<AuthPage> {
   TextEditingController passwordController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
 
-
   Future<void> onTapSignIn() async {
     if (_formKey.currentState!.validate()) {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text(S.current.processingData, style: AppTextStyles.labelTextStyle,)),
+        SnackBar(
+            content: Text(
+          S.current.processingData,
+          style: AppTextStyles.labelTextStyle,
+        )),
       );
       if (widget.errorText != null) {
         ScaffoldMessenger.of(context).clearSnackBars();
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text(widget.errorText!, style: AppTextStyles.labelTextStyle,)),
+          SnackBar(
+              content: Text(
+            widget.errorText!,
+            style: AppTextStyles.labelTextStyle,
+          )),
         );
       }
-      context.read<AuthBloc>().add(
-          SignInEvent(
-        password: passwordController.text,
-        login: loginController.text,
-        userRole: widget.userRole,
-          )
-      );
-
-    } else { ScaffoldMessenger.of(context)
-        .removeCurrentSnackBar();
+      context.read<AuthBloc>().add(SignInEvent(
+            password: passwordController.text,
+            login: loginController.text,
+            userRole: widget.userRole,
+          ));
+    } else {
+      ScaffoldMessenger.of(context).removeCurrentSnackBar();
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text(S.current.dataError, style: AppTextStyles.labelTextStyle,)),
-
+        SnackBar(
+            content: Text(
+          S.current.dataError,
+          style: AppTextStyles.labelTextStyle,
+        )),
       );
     }
   }
 
   Future<void> onTapRegister() async {
     showModalBottomSheet(
-        isScrollControlled: true,
-        useRootNavigator: true,
-        context: context,
-        builder: (context) {
-          return const RegisterPage();
-        },
-        shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(35),
-              topRight: Radius.circular(35)),
-        ));
+      isScrollControlled: true,
+      useRootNavigator: true,
+      context: context,
+      builder: (context) {
+        return Container(
+          height: MediaQuery.of(context).size.height * 0.66,
+          child: ClipRRect(
+              borderRadius: const BorderRadius.only(
+                  topLeft: Radius.circular(35), topRight: Radius.circular(35)),
+            child: Scaffold( resizeToAvoidBottomInset: false,body: RegisterPage(errorText: widget.errorText)),
+          ),
+          decoration: const BoxDecoration(
+              borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(35), topRight: Radius.circular(35))),
+        );
+      },
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(35), topRight: Radius.circular(35)),
+      )
+    );
   }
 
   @override
   Widget build(BuildContext context) {
     return BlocListener<AuthBloc, AuthState>(
-      listener: (context, state) {
-      },
+      listener: (context, state) {},
       child: Scaffold(
         resizeToAvoidBottomInset: false,
         backgroundColor: AppColors.backgroundColor,
@@ -117,11 +134,11 @@ class _AuthPageState extends State<AuthPage> {
                         style: AppTextStyles.questionTitleTextStyle,
                       ),
                       InkWell(
-                          child: Text(
-                            S.current.register,
-                            style: AppTextStyles.tappedTextStyle,
-                          ),
-                          onTap: onTapRegister,
+                        child: Text(
+                          S.current.register,
+                          style: AppTextStyles.tappedTextStyle,
+                        ),
+                        onTap: onTapRegister,
                       ),
                     ],
                   ),

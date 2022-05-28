@@ -4,7 +4,6 @@ import 'package:meta/meta.dart';
 import '../../../core/product/product.dart';
 
 part 'cart_event.dart';
-
 part 'cart_state.dart';
 
 class CartBloc extends Bloc<CartEvent, CartState> {

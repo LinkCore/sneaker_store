@@ -51,6 +51,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("У вас нет аккаунта?  "),
         "edit": MessageLookupByLibrary.simpleMessage("Редактировать"),
         "email": MessageLookupByLibrary.simpleMessage("Почта"),
+        "emailAlreadyInUse":
+            MessageLookupByLibrary.simpleMessage("Эта почта уже занята"),
         "error": MessageLookupByLibrary.simpleMessage("Ошибка"),
         "goToCart": MessageLookupByLibrary.simpleMessage("В корзину"),
         "haveAGoodDay": MessageLookupByLibrary.simpleMessage("Хорошего дня."),
@@ -59,6 +61,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "letsSignYouIn": MessageLookupByLibrary.simpleMessage("Давай войдем!"),
         "noSelectedProducts":
             MessageLookupByLibrary.simpleMessage("Нет Выбранных Продуктов"),
+        "noUserFoundForThatEmail": MessageLookupByLibrary.simpleMessage(
+            "Пользователь с данной почтой не найден"),
         "password": MessageLookupByLibrary.simpleMessage("Пароль"),
         "pleaseAddedSomeProducts": MessageLookupByLibrary.simpleMessage(
             "Пожалуйста, добавьте продукт"),
@@ -83,12 +87,25 @@ class MessageLookup extends MessageLookupByLibrary {
         "showAll": MessageLookupByLibrary.simpleMessage("Показать все"),
         "signIn": MessageLookupByLibrary.simpleMessage("Войти"),
         "sizeGuide": MessageLookupByLibrary.simpleMessage("Размеры"),
+        "theAccountAlreadyExistsForThatEmail":
+            MessageLookupByLibrary.simpleMessage(
+                "Аккаунт для этой почты уже существует"),
+        "thePasswordProvidedIsTooWeak":
+            MessageLookupByLibrary.simpleMessage("Данный пароль слишком прост"),
         "unnamedAlbum":
             MessageLookupByLibrary.simpleMessage("Безымянный альбом"),
         "userIsNotExist":
             MessageLookupByLibrary.simpleMessage("Пользователь не существует"),
+        "userNotFound":
+            MessageLookupByLibrary.simpleMessage("Пользователь не найден"),
+        "weakPassword": MessageLookupByLibrary.simpleMessage("Простой пароль"),
         "welcomeBackWeMissedYou": MessageLookupByLibrary.simpleMessage(
             "С возвращением.\nМы скучали по тебе!"),
+        "wrongPassword":
+            MessageLookupByLibrary.simpleMessage("Неверный пароль"),
+        "wrongPasswordProvidedForThatUser":
+            MessageLookupByLibrary.simpleMessage(
+                "Неверный пароль для этого пользователя"),
         "youCanChooseOnlyFourPictures": MessageLookupByLibrary.simpleMessage(
             "Вы можете выбрать только четыре картинки"),
         "yourCart": MessageLookupByLibrary.simpleMessage("Ваша корзина")

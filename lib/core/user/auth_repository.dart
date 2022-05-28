@@ -1,6 +1,6 @@
-// import 'package:cloud_firestore/cloud_firestore.dart';
-// import 'package:firebase_auth/firebase_auth.dart' as firebase_auth;
 import 'package:firebase_auth/firebase_auth.dart';
+
+import '../../generated/l10n.dart';
 
  class AuthRepository {
 
@@ -21,9 +21,9 @@ import 'package:firebase_auth/firebase_auth.dart';
     );
    } on FirebaseAuthException catch (e) {
     if (e.code == 'weak-password') {
-     throw Exception('The password provided is too weak.');
+     throw Exception(S.current.thePasswordProvidedIsTooWeak);
     } else if (e.code == 'email-already-in-use') {
-     throw Exception('The account already exists for that email.');
+     throw Exception(S.current.theAccountAlreadyExistsForThatEmail);
     }
    } catch (e) {
     throw Exception(e);
@@ -38,71 +38,10 @@ import 'package:firebase_auth/firebase_auth.dart';
      );
     } on FirebaseAuthException catch (e) {
      if (e.code == 'user-not-found') {
-      throw Exception('No user found for that email.');
+      throw Exception(S.current.noUserFoundForThatEmail);
      } else if (e.code == 'wrong-password') {
-      throw Exception('Wrong password provided for that user.');
+      throw Exception(S.current.wrongPasswordProvidedForThatUser);
      }
     }
    }
   }
-
-
-//     try{
-//       await _firebaseAuth.createUserWithEmailAndPassword(
-//         email: email,
-//         password: password,
-//       );
-//       _userCollection =
-//           FirebaseFirestore.instance.collection('users');
-//     } on Exception catch (e) {
-//
-//     }
-//   }
-// }
-
-
-//   final firebase_auth.FirebaseAuth _firebaseAuth = firebase_auth.FirebaseAuth.instance;
-//
-//   FirebaseAuth.instance.authStateChanges().listen((User? user) {
-//   if (user == null) {
-//   print('User is currently signed out!');
-//   } else {
-//   print('User is signed in!');
-//   }
-//   }) {
-//   // TODO: implement listen
-//   throw UnimplementedError();
-// }
-//  }
-//
-//   final firebase_auth.FirebaseAuth _firebaseAuth = firebase_auth.FirebaseAuth.instance;
-//
-//   factory AuthRepository() {
-//     return _firebaseAuth;
-//   }
-//
-//   late final CollectionReference _userCollection;
-//
-//   Future<void> _signInWithEmail(String email, String password) async {
-//     try {
-//       await _firebaseAuth.signInWithEmailAndPassword(
-//           email: email, password: password);
-//     } on Exception catch (e) {
-//       // TODO
-//     }
-//   }
-//
-//   Future<void> signUpWithEmail(String email, String password) async {
-//
-//     try{
-//       await _firebaseAuth.createUserWithEmailAndPassword(
-//         email: email,
-//         password: password,
-//       );
-//       _userCollection =
-//           FirebaseFirestore.instance.collection('users');
-//     } on Exception catch (e) {
-//
-//     }
-//   }
-// }
