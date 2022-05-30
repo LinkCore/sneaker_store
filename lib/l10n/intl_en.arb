@@ -54,5 +54,6 @@
   "userNotFound" : "User not found",
   "noUserFoundForThatEmail" : "No user found for that email",
   "wrongPassword" : "Wrong password",
-  "wrongPasswordProvidedForThatUser" : "Wrong password provided for that user"
+  "wrongPasswordProvidedForThatUser" : "Wrong password provided for that user",
+  "noInternetConnection" : "No internet connection, please \ncheck your connection and try again."
 }

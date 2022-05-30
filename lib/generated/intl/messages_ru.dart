@@ -59,6 +59,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "invalidState":
             MessageLookupByLibrary.simpleMessage("Некорректное состояние"),
         "letsSignYouIn": MessageLookupByLibrary.simpleMessage("Давай войдем!"),
+        "noInternetConnection": MessageLookupByLibrary.simpleMessage(
+            "Нет подключения к Интернету, проверьте \nсоединение и попробуйте снова."),
         "noSelectedProducts":
             MessageLookupByLibrary.simpleMessage("Нет Выбранных Продуктов"),
         "noUserFoundForThatEmail": MessageLookupByLibrary.simpleMessage(
