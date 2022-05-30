@@ -54,5 +54,6 @@
   "userNotFound" : "Пользователь не найден",
   "noUserFoundForThatEmail" : "Пользователь с данной почтой не найден",
   "wrongPassword" : "Неверный пароль",
-  "wrongPasswordProvidedForThatUser" : "Неверный пароль для этого пользователя"
+  "wrongPasswordProvidedForThatUser" : "Неверный пароль для этого пользователя",
+  "noInternetConnection" : "Нет подключения к Интернету, проверьте \nсоединение и попробуйте снова."
 }
