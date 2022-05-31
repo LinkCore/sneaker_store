@@ -9,14 +9,14 @@ import '../../../core/product/product.dart';
 import '../../../generated/l10n.dart';
 import '../../product/product_bloc/product_bloc.dart';
 
-class SliverBrandFilterWidget extends StatefulWidget {
-  const SliverBrandFilterWidget({Key? key}) : super(key: key);
+class BrandFilterWidget extends StatefulWidget {
+  const BrandFilterWidget({Key? key}) : super(key: key);
 
   @override
-  _SliverBrandFilterWidgetState createState() => _SliverBrandFilterWidgetState();
+  _BrandFilterWidgetState createState() => _BrandFilterWidgetState();
 }
 
-class _SliverBrandFilterWidgetState extends State<SliverBrandFilterWidget> {
+class _BrandFilterWidgetState extends State<BrandFilterWidget> {
 
   Brands brandsFilter = Brands.noFilter;
 

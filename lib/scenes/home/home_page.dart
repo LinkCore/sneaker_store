@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_sneaker_store/scenes/home/widgets/home_page_button_widget.dart';
-import 'package:flutter_sneaker_store/scenes/home/widgets/sliver_bloc_consumer/sliver_bloc_consumer_widget.dart';
-import 'package:flutter_sneaker_store/scenes/home/widgets/sliver_brand_filter_widget.dart';
-import 'package:flutter_sneaker_store/scenes/home/widgets/sliver_header_widget.dart';
+import 'package:flutter_sneaker_store/scenes/home/widgets/product_list_provider/product_list_provider_widget.dart';
+import 'package:flutter_sneaker_store/scenes/home/widgets/brand_filter_widget.dart';
+import 'package:flutter_sneaker_store/scenes/home/widgets/home_page_header_widget.dart';
 
 import '../../core/user/roles.dart';
 import '../product/add_product/add_product_modal.dart';
@@ -50,9 +50,9 @@ class _HomePageState extends State<HomePage> {
         child: CustomScrollView(
         physics: const BouncingScrollPhysics(),
           slivers: [
-        const SliverHeaderWidget(),
-        const SliverBrandFilterWidget(),
-        SliverBlocConsumerWidget(userRole: widget.userRoles),
+        const HomePageHeaderWidget(),
+        const BrandFilterWidget(),
+        ProductListProviderWidget(userRole: widget.userRoles),
           ],
         ),
       ),

@@ -3,21 +3,21 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../common/app_textstyles.dart';
 import '../../../../core/user/roles.dart';
 import '../../../../generated/l10n.dart';
-import '../../../home/widgets/sliver_bloc_consumer/sliver_grid_count/sliver_grid_count_widget.dart';
 import '../../../product/product_bloc/product_bloc.dart';
-import 'circular_loading_widget.dart';
+import 'has_data_product_list/has_data_product_list_widget.dart';
+import 'loading_widget.dart';
 import 'empty_product_list_widget.dart';
 import 'error_text_widget.dart';
 
-class SliverBlocConsumerWidget extends StatefulWidget {
+class ProductListProviderWidget extends StatefulWidget {
   final Roles? userRole;
-  const SliverBlocConsumerWidget({Key? key, required this.userRole}) : super(key: key);
+  const ProductListProviderWidget({Key? key, required this.userRole}) : super(key: key);
 
   @override
-  _SliverBlocConsumerWidgetState createState() => _SliverBlocConsumerWidgetState();
+  _ProductListProviderWidgetState createState() => _ProductListProviderWidgetState();
 }
 
-class _SliverBlocConsumerWidgetState extends State<SliverBlocConsumerWidget> {
+class _ProductListProviderWidgetState extends State<ProductListProviderWidget> {
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<ProductBloc, ProductState>(
@@ -31,14 +31,14 @@ class _SliverBlocConsumerWidgetState extends State<SliverBlocConsumerWidget> {
       },
       builder: (context, state) {
         if (state is LoadingState) {
-          return const CircularLoadingWidget();
+          return const LoadingWidget();
         }
         if (state is ProductHasDataState) {
           if(state.productList.isEmpty){
             return const EmptyProductListWidget();
           }
           else{
-            return SliverGridCountWidget(state: state, userRole: widget.userRole);
+            return HasDataProductListWidget(state: state, userRole: widget.userRole);
           }
         }
         if (state is ErrorState) {
