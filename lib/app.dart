@@ -5,6 +5,7 @@ import 'package:flutter_sneaker_store/scenes/auth/auth_bloc/auth_bloc.dart';
 import 'package:flutter_sneaker_store/scenes/auth/entry_page.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_sneaker_store/scenes/cart/cart_bloc/cart_bloc.dart';
+import 'package:flutter_sneaker_store/scenes/connectivity/connectivity_bloc/connectivity_bloc.dart';
 import 'package:flutter_sneaker_store/scenes/product/product_bloc/product_bloc.dart';
 
 import 'common/app_theme.dart';
@@ -17,6 +18,10 @@ class SneakerStoreApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
+        BlocProvider<ConnectivityBloc>(
+            create: (context) => ConnectivityBloc()
+              ..add(StartupConnectionCheck())
+        ),
         BlocProvider<CartBloc>(
             create: (context) => CartBloc()),
         BlocProvider<ProductBloc>(

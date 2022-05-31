@@ -60,7 +60,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "letsSignYouIn":
             MessageLookupByLibrary.simpleMessage("Let\'s sign you in."),
         "noInternetConnection": MessageLookupByLibrary.simpleMessage(
-            "No internet connection, please \ncheck your connection and try again."),
+            "No internet connection, please \ncheck your connection and try again..."),
         "noSelectedProducts":
             MessageLookupByLibrary.simpleMessage("No Selected Products"),
         "noUserFoundForThatEmail": MessageLookupByLibrary.simpleMessage(

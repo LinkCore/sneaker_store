@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_sneaker_store/common/app_colors.dart';
 
-class CircularLoadingWidget extends StatelessWidget {
-  const CircularLoadingWidget({Key? key}) : super(key: key);
+class LoadingWidget extends StatelessWidget {
+  const LoadingWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
