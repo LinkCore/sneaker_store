@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_sneaker_store/common/app_colors.dart';
 import 'package:flutter_sneaker_store/common/app_textstyles.dart';
 
 import '../../../../../core/user/roles.dart';
@@ -42,18 +43,13 @@ class _HasDataProductListWidgetState extends State<HasDataProductListWidget> {
                         child: CachedNetworkImage(
                           imageUrl: product.imagesUrls!.first,
                           placeholder: (context, string) =>
-                              const CircularProgressIndicator(color: Colors.amber),
-                        ),
-                      ),
-                    ),
+                              const CircularProgressIndicator(color: AppColors.primaryColor))))
                   ),
                   Container(
                     padding: const EdgeInsets.symmetric(horizontal: 5),
                     decoration: BoxDecoration(
-
                       color: Colors.transparent,
-                      borderRadius: BorderRadius.circular(20),
-                    ),
+                      borderRadius: BorderRadius.circular(20)),
                     child: Align(
                       alignment: Alignment.bottomCenter,
                       child: Column(
@@ -65,22 +61,13 @@ class _HasDataProductListWidgetState extends State<HasDataProductListWidget> {
                               padding: const EdgeInsets.only(left: 5),
                               child: Text(
                                 '${product.productName} ',
-                                style: AppTextStyles.gridCountModelTextStyle,
-                              ),
-                            ),
+                                style: AppTextStyles.gridCountModelTextStyle))
                           ),
                           SingleChildScrollView(
                             scrollDirection: Axis.horizontal,
                             child: Text(
                               '${product.price.toString()} USD',
-                              style: AppTextStyles.gridCountPriceTextStyle,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ],
+                              style: AppTextStyles.gridCountPriceTextStyle))])))]
               ),
               onLongPress: () async {
                 if (widget.userRole == Roles.seller) {
@@ -92,12 +79,10 @@ class _HasDataProductListWidgetState extends State<HasDataProductListWidget> {
                                     BorderRadius.all(Radius.circular(20.0))),
                             title: Text(
                               S.current.deleteProduct,
-                              style: AppTextStyles.labelTextStyle,
-                            ),
+                              style: AppTextStyles.plainTextStyle),
                             content: Text(
                               S.current.areYouSureYouWantToDeleteThisProduct,
-                              style: AppTextStyles.labelTextStyle,
-                            ),
+                              style: AppTextStyles.plainTextStyle),
                             actions: [
                               TextButton(
                                 onPressed: () {
@@ -107,24 +92,17 @@ class _HasDataProductListWidgetState extends State<HasDataProductListWidget> {
                                 },
                                 child: Text(
                                   S.current.approve,
-                                  style: AppTextStyles.alertApproveTextStyle,
-                                ),
-                              )
-                            ],
+                                  style: AppTextStyles.alertApproveTextStyle),
+                              )]
                           ));
-                }
-              },
+                }},
               onTap: () async {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
+                Navigator.push(context, MaterialPageRoute(
                         builder: (context) => ProductPage(
                               product: product,
-                              userRole: widget.userRole,
-                            )));
+                              userRole: widget.userRole
+                        )));
               });
-        }).toList(),
-      ),
-    );
+        }).toList()));
   }
 }

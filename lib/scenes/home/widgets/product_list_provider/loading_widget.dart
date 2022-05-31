@@ -7,19 +7,15 @@ class LoadingWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverToBoxAdapter(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
+        child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
           Container(
               color: AppColors.backgroundColor,
               child: const CircularProgressIndicator(
                   backgroundColor: AppColors.backgroundColor,
-                  color: Colors.amber
-              )
-          ),
-        ],
-      ),
-    );
+                  color: Colors.amber))
+        ]));
   }
 }

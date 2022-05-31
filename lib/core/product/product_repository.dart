@@ -1,8 +1,8 @@
 import 'dart:io';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter_sneaker_store/core/product/product.dart';
+import '../../common/app_constance.dart';
 
 class ProductRepository {
   static final ProductRepository _productRepository = ProductRepository._internal();
@@ -14,29 +14,28 @@ class ProductRepository {
   ProductRepository._internal();
 
   final CollectionReference _productCollection =
-  FirebaseFirestore.instance.collection('products');
+  FirebaseFirestore.instance.collection(AppConstance.products);
 
   final storage  = FirebaseStorage.instance;
 
-  Future<List<String>> uploadImages( String id, {List<File>? newFiles, List<String>? oldFiles}) async{
+  Future<List<String>> uploadImages(String id, {List<File>? newFiles, List<String>? oldFiles}) async{
 
     if (newFiles != null) {
       if (newFiles.isNotEmpty) {
         List<String> urls = [];
         for(int i = 0; i < newFiles.length; i++){
-          String linkUri = 'product_images/$id/$i.png';
+          String linkUri = '${AppConstance.images}/$id/$i.png';
           await storage.ref(linkUri).putFile(newFiles[i]).then((snapshot) async {
             urls.add(await snapshot.ref.getDownloadURL());
           });
         }
         return urls;
-      }else{
+      } else {
         return oldFiles!;
       }
-    }else{
+    } else {
       return oldFiles!;
     }
-
   }
 
   Future<List<Product>> getProducts() async {
@@ -61,7 +60,6 @@ class ProductRepository {
     );
 
     _productCollection.doc(newProduct.id).set(newProduct.toJson());
-
   }
 
   void deleteProduct(Product product) async {

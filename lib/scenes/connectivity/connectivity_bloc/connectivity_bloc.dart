@@ -6,13 +6,10 @@ import 'package:flutter_sneaker_store/core/connectivity/connectivity_repository.
 import 'package:meta/meta.dart';
 
 part 'connectivity_event.dart';
-
 part 'connectivity_state.dart';
 
 class ConnectivityBloc extends Bloc<ConnectivityEvent, ConnectivityState> {
   ConnectivityBloc() : super(ConnectivityInitial()) {
-    on<HasConnectionEvent>(_onHasConnectionEvent);
-    on<NoConnectionEvent>(_onNoConnectionEvent);
     on<ConnectionChange>(_onConnectionChange);
     on<StartupConnectionCheck>(_onStartupConnectionCheck);
     connectivitySubscription = ConnectivityRepository()
@@ -20,17 +17,10 @@ class ConnectivityBloc extends Bloc<ConnectivityEvent, ConnectivityState> {
         .listen((connectivityResult) {
       add(ConnectionChange(connectivityResult: connectivityResult));
     });
-
   }
 
   bool isStart = false;
   late StreamSubscription connectivitySubscription;
-
-  Future<void> _onHasConnectionEvent(
-      HasConnectionEvent event, Emitter<ConnectivityState> emit) async {}
-
-  Future<void> _onNoConnectionEvent(
-      NoConnectionEvent event, Emitter<ConnectivityState> emit) async {}
 
   void _onConnectionChange(
       ConnectionChange event, Emitter<ConnectivityState> emit) {
