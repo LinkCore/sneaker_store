@@ -10,15 +10,10 @@ class ErrorTextWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverToBoxAdapter(
-      child: Container(
-          color: AppColors.backgroundColor,
-          child: Center(
-              child: Text(
-                  text,
-                style: AppTextStyles.backgroundRolesSwitcherTextStyle,
-              )
-          )
-      ),
-    );
+        child: Container(
+            color: AppColors.backgroundColor,
+            child: Center(
+                child: Text(text,
+                    style: AppTextStyles.backgroundRolesSwitcherTextStyle))));
   }
 }

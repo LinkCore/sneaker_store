@@ -1,25 +1,26 @@
+import 'package:flutter_sneaker_store/common/app_constance.dart';
+
 import '../core/product/product.dart';
 
 class BrandImage {
   final String asset;
-  final Brands brandsName;
+  final Brands brandName;
 
-  BrandImage({required this.brandsName, required this.asset});
+  BrandImage({required this.brandName, required this.asset});
 }
 
+const String path = AppConstance.assetsPath;
+
 List<BrandImage> brandImage = [
-  BrandImage(asset: 'assets/images/nike_logo.png', brandsName: Brands.nike),
-  BrandImage(asset: 'assets/images/adidas_logo.png', brandsName: Brands.adidas),
-  BrandImage(
-      asset: 'assets/images/new_balance_logo.png',
-      brandsName: Brands.newBalance),
-  BrandImage(asset: 'assets/images/puma_logo.png', brandsName: Brands.puma),
-  BrandImage(asset: 'assets/images/fila_logo.png', brandsName: Brands.fila),
-  BrandImage(asset: 'assets/images/jordan_logo.png', brandsName: Brands.jordan),
-  BrandImage(asset: 'assets/images/reebok_logo.png', brandsName: Brands.reebok),
-  BrandImage(
-      asset: 'assets/images/converse_logo.png', brandsName: Brands.converse),
-  BrandImage(
-      asset: 'assets/images/saucony_logo.png', brandsName: Brands.saucony),
-  BrandImage(asset: 'assets/images/asics_logo.png', brandsName: Brands.asics),
+
+  BrandImage(asset: '${path}nike_logo.png', brandName: Brands.nike),
+  BrandImage(asset: '${path}adidas_logo.png', brandName: Brands.adidas),
+  BrandImage(asset: '${path}new_balance_logo.png', brandName: Brands.newBalance),
+  BrandImage(asset: '${path}puma_logo.png', brandName: Brands.puma),
+  BrandImage(asset: '${path}fila_logo.png', brandName: Brands.fila),
+  BrandImage(asset: '${path}jordan_logo.png', brandName: Brands.jordan),
+  BrandImage(asset: '${path}reebok_logo.png', brandName: Brands.reebok),
+  BrandImage(asset: '${path}converse_logo.png', brandName: Brands.converse),
+  BrandImage(asset: '${path}saucony_logo.png', brandName: Brands.saucony),
+  BrandImage(asset: '${path}asics_logo.png', brandName: Brands.asics)
 ];

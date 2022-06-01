@@ -39,9 +39,7 @@ class _BrandFilterWidgetState extends State<BrandFilterWidget> {
                 margin: const EdgeInsets.only(left: 15, bottom: 10),
                 child: Text(
                   S.current.shopByBrand,
-                  style: AppTextStyles.brandFilterTextStyle,
-                ),
-              ),
+                  style: AppTextStyles.brandFilterTextStyle)),
               InkWell(
                 child: Container(
                   margin: const EdgeInsets.only(right: 15, bottom: 10),
@@ -49,9 +47,7 @@ class _BrandFilterWidgetState extends State<BrandFilterWidget> {
                     S.current.showAll,
                     style: GoogleFonts.poppins(color:  brandsFilter == Brands.noFilter ? Colors.white54 : Colors.amber,
                         fontSize: 16,
-                        fontWeight: FontWeight.w500),
-                  ),
-                ),
+                        fontWeight: FontWeight.w500))),
                 onTap: (){
                   setState(() {
                     brandsFilter = Brands.noFilter;
@@ -60,13 +56,9 @@ class _BrandFilterWidgetState extends State<BrandFilterWidget> {
                     OnStartupEvent(
                         isUpdate: false,
                         filter: Brands.noFilter,
-                        searchFilter: ''
-                    ),
+                        searchFilter: '')
                   );
-                },
-              ),
-            ],
-          ),
+                })]),
           SingleChildScrollView(
             padding: const EdgeInsets.only(right: 10),
             scrollDirection: Axis.horizontal,
@@ -81,35 +73,23 @@ class _BrandFilterWidgetState extends State<BrandFilterWidget> {
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(15),
-                          border: Border.all(color: brandsFilter == element.brandsName ? Colors.amber : Colors.transparent, width: 2.5)
+                          border: Border.all(color: brandsFilter == element.brandName ? Colors.amber : Colors.transparent, width: 2.5)
                         ),
                         child: Image.asset(
                           element.asset,
                           width: 80,
-                          height: 60,
-                        )),
+                          height: 60)),
                     onTap: () {
                       setState(() {
-                        brandsFilter = element.brandsName;
+                        brandsFilter = element.brandName;
                       });
-                      if(brandsFilter == element.brandsName){
+                      if(brandsFilter == element.brandName){
                         context.read<ProductBloc>().add(
                           OnStartupEvent(
                               isUpdate: false,
-                              filter: element.brandsName,
-                              searchFilter: ''
-                          ),
+                              filter: element.brandName,
+                              searchFilter: ''),
                         );
-                      }
-                    },
-                  ))
-                      .toList(),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
+                      }})).toList())]))]));
   }
 }

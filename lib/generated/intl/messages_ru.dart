@@ -42,11 +42,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "chooseYourSize":
             MessageLookupByLibrary.simpleMessage("Выберите размер"),
         "createAccount":
-            MessageLookupByLibrary.simpleMessage("Создать Аккаунт!"),
+            MessageLookupByLibrary.simpleMessage("Создать аккаунт!"),
         "dataError": MessageLookupByLibrary.simpleMessage("Ошибка данных"),
         "dataUpdated": MessageLookupByLibrary.simpleMessage("Данные обновлены"),
         "deleteProduct":
-            MessageLookupByLibrary.simpleMessage("Удалить Продукт"),
+            MessageLookupByLibrary.simpleMessage("Удалить продукт"),
         "dontHaveAnAccount":
             MessageLookupByLibrary.simpleMessage("У вас нет аккаунта?  "),
         "edit": MessageLookupByLibrary.simpleMessage("Редактировать"),
@@ -62,7 +62,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "noInternetConnection": MessageLookupByLibrary.simpleMessage(
             "Нет подключения к интернету, проверьте \nсоединение и попробуйте снова..."),
         "noSelectedProducts":
-            MessageLookupByLibrary.simpleMessage("Нет Выбранных Продуктов"),
+            MessageLookupByLibrary.simpleMessage("Нет выбранных продуктов"),
         "noUserFoundForThatEmail": MessageLookupByLibrary.simpleMessage(
             "Пользователь с данной почтой не найден"),
         "password": MessageLookupByLibrary.simpleMessage("Пароль"),

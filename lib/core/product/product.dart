@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:flutter_sneaker_store/core/product/product_keys.dart';
 
 enum Brands {
   nike,
@@ -11,7 +12,7 @@ enum Brands {
   converse,
   saucony,
   asics,
-  noFilter,
+  noFilter
 }
 
 class Product {
@@ -22,8 +23,7 @@ class Product {
     String? description,
     List<int>? sizedList,
     List<File>? imagesList,
-    List<String>? imagesUrls,
-
+    List<String>? imagesUrls
   }) {
     _id = id;
     _price = price;
@@ -35,12 +35,13 @@ class Product {
   }
 
   Product.fromJson({required Map<String, dynamic> json, required String id}) {
+
     _id = id;
-    _price = json['price'];
-    _productName = json['productName'];
-    _description = json['description'];
-    _sizedList = List<int>.from(json['sizedList']as List);
-    _imagesUrls = List<String>.from(json['imagesUrls']);
+    _price = json[ProductKeys.price];
+    _productName = json[ProductKeys.productName];
+    _description = json[ProductKeys.description];
+    _sizedList = List<int>.from(json[ProductKeys.sizedList]as List);
+    _imagesUrls = List<String>.from(json[ProductKeys.imagesUrls]);
   }
 
   String? _id;
@@ -59,14 +60,13 @@ class Product {
   List<File>? get imagesList => _imagesList;
   List<String>? get imagesUrls => _imagesUrls;
 
-
   Map<String, dynamic> toJson() {
     final productMap = <String, dynamic>{};
-    productMap['price'] = _price;
-    productMap['productName'] = _productName;
-    productMap['description'] = _description;
-    productMap['sizedList'] = _sizedList;
-    productMap['imagesUrls'] = _imagesUrls;
+    productMap[ProductKeys.price] = _price;
+    productMap[ProductKeys.productName] = _productName;
+    productMap[ProductKeys.description] = _description;
+    productMap[ProductKeys.sizedList] = _sizedList;
+    productMap[ProductKeys.imagesUrls] = _imagesUrls;
     return productMap;
   }
 }

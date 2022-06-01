@@ -25,134 +25,107 @@ class _AuthPageState extends State<AuthPage> {
   TextEditingController passwordController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
 
+  void _snackBar(String text) {
+    ScaffoldMessenger.of(context).clearSnackBars();
+    ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(text, style: AppTextStyles.plainTextStyle)));
+  }
+
   Future<void> onTapSignIn() async {
     if (_formKey.currentState!.validate()) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-            content: Text(
-          S.current.processingData,
-          style: AppTextStyles.labelTextStyle,
-        )),
-      );
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+          content: Text(S.current.processingData,
+              style: AppTextStyles.plainTextStyle)));
       if (widget.errorText != null) {
-        ScaffoldMessenger.of(context).clearSnackBars();
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-              content: Text(
-            widget.errorText!,
-            style: AppTextStyles.labelTextStyle,
-          )),
-        );
+        _snackBar(widget.errorText!);
       }
       context.read<AuthBloc>().add(SignInEvent(
-            password: passwordController.text,
-            login: loginController.text,
-            userRole: widget.userRole,
-          ));
+          password: passwordController.text,
+          login: loginController.text,
+          userRole: widget.userRole));
     } else {
       ScaffoldMessenger.of(context).removeCurrentSnackBar();
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-            content: Text(
-          S.current.dataError,
-          style: AppTextStyles.labelTextStyle,
-        )),
-      );
+      _snackBar(S.current.dataError);
     }
   }
 
   Future<void> onTapRegister() async {
     showModalBottomSheet(
-      isScrollControlled: true,
-      useRootNavigator: true,
-      context: context,
-      builder: (context) {
-        return Container(
-          height: MediaQuery.of(context).size.height * 0.66,
-          child: ClipRRect(
-              borderRadius: const BorderRadius.only(
-                  topLeft: Radius.circular(35), topRight: Radius.circular(35)),
-            child: Scaffold( resizeToAvoidBottomInset: false,body: RegisterPage(errorText: widget.errorText)),
-          ),
-          decoration: const BoxDecoration(
-              borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(35), topRight: Radius.circular(35))),
-        );
-      },
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(35), topRight: Radius.circular(35)),
-      )
-    );
+        isScrollControlled: true,
+        useRootNavigator: true,
+        context: context,
+        builder: (context) {
+          return Container(
+              height: MediaQuery.of(context).size.height * 0.66,
+              child: ClipRRect(
+                  borderRadius: const BorderRadius.only(
+                      topLeft: Radius.circular(35),
+                      topRight: Radius.circular(35)),
+                  child: Scaffold(
+                      resizeToAvoidBottomInset: false,
+                      body: RegisterPage(errorText: widget.errorText))),
+              decoration: const BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(35),
+                      topRight: Radius.circular(35))));
+        },
+        shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(35), topRight: Radius.circular(35))));
   }
 
   @override
   Widget build(BuildContext context) {
     return BlocListener<AuthBloc, AuthState>(
-      listener: (context, state) {},
-      child: Scaffold(
-        resizeToAvoidBottomInset: false,
-        backgroundColor: AppColors.backgroundColor,
-        body: SafeArea(
-          child: Padding(
-            padding: const EdgeInsets.only(left: 35, right: 35, top: 70),
-            child: Form(
-              key: _formKey,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    S.current.letsSignYouIn,
-                    style: AppTextStyles.titleTextStyle,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 10, bottom: 140),
-                    child: Text(
-                      S.current.welcomeBackWeMissedYou,
-                      style: AppTextStyles.subTitleTextStyle,
-                    ),
-                  ),
-                  AuthTextFieldWidget(
-                    labelText: S.current.email,
-                    controller: loginController,
-                    keyboard: TextInputType.emailAddress,
-                    isSuffixIcon: false,
-                  ),
-                  AuthTextFieldWidget(
-                    labelText: S.current.password,
-                    controller: passwordController,
-                    keyboard: TextInputType.text,
-                    isSuffixIcon: true,
-                  ),
-                  const Spacer(),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        S.current.dontHaveAnAccount,
-                        style: AppTextStyles.questionTitleTextStyle,
-                      ),
-                      InkWell(
-                        child: Text(
-                          S.current.register,
-                          style: AppTextStyles.tappedTextStyle,
-                        ),
-                        onTap: onTapRegister,
-                      ),
-                    ],
-                  ),
-                  AuthButtonWidget(
-                    margin: const EdgeInsets.only(top: 20, bottom: 50),
-                    text: S.current.signIn,
-                    onTap: onTapSignIn,
-                  ),
-                ],
-              ),
-            ),
-          ),
-        ),
-      ),
-    );
+        listener: (context, state) {},
+        child: Scaffold(
+            resizeToAvoidBottomInset: false,
+            backgroundColor: AppColors.backgroundColor,
+            body: SafeArea(
+                child: Padding(
+                    padding:
+                        const EdgeInsets.only(left: 35, right: 35, top: 70),
+                    child: Form(
+                        key: _formKey,
+                        child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(S.current.letsSignYouIn,
+                                  style: AppTextStyles.titleTextStyle),
+                              Padding(
+                                  padding: const EdgeInsets.only(
+                                      top: 10, bottom: 140),
+                                  child: Text(S.current.welcomeBackWeMissedYou,
+                                      style: AppTextStyles.subTitleTextStyle)),
+                              CommonTextFieldWidget(
+                                  labelText: S.current.email,
+                                  controller: loginController,
+                                  keyboard: TextInputType.emailAddress,
+                                  isSuffixIcon: false),
+                              CommonTextFieldWidget(
+                                  labelText: S.current.password,
+                                  controller: passwordController,
+                                  keyboard: TextInputType.text,
+                                  isSuffixIcon: true),
+                              const Spacer(),
+                              Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text(S.current.dontHaveAnAccount,
+                                        style: AppTextStyles
+                                            .backgroundRolesSwitcherTextStyle),
+                                    InkWell(
+                                        child: Text(S.current.register,
+                                            style:
+                                                AppTextStyles.tappedTextStyle),
+                                        onTap: onTapRegister)
+                                  ]),
+                              CommonTextButtonWidget(
+                                  margin: const EdgeInsets.only(
+                                      top: 20, bottom: 50),
+                                  text: S.current.signIn,
+                                  onTap: onTapSignIn)
+                            ]))))));
   }
 }

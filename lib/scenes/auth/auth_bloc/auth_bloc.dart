@@ -11,7 +11,6 @@ import '../../../core/user/user_repository.dart';
 import '../../../generated/l10n.dart';
 
 part 'auth_event.dart';
-
 part 'auth_state.dart';
 
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
@@ -22,11 +21,13 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     on<SignOutEvent>(_onSignOutEvent);
   }
 
-  Future<FutureOr<void>> _onStartupEvent(
+  final UserRepository _userRepository = UserRepository();
+
+  Future<void> _onStartupEvent(
       StartupEvent event, Emitter<AuthState> emit) async {
     emit(AuthLoadingState());
-    if (await UserRepository().isUserExistLocal()) {
-      emit(AutoLoginState(userRole: UserRepository().currentUser.roles));
+    if (await _userRepository.isUserExistLocal()) {
+      emit(AutoLoginState(userRole: _userRepository.currentUser.roles));
     } else {
       emit(NeedToAuthState());
     }
@@ -44,13 +45,13 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
             .generate(),
         roles: event.roles,
         login: event.login,
-        password: event.password,
+        password: event.password
       );
 
       try {
-        UserRepository().addUserLocal(
+        _userRepository.addUserLocal(
             newUser.login, newUser.password, newUser.roles, newUser.id);
-        UserRepository().addUserRemote(newUser);
+        _userRepository.addUserRemote(newUser);
         emit(AutoLoginState(userRole: event.roles));
       } catch (e) {
         emit(AuthErrorState(errorText: e.toString()));
@@ -65,15 +66,15 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     emit(AuthLoadingState());
     try {
       await AuthRepository().signInWithEmail(event.login, event.password);
-      if (await UserRepository()
-          .isUserExistRemote(event.login, event.password)) {
-        UserRepository().addUserLocal(
-          UserRepository().currentUser.login,
-          UserRepository().currentUser.password,
-          UserRepository().currentUser.roles,
-          UserRepository().currentUser.id,
+      if (await _userRepository.isUserExistRemote(
+          event.login, event.password)) {
+        _userRepository.addUserLocal(
+          _userRepository.currentUser.login,
+          _userRepository.currentUser.password,
+          _userRepository.currentUser.roles,
+          _userRepository.currentUser.id
         );
-        emit(AutoLoginState(userRole: UserRepository().currentUser.roles));
+        emit(AutoLoginState(userRole: _userRepository.currentUser.roles));
       } else {
         emit(AuthErrorState(errorText: S.current.userIsNotExist));
       }
@@ -84,7 +85,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
   Future<void> _onSignOutEvent(
       SignOutEvent event, Emitter<AuthState> emit) async {
-    UserRepository().removeUserLocal();
+    _userRepository.removeUserLocal();
     emit(NeedToAuthState());
   }
 }

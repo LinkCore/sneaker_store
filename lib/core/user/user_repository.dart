@@ -3,6 +3,7 @@ import 'package:flutter_sneaker_store/core/user/roles.dart';
 import 'package:flutter_sneaker_store/core/user/user.dart';
 import 'package:hive/hive.dart';
 
+import '../../common/app_constance.dart';
 
 class UserRepository {
   static final UserRepository _userRepository = UserRepository._internal();
@@ -14,28 +15,31 @@ class UserRepository {
   UserRepository._internal();
 
   late LocalUser currentUser;
-  final CollectionReference _userCollection =   FirebaseFirestore.instance.collection('users');
+  final CollectionReference _userCollection =
+      FirebaseFirestore.instance.collection(AppConstance.users);
 
   Future<void> addUserLocal(
       String? login, String? password, Roles? roles, String? id) async {
-    var userBox = await Hive.openBox('userBox');
-    userBox.put('login', login);
-    userBox.put('password', password);
-    userBox.put('roles', roles!.index);
-    userBox.put('id', id);
+    var userBox = await Hive.openBox(AppConstance.userBox);
+    userBox.put(AppConstance.login, login);
+    userBox.put(AppConstance.password, password);
+    userBox.put(AppConstance.roles, roles!.index);
+    userBox.put(AppConstance.id, id);
 
-    currentUser = LocalUser(id: id, roles: roles, login: login, password: password);
+    currentUser =
+        LocalUser(id: id, roles: roles, login: login, password: password);
   }
 
   Future<bool> isUserExistLocal() async {
-    var userBox = await Hive.openBox('userBox');
-    if(userBox.containsKey('id') && userBox.containsKey('roles') && userBox.containsKey('login') && userBox.containsKey('password')){
-      await addUserLocal(
-        userBox.get('login'),
-        userBox.get('password'),
-        Roles.values[userBox.get('roles')],
-        userBox.get('id'),
-      );
+    var userBox = await Hive.openBox(AppConstance.userBox);
+    if (userBox.containsKey(AppConstance.id) &&
+        userBox.containsKey(AppConstance.roles) &&
+        userBox.containsKey(AppConstance.login) &&
+        userBox.containsKey(AppConstance.password)) { await addUserLocal(
+          userBox.get(AppConstance.login),
+          userBox.get(AppConstance.password),
+          Roles.values[userBox.get(AppConstance.roles)],
+          userBox.get(AppConstance.id));
       return true;
     } else {
       return false;
@@ -43,7 +47,7 @@ class UserRepository {
   }
 
   Future<void> removeUserLocal() async {
-    var userBox = await Hive.openBox('userBox');
+    var userBox = await Hive.openBox(AppConstance.userBox);
     await userBox.clear();
   }
 

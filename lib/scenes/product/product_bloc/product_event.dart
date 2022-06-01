@@ -10,8 +10,8 @@ class OnStartupEvent extends ProductEvent {
 
   OnStartupEvent(
       {required this.searchFilter,
-        required this.isUpdate,
-        required this.filter});
+      required this.isUpdate,
+      required this.filter});
 }
 
 class AddProductEvent extends ProductEvent {

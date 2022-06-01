@@ -1,4 +1,5 @@
 import 'dart:async';
+
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
 
@@ -7,6 +8,7 @@ import '../../../core/product/product.dart';
 import '../../../core/product/product_repository.dart';
 
 part 'product_event.dart';
+
 part 'product_state.dart';
 
 class ProductBloc extends Bloc<ProductEvent, ProductState> {
@@ -32,12 +34,13 @@ class ProductBloc extends Bloc<ProductEvent, ProductState> {
 
     if (event.searchFilter == '') {
       if (event.filter == Brands.noFilter) {
-        emit(ProductHasDataState(productList: productList, isUpdate: event.isUpdate));
+        emit(ProductHasDataState(
+            productList: productList, isUpdate: event.isUpdate));
       } else {
         emit(ProductHasDataState(
             productList: productList
-                .where((element) =>
-                element.productName!.contains(AppUtilities.brandsEnumToString[event.filter]!))
+                .where((element) => element.productName!
+                    .contains(AppUtilities.brandsEnumToString[event.filter]!))
                 .toList(),
             isUpdate: event.isUpdate));
       }
@@ -45,10 +48,10 @@ class ProductBloc extends Bloc<ProductEvent, ProductState> {
       emit(ProductHasDataState(
           productList: productList
               .where((element) =>
-          element.productName!.contains(event.searchFilter) ||
-              element.productName!
-                  .toLowerCase()
-                  .contains(event.searchFilter))
+                  element.productName!.contains(event.searchFilter) ||
+                  element.productName!
+                      .toLowerCase()
+                      .contains(event.searchFilter))
               .toList(),
           isUpdate: event.isUpdate));
     }

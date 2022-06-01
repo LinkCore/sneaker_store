@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_sneaker_store/common/app_colors.dart';
 
 class HomePageButtonWidget extends StatelessWidget {
   final VoidCallback onPressed;
@@ -15,10 +16,9 @@ class HomePageButtonWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FloatingActionButton(
-      heroTag: heroTag,
-      onPressed: onPressed,
-      backgroundColor: Colors.amber,
-      child: Icon(icon, size: 26),
-    );
+        heroTag: heroTag,
+        onPressed: onPressed,
+        backgroundColor: AppColors.primaryColor,
+        child: Icon(icon, size: 26));
   }
 }

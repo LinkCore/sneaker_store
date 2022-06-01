@@ -1,11 +1,12 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_sneaker_store/common/app_colors.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_sneaker_store/common/app_textstyles.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:photo_gallery/photo_gallery.dart';
 import 'package:transparent_image/transparent_image.dart';
 
+import '../../generated/l10n.dart';
 import '../auth/widgets/bootom_sheet_anchor.dart';
 import 'album_page.dart';
 
@@ -34,8 +35,7 @@ class _GalleryPageState extends State<GalleryPage> {
       setState(() {
         _albums = albums;
       });
-    }
-  }
+    }}
 
   Future<bool> _promptPermissionSetting() async {
     if (Platform.isIOS &&
@@ -59,11 +59,11 @@ class _GalleryPageState extends State<GalleryPage> {
             decoration: const BoxDecoration(
               borderRadius: BorderRadius.only(
                   topRight: Radius.circular(35), topLeft: Radius.circular(35)),
-              color: AppColors.backgroundColor,
+              color: AppColors.backgroundColor
             ),
             child: Column(
               children: [
-                const BottomSheetAnchor(margin: EdgeInsets.only(left: 165, right: 165, bottom: 10, top: 10)),
+                const ScrollIndicator(margin: EdgeInsets.only(left: 165, right: 165, bottom: 10, top: 10)),
                 Expanded(
                   child: SizedBox(
                     height: MediaQuery.of(context).size.height / 2,
@@ -72,8 +72,7 @@ class _GalleryPageState extends State<GalleryPage> {
                       controller: scrollController,
                       itemBuilder: (context, index) {
                         return GestureDetector(
-                          onTap: () => Navigator.of(context)
-                              .push(MaterialPageRoute(builder: (context) {
+                          onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) {
                             return AlbumPage(
                                 indexes: widget.indexes, album: _albums[index]);
                           })),
@@ -84,23 +83,15 @@ class _GalleryPageState extends State<GalleryPage> {
                                   borderRadius: BorderRadius.circular(5.0),
                                   child: Container(
                                     color: Colors.grey[300],
-                                    height:
-                                    MediaQuery.of(context).size.height / 10,
-                                    width:
-                                    MediaQuery.of(context).size.height / 10,
+                                    height: MediaQuery.of(context).size.height / 10,
+                                    width: MediaQuery.of(context).size.height / 10,
                                     child: FadeInImage(
                                       fit: BoxFit.cover,
-                                      placeholder:
-                                      MemoryImage(kTransparentImage),
+                                      placeholder: MemoryImage(kTransparentImage),
                                       image: AlbumThumbnailProvider(
                                         albumId: _albums[index].id,
                                         mediumType: _albums[index].mediumType,
-                                        highQuality: true,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
+                                        highQuality: true))))),
                               Positioned(
                                 child: Align(
                                   alignment: Alignment.bottomCenter,
@@ -110,60 +101,35 @@ class _GalleryPageState extends State<GalleryPage> {
                                         borderRadius: BorderRadius.only(
                                             bottomLeft: Radius.circular(5),
                                             bottomRight: Radius.circular(5))),
-                                    height:
-                                    MediaQuery.of(context).size.height / 50,
+                                    height: MediaQuery.of(context).size.height / 50,
                                     width: MediaQuery.of(context).size.width,
                                     child: Row(
                                       crossAxisAlignment:
                                       CrossAxisAlignment.start,
-                                      mainAxisAlignment:
-                                      MainAxisAlignment.spaceAround,
+                                      mainAxisAlignment: MainAxisAlignment.spaceAround,
                                       mainAxisSize: MainAxisSize.min,
                                       children: [
                                         Container(
                                           alignment: Alignment.topLeft,
-                                          child: Text(
-                                            _albums[index].name ??
-                                                "Unnamed Album",
+                                          child: Text(_albums[index].name ?? S.current.unnamedAlbum,
                                             maxLines: 1,
                                             textAlign: TextAlign.start,
-                                            style: GoogleFonts.poppins(
-                                              fontSize: 14,
-                                            ),
-                                          ),
+                                            style: AppTextStyles.albumNameTextStyle
+                                          )
                                         ),
                                         Container(
                                           alignment: Alignment.topLeft,
                                           child: Text(
                                             _albums[index].count.toString(),
                                             textAlign: TextAlign.start,
-                                            style: GoogleFonts.poppins(
-                                              fontSize: 14,
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        );
+                                            style: AppTextStyles.albumNameTextStyle))]))))]));
                       },
-                      gridDelegate:
-                      const SliverGridDelegateWithFixedCrossAxisCount(
+                      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: 3,
                         mainAxisSpacing: 5,
-                        crossAxisSpacing: 5,
+                        crossAxisSpacing: 5
                       ),
-                      itemCount: _albums.length,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          );
+                      itemCount: _albums.length)))]));
         });
   }
 }
