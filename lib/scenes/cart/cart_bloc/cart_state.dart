@@ -5,7 +5,7 @@ abstract class CartState {}
 
 class CartInitial extends CartState {}
 
-class LoadingState extends CartState{}
+class LoadingState extends CartState {}
 
 class CartHasDataState extends CartState {
   final List<Product> productList;

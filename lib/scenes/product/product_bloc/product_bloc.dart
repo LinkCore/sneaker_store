@@ -8,7 +8,6 @@ import '../../../core/product/product.dart';
 import '../../../core/product/product_repository.dart';
 
 part 'product_event.dart';
-
 part 'product_state.dart';
 
 class ProductBloc extends Bloc<ProductEvent, ProductState> {

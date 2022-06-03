@@ -3,13 +3,13 @@ part of 'auth_bloc.dart';
 @immutable
 abstract class AuthEvent {}
 
+class SignOutEvent extends AuthEvent {}
+
 class StartupEvent extends AuthEvent {
   final Roles? roles;
 
   StartupEvent({this.roles});
 }
-
-class SignOutEvent extends AuthEvent {}
 
 class SignInEvent extends AuthEvent {
   final Roles? userRole;
@@ -24,5 +24,6 @@ class RegisterUserEvent extends AuthEvent {
   final String password;
   final Roles roles;
 
-  RegisterUserEvent({required this.login, required this.password, required this.roles});
+  RegisterUserEvent(
+      {required this.login, required this.password, required this.roles});
 }

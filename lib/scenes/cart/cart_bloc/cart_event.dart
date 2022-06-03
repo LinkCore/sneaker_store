@@ -5,6 +5,8 @@ abstract class CartEvent {}
 
 class OnStartupEvent extends CartEvent {}
 
+class ClearCartEvent extends CartEvent {}
+
 class AddToCartEvent extends CartEvent {
   final Product newProduct;
 
@@ -16,6 +18,3 @@ class DeleteProductEvent extends CartEvent {
 
   DeleteProductEvent({required this.product});
 }
-
-class ClearCartEvent extends CartEvent {}
-

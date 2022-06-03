@@ -3,7 +3,6 @@ import 'package:flutter_sneaker_store/common/app_colors.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AppTextStyles {
-
   static TextStyle mainTextStyle = GoogleFonts.poppins(fontWeight: FontWeight.w600, fontSize: 16, color: AppColors.backgroundColor);
   static TextStyle subMainTextStyle = GoogleFonts.poppins(fontWeight: FontWeight.w300, fontSize: 16);
 
