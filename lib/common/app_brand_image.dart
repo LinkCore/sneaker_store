@@ -1,5 +1,4 @@
 import 'package:flutter_sneaker_store/common/app_constance.dart';
-
 import '../core/product/product.dart';
 
 class BrandImage {
@@ -12,7 +11,6 @@ class BrandImage {
 const String path = AppConstance.assetsPath;
 
 List<BrandImage> brandImage = [
-
   BrandImage(asset: '${path}nike_logo.png', brandName: Brands.nike),
   BrandImage(asset: '${path}adidas_logo.png', brandName: Brands.adidas),
   BrandImage(asset: '${path}new_balance_logo.png', brandName: Brands.newBalance),

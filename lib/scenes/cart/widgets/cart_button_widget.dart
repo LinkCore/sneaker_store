@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
 import '../../../common/app_colors.dart';
 import '../../../common/app_textstyles.dart';
 import '../../../generated/l10n.dart';

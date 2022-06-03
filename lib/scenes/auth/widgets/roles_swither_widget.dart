@@ -11,11 +11,10 @@ class RolesSwitcherWidget extends StatefulWidget {
   final double width;
   final VoidCallback onTap;
 
-  const RolesSwitcherWidget(
-      {Key? key, required this.onTap, required this.height,
-      required this.floatingWidgetColor, required this.backgroundColor,
-      required this.floatingWidgetTextStyle, required this.backgroundTextStyle,
-      required this.leftText, required this.rightText, required this.width})
+  const RolesSwitcherWidget({Key? key, required this.onTap, required this.height,
+    required this.floatingWidgetColor, required this.backgroundColor,
+    required this.floatingWidgetTextStyle, required this.backgroundTextStyle,
+    required this.leftText, required this.rightText, required this.width})
       : super(key: key);
 
   @override
@@ -28,9 +27,8 @@ class _RolesSwitcherWidgetState extends State<RolesSwitcherWidget> {
 
   @override
   void initState() {
-    child = Text(widget.leftText,
-        style: widget.floatingWidgetTextStyle, key: Key(widget.leftText));
-    super.initState();
+    child = Text(widget.leftText, style: widget.floatingWidgetTextStyle,
+        key: Key(widget.leftText)); super.initState();
   }
 
   Future<void> onInteractive() async {
@@ -50,8 +48,7 @@ class _RolesSwitcherWidgetState extends State<RolesSwitcherWidget> {
           child = Text(widget.leftText,
               style: widget.floatingWidgetTextStyle, key: Key(widget.leftText));
         });
-      }
-    });
+      }});
     widget.onTap;
   }
 
@@ -79,10 +76,7 @@ class _RolesSwitcherWidgetState extends State<RolesSwitcherWidget> {
               Expanded(
                   child: Center(
                       child: Text(widget.rightText,
-                          style: widget.backgroundTextStyle)))
-            ],
-          ),
-        ),
+                          style: widget.backgroundTextStyle)))]))
       ),
       AnimatedPositioned(
           curve: Curves.easeInQuart,

@@ -5,13 +5,10 @@ abstract class ConnectivityState {}
 
 class ConnectivityInitial extends ConnectivityState {}
 
-class HasConnectionState extends ConnectivityState{
+class NoConnectionState extends ConnectivityState {}
 
- final bool needToBlock;
+class HasConnectionState extends ConnectivityState {
+  final bool needToBlock;
 
-  HasConnectionState({
-    required this.needToBlock,
-  });
+  HasConnectionState({required this.needToBlock});
 }
-
-class NoConnectionState extends ConnectivityState{}

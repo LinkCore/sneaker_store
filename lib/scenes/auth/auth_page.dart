@@ -46,8 +46,7 @@ class _AuthPageState extends State<AuthPage> {
     } else {
       ScaffoldMessenger.of(context).removeCurrentSnackBar();
       _snackBar(S.current.dataError);
-    }
-  }
+    }}
 
   Future<void> onTapRegister() async {
     showModalBottomSheet(
