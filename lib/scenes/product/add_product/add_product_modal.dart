@@ -8,7 +8,7 @@ import 'package:flutter_sneaker_store/scenes/product/product_bloc/product_bloc.d
 import 'package:random_string_generator/random_string_generator.dart';
 
 import '../../../common/app_colors.dart';
-import '../../../common/app_textstyles.dart';
+import '../../../common/app_text_styles.dart';
 import '../../../common/app_utilities.dart';
 import '../../../core/product/product.dart';
 import '../../../generated/l10n.dart';

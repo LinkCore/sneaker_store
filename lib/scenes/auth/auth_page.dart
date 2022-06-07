@@ -5,7 +5,7 @@ import 'package:flutter_sneaker_store/scenes/auth/widgets/auth_button_widget.dar
 import 'package:flutter_sneaker_store/scenes/auth/widgets/auth_textfield_widget.dart';
 
 import '../../common/app_colors.dart';
-import '../../common/app_textstyles.dart';
+import '../../common/app_text_styles.dart';
 import '../../core/user/roles.dart';
 import '../../generated/l10n.dart';
 import 'auth_bloc/auth_bloc.dart';

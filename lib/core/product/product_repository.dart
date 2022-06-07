@@ -2,7 +2,7 @@ import 'dart:io';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter_sneaker_store/core/product/product.dart';
-import '../../common/app_constance.dart';
+import '../../common/app_constants.dart';
 
 class ProductRepository {
   static final ProductRepository _productRepository = ProductRepository._internal();
@@ -14,7 +14,7 @@ class ProductRepository {
   ProductRepository._internal();
 
   final CollectionReference _productCollection =
-  FirebaseFirestore.instance.collection(AppConstance.products);
+  FirebaseFirestore.instance.collection(AppConstants.productsCollection);
 
   final storage  = FirebaseStorage.instance;
 
@@ -24,7 +24,7 @@ class ProductRepository {
       if (newFiles.isNotEmpty) {
         List<String> urls = [];
         for(int i = 0; i < newFiles.length; i++){
-          String linkUri = '${AppConstance.images}/$id/$i.png';
+          String linkUri = '${AppConstants.images}/$id/$i.png';
           await storage.ref(linkUri).putFile(newFiles[i]).then((snapshot) async {
             urls.add(await snapshot.ref.getDownloadURL());
           });
@@ -49,7 +49,7 @@ class ProductRepository {
     return productsList;
   }
 
-  void addProduct(Product product) async {
+  Future<void> addProduct(Product product) async {
     Product newProduct = Product(
       id: product.id,
       productName: product.productName,
@@ -59,15 +59,15 @@ class ProductRepository {
       imagesUrls: await uploadImages( product.id!, newFiles: product.imagesList!),
     );
 
-    _productCollection.doc(newProduct.id).set(newProduct.toJson());
+    await _productCollection.doc(newProduct.id).set(newProduct.toJson());
   }
 
-  void deleteProduct(Product product) async {
+  void deleteProduct(Product product) {
     _productCollection.doc(product.id).delete();
   }
 
-  void editProduct(Product product) async {
-    _productCollection.doc(product.id).set(product.toJson(), SetOptions(merge: true));
+  Future<void> editProduct(Product product) async {
+    await _productCollection.doc(product.id).set(product.toJson(), SetOptions(merge: true));
   }
 
   Stream collectionListener() {

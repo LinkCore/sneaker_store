@@ -3,7 +3,7 @@ import 'package:photo_gallery/photo_gallery.dart';
 import 'package:transparent_image/transparent_image.dart';
 
 import '../../common/app_colors.dart';
-import '../../common/app_textstyles.dart';
+import '../../common/app_text_styles.dart';
 import '../../generated/l10n.dart';
 
 class ViewerPage extends StatelessWidget {

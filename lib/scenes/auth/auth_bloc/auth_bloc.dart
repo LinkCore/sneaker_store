@@ -49,9 +49,9 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       );
 
       try {
-        _userRepository.addUserLocal(
+        await _userRepository.addUserLocal(
             newUser.login, newUser.password, newUser.roles, newUser.id);
-        _userRepository.addUserRemote(newUser);
+        await _userRepository.addUserRemote(newUser);
         emit(AutoLoginState(userRole: event.roles));
       } catch (e) {
         emit(AuthErrorState(errorText: e.toString()));
@@ -85,7 +85,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
   Future<void> _onSignOutEvent(
       SignOutEvent event, Emitter<AuthState> emit) async {
-    _userRepository.removeUserLocal();
+    await _userRepository.removeUserLocal();
     emit(NeedToAuthState());
   }
 }

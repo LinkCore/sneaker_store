@@ -18,19 +18,17 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  void goToCart() {
+  void goToCart() =>
     Navigator.push(
         context, MaterialPageRoute(builder: (context) => const CartPage()));
-  }
 
   void addProduct() {
     showModalBottomSheet(
         isScrollControlled: true,
         useRootNavigator: true,
         context: context,
-        builder: (context) {
-          return const AddProductModal();
-        },
+        builder: (context) =>
+          const AddProductModal(),
         shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(35), topRight: Radius.circular(35))));

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../common/app_textstyles.dart';
+import '../../../common/app_text_styles.dart';
 
 class CommonTextButtonWidget extends StatelessWidget {
   final EdgeInsetsGeometry margin;

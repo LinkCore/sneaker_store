@@ -1,6 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 
-import '../../common/app_constance.dart';
+import '../../common/app_constants.dart';
 import '../../generated/l10n.dart';
 
 class AuthRepository {
@@ -17,9 +17,9 @@ class AuthRepository {
       await FirebaseAuth.instance
           .createUserWithEmailAndPassword(email: email, password: password);
     } on FirebaseAuthException catch (e) {
-      if (e.code == AppConstance.weakPassword) {
+      if (e.code == AppConstants.weakPassword) {
         throw Exception(S.current.thePasswordProvidedIsTooWeak);
-      } else if (e.code == AppConstance.emailAlreadyInUse) {
+      } else if (e.code == AppConstants.emailAlreadyInUse) {
         throw Exception(S.current.theAccountAlreadyExistsForThatEmail);
       }
     } catch (e) {
@@ -32,9 +32,9 @@ class AuthRepository {
       await FirebaseAuth.instance
           .signInWithEmailAndPassword(email: email, password: password);
     } on FirebaseAuthException catch (e) {
-      if (e.code == AppConstance.userNotFound) {
+      if (e.code == AppConstants.userNotFound) {
         throw Exception(S.current.noUserFoundForThatEmail);
-      } else if (e.code == AppConstance.wrongPassword) {
+      } else if (e.code == AppConstants.wrongPassword) {
         throw Exception(S.current.wrongPasswordProvidedForThatUser);
       }
     }

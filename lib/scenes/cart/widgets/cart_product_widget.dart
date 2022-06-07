@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_sneaker_store/common/app_textstyles.dart';
+import 'package:flutter_sneaker_store/common/app_text_styles.dart';
 
 import '../cart_bloc/cart_bloc.dart';
 

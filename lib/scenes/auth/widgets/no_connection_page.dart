@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../common/app_colors.dart';
-import '../../../common/app_textstyles.dart';
+import '../../../common/app_text_styles.dart';
 import '../../../generated/l10n.dart';
 
 class NoConnectionPage extends StatelessWidget {

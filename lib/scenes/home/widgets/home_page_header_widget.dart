@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_sneaker_store/common/app_colors.dart';
 
-import '../../../common/app_textstyles.dart';
+import '../../../common/app_text_styles.dart';
 import '../../../core/product/product.dart';
 import '../../../generated/l10n.dart';
 import '../../auth/auth_bloc/auth_bloc.dart';
@@ -38,7 +38,7 @@ class _HomePageHeaderWidgetState extends State<HomePageHeaderWidget> {
                           decoration: InputDecoration(
                               prefixIcon: const Icon(
                                 Icons.search,
-                                color: Colors.white70,
+                                color: Colors.white70
                               ),
                               labelStyle: AppTextStyles.plainTextStyle,
                               contentPadding: const EdgeInsets.only(right: 20),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_sneaker_store/common/app_textstyles.dart';
+import 'package:flutter_sneaker_store/common/app_text_styles.dart';
 
 import '../../../../common/app_colors.dart';
 import '../../../../generated/l10n.dart';
@@ -27,7 +27,7 @@ class _SelectPhotosWidgetState extends State<SelectPhotosWidget> {
             child: Center(
                 child: Text(S.current.selectPhotos,
                     style: AppTextStyles.productListTextStyle))),
-        onTap: () {
+        onTap: () =>
           showModalBottomSheet(
               isScrollControlled: true,
               useRootNavigator: true,
@@ -38,7 +38,7 @@ class _SelectPhotosWidgetState extends State<SelectPhotosWidget> {
               shape: const RoundedRectangleBorder(
                   borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(35),
-                      topRight: Radius.circular(35))));
-        });
+                      topRight: Radius.circular(35))))
+        );
   }
 }
