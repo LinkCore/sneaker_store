@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../common/app_textstyles.dart';
+import '../../../../common/app_text_styles.dart';
 import '../../../../core/user/roles.dart';
 import '../../../../generated/l10n.dart';
 import '../../../product/product_bloc/product_bloc.dart';

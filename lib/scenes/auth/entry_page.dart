@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_sneaker_store/common/app_colors.dart';
-import 'package:flutter_sneaker_store/common/app_textstyles.dart';
+import 'package:flutter_sneaker_store/common/app_text_styles.dart';
 import 'package:uiblock/uiblock.dart';
 
 import '../../generated/l10n.dart';
@@ -29,10 +29,8 @@ class _EntryPageState extends State<EntryPage> {
           listeners: [
             BlocListener<ConnectivityBloc, ConnectivityState>(
                 listener: (context, state) {
-              if (state is HasConnectionState) {
-                if (state.needToBlock) {
+              if (state is HasConnectionState && state.needToBlock) {
                   UIBlock.unblock(context);
-                }
               } else if (state is NoConnectionState) {
                 UIBlock.block(context, childBuilder: (context) {
                   return const NoConnectionPage();

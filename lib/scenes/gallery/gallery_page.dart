@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_sneaker_store/common/app_colors.dart';
-import 'package:flutter_sneaker_store/common/app_textstyles.dart';
+import 'package:flutter_sneaker_store/common/app_text_styles.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:photo_gallery/photo_gallery.dart';
 import 'package:transparent_image/transparent_image.dart';
@@ -49,6 +49,7 @@ class _GalleryPageState extends State<GalleryPage> {
 
   @override
   Widget build(BuildContext context) {
+    ///move MediaQuery.of(context).size.height
     return DraggableScrollableSheet(
         initialChildSize: 0.66,
         expand: false,

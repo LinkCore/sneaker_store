@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../../common/app_textstyles.dart';
+
+import '../../../common/app_text_styles.dart';
 import '../../../generated/l10n.dart';
 
 class CommonTextFieldWidget extends StatefulWidget {
@@ -8,7 +9,13 @@ class CommonTextFieldWidget extends StatefulWidget {
   final bool isSuffixIcon;
   final TextInputType keyboard;
 
-  const CommonTextFieldWidget({Key? key, required this.labelText, required this.controller, required this.isSuffixIcon, required this.keyboard}) : super(key: key);
+  const CommonTextFieldWidget(
+      {Key? key,
+      required this.labelText,
+      required this.controller,
+      required this.isSuffixIcon,
+      required this.keyboard})
+      : super(key: key);
 
   @override
   State<CommonTextFieldWidget> createState() => _CommonTextFieldWidgetState();
@@ -53,10 +60,9 @@ class _CommonTextFieldWidgetState extends State<CommonTextFieldWidget> {
             },
             obscureText: isObscure ? visibility : isObscure,
             decoration: InputDecoration(
-              suffixIcon: _suffixIcon(),
-              border: InputBorder.none,
-              labelText: widget.labelText
-            ),
+                suffixIcon: _suffixIcon(),
+                border: InputBorder.none,
+                labelText: widget.labelText),
             controller: widget.controller,
             style: AppTextStyles.plainTextStyle,
             keyboardType: widget.keyboard));

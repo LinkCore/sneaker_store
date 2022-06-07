@@ -6,7 +6,7 @@ import 'package:flutter_sneaker_store/scenes/auth/widgets/auth_textfield_widget.
 import 'package:flutter_sneaker_store/scenes/auth/widgets/bootom_sheet_anchor.dart';
 import 'package:flutter_sneaker_store/scenes/auth/widgets/roles_swither_widget.dart';
 
-import '../../common/app_textstyles.dart';
+import '../../common/app_text_styles.dart';
 import '../../core/user/roles.dart';
 import '../../generated/l10n.dart';
 import 'auth_bloc/auth_bloc.dart';
@@ -27,7 +27,7 @@ class _RegisterPage extends State<RegisterPage> {
   Roles roleValue = Roles.buyer;
   bool isOnTap = true;
 
-  void _snackBar(String text) {
+  void _showSnackBar(String text) {
     ScaffoldMessenger.of(context).clearSnackBars();
     ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text(text, style: AppTextStyles.plainTextStyle)));
@@ -39,7 +39,7 @@ class _RegisterPage extends State<RegisterPage> {
           content: Text(S.current.processingData,
               style: AppTextStyles.plainTextStyle)));
       if (widget.errorText != null) {
-        _snackBar(widget.errorText!);
+        _showSnackBar(widget.errorText!);
       }
       context.read<AuthBloc>().add(RegisterUserEvent(
           login: loginController.text,
@@ -47,7 +47,7 @@ class _RegisterPage extends State<RegisterPage> {
           roles: roleValue));
       Navigator.of(context).pop();
     } else {
-      _snackBar(S.current.dataError);
+      _showSnackBar(S.current.dataError);
     }
   }
 

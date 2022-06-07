@@ -1,4 +1,1 @@
-enum Roles {
-  seller,
-  buyer
-}
+enum Roles { seller, buyer }

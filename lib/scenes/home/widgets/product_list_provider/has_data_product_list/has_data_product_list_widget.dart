@@ -2,8 +2,9 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_sneaker_store/common/app_colors.dart';
-import 'package:flutter_sneaker_store/common/app_textstyles.dart';
+import 'package:flutter_sneaker_store/common/app_text_styles.dart';
 
+import '../../../../../common/app_constants.dart';
 import '../../../../../core/user/roles.dart';
 import '../../../../../generated/l10n.dart';
 import '../../../../product/product_bloc/product_bloc.dart';
@@ -66,7 +67,7 @@ class _HasDataProductListWidgetState extends State<HasDataProductListWidget> {
                           SingleChildScrollView(
                             scrollDirection: Axis.horizontal,
                             child: Text(
-                              '${product.price.toString()} USD',
+                              '${product.price.toString()}' '${AppConstants.usd}',
                               style: AppTextStyles.gridCountPriceTextStyle))])))]
               ),
               onLongPress: () async {
@@ -96,13 +97,13 @@ class _HasDataProductListWidgetState extends State<HasDataProductListWidget> {
                               )]
                           ));
                 }},
-              onTap: () async {
+              onTap: () async =>
                 Navigator.push(context, MaterialPageRoute(
                         builder: (context) => ProductPage(
                               product: product,
                               userRole: widget.userRole
-                        )));
-              });
+                        )))
+              );
         }).toList()));
   }
 }

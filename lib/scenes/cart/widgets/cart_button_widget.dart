@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../common/app_colors.dart';
-import '../../../common/app_textstyles.dart';
+import '../../../common/app_text_styles.dart';
 import '../../../generated/l10n.dart';
 import '../cart_bloc/cart_bloc.dart';
 
@@ -53,14 +53,13 @@ class _CartButtonWidgetState extends State<CartButtonWidget> {
                       height: MediaQuery.of(context).size.height / 17,
                       width: MediaQuery.of(context).size.height / 5,
                       decoration: BoxDecoration(
-                          color: Colors.amber,
+                          color: AppColors.primaryColor,
                           borderRadius: BorderRadius.circular(15)),
                       child: Center(
                           child: Text(S.current.buy,
                               style: AppTextStyles.buttonTextStyle))),
-                  onTap: () {
-                    _alertDialog();
-                  }))
+                  onTap: _alertDialog
+                  ))
         ]));
   }
 }

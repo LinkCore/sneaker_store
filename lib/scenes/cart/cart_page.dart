@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_sneaker_store/common/app_textstyles.dart';
+import 'package:flutter_sneaker_store/common/app_text_styles.dart';
 import 'package:flutter_sneaker_store/scenes/cart/widgets/cart_button_widget.dart';
 import 'package:flutter_sneaker_store/scenes/cart/widgets/cart_product_widget.dart';
 import 'package:flutter_sneaker_store/scenes/cart/widgets/empty_cart_widget.dart';
@@ -26,9 +26,9 @@ class CartPage extends StatelessWidget {
               IconButton(
                   icon: Icon(Icons.delete,
                       color: Colors.redAccent.withOpacity(0.9)),
-                  onPressed: () {
-                    context.read<CartBloc>().add(ClearCartEvent());
-                  })
+                  onPressed: () =>
+                    context.read<CartBloc>().add(ClearCartEvent())
+                  )
             ]),
         body: BlocBuilder<CartBloc, CartState>(builder: (context, state) {
           if (state is LoadingState) {

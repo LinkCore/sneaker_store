@@ -7,7 +7,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:uiblock/uiblock.dart';
 
 import '../../../../common/app_colors.dart';
-import '../../../../common/app_textstyles.dart';
+import '../../../../common/app_text_styles.dart';
 import '../../../../common/app_utilities.dart';
 import '../../../../core/product/product.dart';
 import '../../../../core/product/product_repository.dart';
@@ -127,13 +127,11 @@ class _CustomDialogState extends State<CustomDialog> {
               ModalTextFieldWidget(
                   labelText: S.current.brandModel,
                   controller: productNameController,
-                  keyboardType: TextInputType.text,
-                  filteringText: const []),
+                  keyboardType: TextInputType.text),
               ModalTextFieldWidget(
                   labelText: S.current.shortDescription,
                   controller: descriptionController,
-                  keyboardType: TextInputType.text,
-                  filteringText: const []),
+                  keyboardType: TextInputType.text,),
               ModalTextFieldWidget(
                   labelText: S.current.price,
                   controller: priceController,

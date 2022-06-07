@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_sneaker_store/common/app_textstyles.dart';
+import 'package:flutter_sneaker_store/common/app_text_styles.dart';
 
 class ModalTextFieldWidget extends StatelessWidget {
   final String labelText;
   final TextEditingController controller;
   final TextInputType keyboardType;
-  final List<TextInputFormatter> filteringText;
+  final List<TextInputFormatter>? filteringText;
 
   const ModalTextFieldWidget(
       {Key? key,
       required this.keyboardType,
       required this.labelText,
       required this.controller,
-      required this.filteringText})
+      this.filteringText})
       : super(key: key);
 
   @override
@@ -27,16 +27,9 @@ class ModalTextFieldWidget extends StatelessWidget {
                 alignLabelWithHint: false,
                 labelStyle: AppTextStyles.plainTextStyle,
                 contentPadding: const EdgeInsets.only(left: 15, right: 15),
-                focusedBorder: const OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.white70),
-                    borderRadius: BorderRadius.all(Radius.circular(15.0))),
-                enabledBorder: const OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.white70),
-                    borderRadius: BorderRadius.all(Radius.circular(15.0))),
                 border: InputBorder.none,
                 labelText: labelText,
                 helperMaxLines: 1),
-            style: AppTextStyles.plainTextStyle,
             controller: controller));
   }
 }

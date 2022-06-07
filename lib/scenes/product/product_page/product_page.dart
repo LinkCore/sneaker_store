@@ -10,7 +10,7 @@ import 'package:flutter_sneaker_store/scenes/product/product_page/widgets/produc
 import 'package:flutter_sneaker_store/scenes/product/product_page/widgets/title_appbar_widget.dart';
 
 import '../../../common/app_colors.dart';
-import '../../../common/app_textstyles.dart';
+import '../../../common/app_text_styles.dart';
 import '../../../core/product/product.dart';
 import '../../../core/user/roles.dart';
 import '../../../generated/l10n.dart';
@@ -152,14 +152,14 @@ class _ProductPageState extends State<ProductPage> {
                   visible: widget.userRole == Roles.seller,
                   child: IconButton(
                       icon: const Icon(Icons.edit_outlined),
-                      onPressed: () {
+                      onPressed: () =>
                         showDialog(
                             context: context,
                             builder: (context) => CustomDialog(
                                 product: widget.product,
                                 selectedSize: widget.product.sizedList,
-                                imagesList: widget.product.imagesUrls));
-                      }))
+                                imagesList: widget.product.imagesUrls))
+                      ))
             ]),
         body: Stack(children: [
           MainImageWidget(mainImage: child),

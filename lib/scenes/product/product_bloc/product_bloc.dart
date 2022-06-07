@@ -59,7 +59,7 @@ class ProductBloc extends Bloc<ProductEvent, ProductState> {
   Future<void> _addProductEvent(
       AddProductEvent event, Emitter<ProductState> emit) async {
     try {
-      ProductRepository().addProduct(event.product);
+      await ProductRepository().addProduct(event.product);
     } catch (e) {
       emit(ErrorState(errorText: e.toString()));
     }
@@ -72,6 +72,6 @@ class ProductBloc extends Bloc<ProductEvent, ProductState> {
 
   Future<void> _editProductEvent(
       EditProductEvent event, Emitter<ProductState> emit) async {
-    ProductRepository().editProduct(event.product);
+    await ProductRepository().editProduct(event.product);
   }
 }

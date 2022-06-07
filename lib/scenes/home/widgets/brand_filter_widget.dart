@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_sneaker_store/common/app_textstyles.dart';
+import 'package:flutter_sneaker_store/common/app_text_styles.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../../common/app_brand_image.dart';
@@ -45,7 +45,7 @@ class _BrandFilterWidgetState extends State<BrandFilterWidget> {
                   margin: const EdgeInsets.only(right: 15, bottom: 10),
                   child: Text(
                     S.current.showAll,
-                    style: GoogleFonts.poppins(color:  brandsFilter == Brands.noFilter ? Colors.white54 : Colors.amber,
+                    style: GoogleFonts.poppins(color: brandsFilter == Brands.noFilter ? Colors.white54 : Colors.amber,
                         fontSize: 16,
                         fontWeight: FontWeight.w500))),
                 onTap: (){
